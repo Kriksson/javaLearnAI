@@ -1,6 +1,7 @@
 # Парсер карточки персонажа
 
-- Тема: 2. Строки, методы и классы
+- Задача: №4
+- Навыки: разбор структурированной строки и проверка формата
 - Сложность: высокая
 
 ## Условие
@@ -73,8 +74,8 @@ createCharacterCard("Kirill|mage")
 
 ## Файлы
 
-- Решение: `src/main/java/learning/topic02/task03/Solution.java`
-- Тесты: `src/test/java/learning/topic02/task03/SolutionTest.java`
+- Архив решения: `Solution.java`
+- Архив тестов: `SolutionTest.java`
 
 ## Запуск тестов
 

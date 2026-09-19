@@ -1,4 +1,4 @@
-package learning.topic02.task01;
+package learning.task002;
 
 import org.junit.jupiter.api.Test;
 

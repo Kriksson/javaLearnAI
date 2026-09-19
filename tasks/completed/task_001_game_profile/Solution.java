@@ -1,4 +1,4 @@
-package learning.topic01.task01;
+package learning.task001;
 
 import java.util.Scanner;
 

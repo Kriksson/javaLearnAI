@@ -1,6 +1,7 @@
 # Профиль игрового персонажа
 
-- Тема: 1. `Scanner` и вывод
+- Задача: №1
+- Навыки: `Scanner`, консольный ввод и форматированный вывод
 - Сложность: лёгкая
 
 ## Условие
@@ -99,8 +100,8 @@ Space Ranger
 
 ## Файлы
 
-- Решение: `src/main/java/learning/topic01/task01/Solution.java`
-- Тесты: `src/test/java/learning/topic01/task01/SolutionTest.java`
+- Архив решения: `Solution.java`
+- Архив тестов: `SolutionTest.java`
 
 ## Запуск тестов
 

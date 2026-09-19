@@ -1,6 +1,7 @@
 # Тег игрового персонажа
 
-- Тема: 2. Строки, методы и классы
+- Задача: №2
+- Навыки: методы, очистка и преобразование строк
 - Сложность: лёгкая
 
 ## Условие
@@ -45,8 +46,8 @@ createPlayerTag("   ", "warrior") → "Некорректные данные"
 
 ## Файлы
 
-- Решение: `src/main/java/learning/topic02/task01/Solution.java`
-- Тесты: `src/test/java/learning/topic02/task01/SolutionTest.java`
+- Архив решения: `Solution.java`
+- Архив тестов: `SolutionTest.java`
 
 ## Запуск тестов
 

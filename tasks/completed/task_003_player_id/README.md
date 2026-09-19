@@ -1,6 +1,7 @@
 # Игровой идентификатор
 
-- Тема: 2. Строки, методы и классы
+- Задача: №3
+- Навыки: `substring`, проверки длины и композиция методов
 - Сложность: средняя
 
 ## Условие
@@ -50,7 +51,7 @@ createPlayerId("Kirill", " CS ") → "CS-KIRILL"
 - Аргументы не равны `null`.
 - Регистр результата должен точно соответствовать условию.
 - Используй методы `String`: `trim`, `toUpperCase`, `replace`, `substring` и `length`.
-- Не используй циклы — они понадобятся в следующих темах.
+- Не используй циклы — они понадобятся в следующих задачах.
 
 ## Критерии готовности
 
@@ -61,8 +62,8 @@ createPlayerId("Kirill", " CS ") → "CS-KIRILL"
 
 ## Файлы
 
-- Решение: `src/main/java/learning/topic02/task02/Solution.java`
-- Тесты: `src/test/java/learning/topic02/task02/SolutionTest.java`
+- Архив решения: `Solution.java`
+- Архив тестов: `SolutionTest.java`
 
 ## Запуск тестов
 

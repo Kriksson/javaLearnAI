@@ -1,4 +1,4 @@
-package learning.topic02.task01;
+package learning.task002;
 
 public class Solution {
     public static String createPlayerTag(String nickname, String characterClass) {

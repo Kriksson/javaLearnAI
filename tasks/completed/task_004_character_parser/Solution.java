@@ -1,4 +1,4 @@
-package learning.topic02.task03;
+package learning.task004;
 
 public class Solution {
     public static String normalizeToken(String value) {

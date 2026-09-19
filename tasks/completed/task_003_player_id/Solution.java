@@ -1,4 +1,4 @@
-package learning.topic02.task02;
+package learning.task003;
 
 public class Solution {
     public static String createGameCode(String gameTitle) {
