@@ -1,7 +1,13 @@
 package learning.topic01.task01;
 
+import java.util.Scanner;
+
 public class Solution {
     public static void main(String[] args) {
-        // TODO: прочитай данные через Scanner и выведи карточку персонажа.
+        Scanner scan = new Scanner(System.in);
+        String name = scan.nextLine();
+        String wClass = scan.nextLine();
+        int level = Integer.parseInt(scan.nextLine());
+        System.out.printf("Игрок: %s%nКласс: %s%nУровень: %d%nГотов к приключению!", name, wClass, level);
     }
 }
