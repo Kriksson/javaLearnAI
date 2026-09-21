@@ -8,6 +8,15 @@
     <artifactId>java-learning</artifactId>
     <version>1.0.0</version>
 
+    <profiles>
+        <profile>
+            <id>development</id>
+            <properties>
+                <app.environment>dev</app.environment>
+            </properties>
+        </profile>
+    </profiles>
+
     <properties>
         <maven.compiler.release>21</maven.compiler.release>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
