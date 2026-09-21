@@ -54,13 +54,13 @@ Linux/macOS:
 
 ### Приобретённый стек
 
-| Значок | Технология | Практическое применение |
-|---|---|---|
-| ☕ | Java 21 | классы, ООП, коллекции, дженерики, исключения |
-| 🧪 | JUnit 5 | обычные и параметризованные unit-тесты |
-| 📦 | Maven | сборка, плагины, профили, запуск тестов |
-| 🌿 | Git | коммиты, ветки, merge, конфликты, восстановление файлов |
-| 🐙 | GitHub | remote, push и проверка GitHub Actions |
+[![Java 21](https://img.shields.io/badge/Java-21-ED8B00?style=flat-square&logo=openjdk&logoColor=white)](https://openjdk.org/projects/jdk/21/)
+[![JUnit 5](https://img.shields.io/badge/JUnit-5-25A162?style=flat-square&logo=junit5&logoColor=white)](https://junit.org/junit5/)
+[![Maven](https://img.shields.io/badge/Maven-3.9-C71A36?style=flat-square&logo=apachemaven&logoColor=white)](https://maven.apache.org/)
+[![Git](https://img.shields.io/badge/Git-2-F05032?style=flat-square&logo=git&logoColor=white)](https://git-scm.com/)
+[![GitHub](https://img.shields.io/badge/GitHub-Actions-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/Kriksson/javaLearnAI/actions)
+
+Java 21 · JUnit 5 · Maven · Git · GitHub Actions
 
 - Подтверждённые навыки:
   - консольный ввод через `Scanner` и форматированный вывод;
