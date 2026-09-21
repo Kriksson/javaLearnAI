@@ -1,0 +1,1 @@
+rewardMultiplier=1.20
