@@ -55,12 +55,13 @@ Linux/macOS:
 ### Приобретённый стек
 
 [![Java 21](https://img.shields.io/badge/Java-21-ED8B00?style=flat-square&logo=openjdk&logoColor=white)](https://openjdk.org/projects/jdk/21/)
+[![BigDecimal](https://img.shields.io/badge/BigDecimal-Java-ED8B00?style=flat-square&logo=openjdk&logoColor=white)](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/math/BigDecimal.html)
 [![JUnit 5](https://img.shields.io/badge/JUnit-5-25A162?style=flat-square&logo=junit5&logoColor=white)](https://junit.org/junit5/)
 [![Maven](https://img.shields.io/badge/Maven-3.9-C71A36?style=flat-square&logo=apachemaven&logoColor=white)](https://maven.apache.org/)
 [![Git](https://img.shields.io/badge/Git-2-F05032?style=flat-square&logo=git&logoColor=white)](https://git-scm.com/)
 [![GitHub](https://img.shields.io/badge/GitHub-Actions-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/Kriksson/javaLearnAI/actions)
 
-Java 21 · JUnit 5 · Maven · Git · GitHub Actions
+Java 21 · BigDecimal · JUnit 5 · Maven · Git · GitHub Actions
 
 - Подтверждённые навыки:
   - консольный ввод через `Scanner` и форматированный вывод;
@@ -115,10 +116,12 @@ Java 21 · JUnit 5 · Maven · Git · GitHub Actions
   - составной `Comparator` и сортировка копии коллекции по нескольким полям.
   - агрегация данных в `Map` через `merge`;
   - неизменяемые снимки `Map` и сортировка записей `Map.Entry`.
+  - точные денежные расчёты через `BigDecimal`;
+  - сравнение и суммирование денежных значений без `double`.
 
 ## Прогресс
 
-- Решено задач: **28**
+- Решено задач: **29**
 - Текущая задача: **отсутствует**
 - Следующая сложность будет выбрана по прогрессии.
 
@@ -152,6 +155,7 @@ Java 21 · JUnit 5 · Maven · Git · GitHub Actions
 | 26 | Отмена локального изменения | `git diff`, `git restore`, проверка состояния файла | решена |
 | 27 | История боёв | `record`, `Comparator`, неизменяемые списки, сортировка по нескольким полям | решена |
 | 28 | Статистика добычи | `Map.merge`, агрегация, `Map.Entry`, неизменяемые снимки | решена |
+| 29 | Корзина покупок | `BigDecimal`, `Map<Product, Integer>`, точный итог заказа | решена |
 
 ## Текущая задача
 
