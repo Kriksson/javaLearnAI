@@ -10,11 +10,11 @@
 4. Успешная задача переносится в `tasks/completed/` вместе с решением и тестами.
 5. Обновляются общий прогресс и подтверждённые навыки, затем выполняются commit и push.
 
-Новые задания могут смешивать знания из разных разделов программы. Базы данных, Spring и другие темы вне программы пока не используются.
+Новые задания могут смешивать знания из разных разделов программы. После уверенного Java Core программа расширена на следующий этап backend-разработки.
 
 ## Границы курса
 
-Задачи строятся только на следующих направлениях:
+Пройденный фундамент и следующие этапы обучения:
 
 - типы данных, строки, числа, булевы значения, циклы и массивы;
 - методы, область видимости, декомпозиция и правила написания кода;
@@ -22,6 +22,10 @@
 - Git, GitHub, командная строка, JDK, отладка и IntelliJ IDEA;
 - ООП: инкапсуляция, наследование, `Object`, статика, константы, перечисления, абстракция и полиморфизм;
 - дженерики, unit-тесты, анализ проблем и итоговые проекты.
+- современный Java: лямбды, Stream API, дата и время;
+- SQL, PostgreSQL и проектирование реляционных данных;
+- JDBC и работа Java-приложения с базой данных;
+- HTTP, REST API и Spring Boot.
 
 ## Команды
 
@@ -50,19 +54,20 @@ Linux/macOS:
 - Имя: Кирилл
 - Исходный опыт: небольшой опыт в Java Core
 - Интересы: игры
-- Текущий практический уровень: уверенно решает учебные задачи на Java Core, применяет ООП и коллекции, пишет JUnit-тесты, собирает Maven-проект и ведёт изменения через Git.
+- Текущий практический уровень: уверенно решает учебные задачи на Java Core, применяет ООП, коллекции и базовый Stream API, пишет JUnit-тесты, собирает Maven-проект и ведёт изменения через Git.
 
 ### Приобретённый стек
 
 [![Java 21](https://img.shields.io/badge/Java-21-ED8B00?style=flat-square&logo=openjdk&logoColor=white)](https://openjdk.org/projects/jdk/21/)
 [![BigDecimal](https://img.shields.io/badge/BigDecimal-Java-ED8B00?style=flat-square&logo=openjdk&logoColor=white)](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/math/BigDecimal.html)
 [![Optional](https://img.shields.io/badge/Optional-Java-ED8B00?style=flat-square&logo=openjdk&logoColor=white)](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Optional.html)
+[![Stream API](https://img.shields.io/badge/Stream_API-Java-ED8B00?style=flat-square&logo=openjdk&logoColor=white)](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/stream/package-summary.html)
 [![JUnit 5](https://img.shields.io/badge/JUnit-5-25A162?style=flat-square&logo=junit5&logoColor=white)](https://junit.org/junit5/)
 [![Maven](https://img.shields.io/badge/Maven-3.9-C71A36?style=flat-square&logo=apachemaven&logoColor=white)](https://maven.apache.org/)
 [![Git](https://img.shields.io/badge/Git-2-F05032?style=flat-square&logo=git&logoColor=white)](https://git-scm.com/)
 [![GitHub](https://img.shields.io/badge/GitHub-Actions-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/Kriksson/javaLearnAI/actions)
 
-Java 21 · BigDecimal · Optional · JUnit 5 · Maven · Git · GitHub Actions
+Java 21 · BigDecimal · Optional · Stream API · JUnit 5 · Maven · Git · GitHub Actions
 
 - Подтверждённые навыки:
   - консольный ввод через `Scanner` и форматированный вывод;
@@ -127,10 +132,12 @@ Java 21 · BigDecimal · Optional · JUnit 5 · Maven · Git · GitHub Actions
   - координация `Deque` и `Set` для уникальности элементов в очереди.
   - очередь с приоритетом через `PriorityQueue`;
   - создание упорядоченного снимка коллекции по `Comparator`.
+  - лямбда-выражения и Stream-конвейеры;
+  - агрегация данных через `groupingBy` и `summingInt`.
 
 ## Прогресс
 
-- Решено задач: **33**
+- Решено задач: **34**
 - Текущая задача: **отсутствует**
 - Следующая сложность будет выбрана по прогрессии.
 
@@ -169,6 +176,7 @@ Java 21 · BigDecimal · Optional · JUnit 5 · Maven · Git · GitHub Actions
 | 31 | Склад ресурсов | checked-исключение, `throws`, целостность состояния | решена |
 | 32 | Очередь матчмейкинга | `Deque`, `ArrayDeque`, FIFO, уникальность через `Set` | решена |
 | 33 | Очередь обращений | `PriorityQueue`, приоритеты, `Optional`, снимок по компаратору | решена |
+| 34 | Аналитика урона | Stream API, лямбды, `groupingBy`, `summingInt` | решена |
 
 ## Текущая задача
 
