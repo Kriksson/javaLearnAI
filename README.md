@@ -54,7 +54,7 @@ Linux/macOS:
 - Имя: Кирилл
 - Исходный опыт: небольшой опыт в Java Core
 - Интересы: игры
-- Текущий практический уровень: уверенно решает учебные задачи на Java Core, применяет ООП, коллекции и базовый Stream API, пишет JUnit-тесты, собирает Maven-проект и ведёт изменения через Git.
+- Текущий практический уровень: уверенно решает учебные задачи на Java Core, применяет ООП, коллекции и Stream API, пишет JUnit-тесты, собирает Maven-проект, ведёт изменения через Git и начал проектировать реляционные схемы на SQL.
 
 ### Приобретённый стек
 
@@ -67,8 +67,9 @@ Linux/macOS:
 [![Maven](https://img.shields.io/badge/Maven-3.9-C71A36?style=flat-square&logo=apachemaven&logoColor=white)](https://maven.apache.org/)
 [![Git](https://img.shields.io/badge/Git-2-F05032?style=flat-square&logo=git&logoColor=white)](https://git-scm.com/)
 [![GitHub](https://img.shields.io/badge/GitHub-Actions-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/Kriksson/javaLearnAI/actions)
+[![PostgreSQL](https://img.shields.io/badge/PostgreSQL-SQL-4169E1?style=flat-square&logo=postgresql&logoColor=white)](https://www.postgresql.org/)
 
-Java 21 · BigDecimal · Optional · Stream API · java.time · JUnit 5 · Maven · Git · GitHub Actions
+Java 21 · BigDecimal · Optional · Stream API · java.time · JUnit 5 · Maven · Git · GitHub Actions · SQL · PostgreSQL
 
 - Подтверждённые навыки:
   - консольный ввод через `Scanner` и форматированный вывод;
@@ -137,10 +138,13 @@ Java 21 · BigDecimal · Optional · Stream API · java.time · JUnit 5 · Maven
   - агрегация данных через `groupingBy` и `summingInt`.
   - работа с календарными датами через `LocalDate`;
   - сравнение периодов и подсчёт дней через `ChronoUnit`.
+  - проектирование таблиц SQL через `CREATE TABLE`;
+  - первичные и внешние ключи, `NOT NULL`, `UNIQUE` и `CHECK`;
+  - точные денежные значения через `DECIMAL` и целостность реляционных данных.
 
 ## Прогресс
 
-- Решено задач: **35**
+- Решено задач: **36**
 - Текущая задача: **отсутствует**
 - Следующая сложность будет выбрана по прогрессии.
 
@@ -181,6 +185,7 @@ Java 21 · BigDecimal · Optional · Stream API · java.time · JUnit 5 · Maven
 | 33 | Очередь обращений | `PriorityQueue`, приоритеты, `Optional`, снимок по компаратору | решена |
 | 34 | Аналитика урона | Stream API, лямбды, `groupingBy`, `summingInt` | решена |
 | 35 | Сезонные пропуска | `LocalDate`, границы периода, `ChronoUnit` | решена |
+| 36 | Схема заказов игроков | SQL: таблицы, ключи, ограничения, внешние ключи | решена |
 
 ## Текущая задача
 
