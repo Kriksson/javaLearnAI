@@ -54,7 +54,7 @@ Linux/macOS:
 - Имя: Кирилл
 - Исходный опыт: небольшой опыт в Java Core
 - Интересы: игры
-- Текущий практический уровень: уверенно решает учебные задачи на Java Core, применяет ООП, коллекции и Stream API, пишет JUnit-тесты, собирает Maven-проект, ведёт изменения через Git, читает и сохраняет реляционные данные через SQL и JDBC.
+- Текущий практический уровень: уверенно решает учебные задачи на Java Core, применяет ООП, коллекции и Stream API, пишет JUnit-тесты, собирает Maven-проект, ведёт изменения через Git, работает с SQL и JDBC, отправляет HTTP-запросы через Java `HttpClient`.
 
 ### Приобретённый стек
 
@@ -69,8 +69,9 @@ Linux/macOS:
 [![GitHub](https://img.shields.io/badge/GitHub-Actions-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/Kriksson/javaLearnAI/actions)
 [![PostgreSQL](https://img.shields.io/badge/PostgreSQL-SQL-4169E1?style=flat-square&logo=postgresql&logoColor=white)](https://www.postgresql.org/)
 [![JDBC](https://img.shields.io/badge/JDBC-Java-ED8B00?style=flat-square&logo=openjdk&logoColor=white)](https://docs.oracle.com/en/java/javase/21/docs/api/java.sql/java/sql/package-summary.html)
+[![HTTP Client](https://img.shields.io/badge/HTTP-Client-005571?style=flat-square&logo=openjdk&logoColor=white)](https://docs.oracle.com/en/java/javase/21/docs/api/java.net.http/java/net/http/HttpClient.html)
 
-Java 21 · BigDecimal · Optional · Stream API · java.time · JUnit 5 · Maven · Git · GitHub Actions · SQL · PostgreSQL · JDBC
+Java 21 · BigDecimal · Optional · Stream API · java.time · JUnit 5 · Maven · Git · GitHub Actions · SQL · PostgreSQL · JDBC · HTTP Client
 
 - Подтверждённые навыки:
   - консольный ввод через `Scanner` и форматированный вывод;
@@ -156,10 +157,12 @@ Java 21 · BigDecimal · Optional · Stream API · java.time · JUnit 5 · Maven
   - получение созданного базой ID через `RETURN_GENERATED_KEYS` и `getGeneratedKeys()`.
   - транзакции JDBC: `commit()`, `rollback()` и восстановление `autoCommit`;
   - проверка числа изменённых строк и откат при неудачном переводе.
+  - HTTP `GET` через Java `HttpClient`, формирование URI и заголовка `Accept`;
+  - обработка статусов HTTP и чтение тела ответа в UTF-8.
 
 ## Прогресс
 
-- Решено задач: **43**
+- Решено задач: **44**
 - Текущая задача: **отсутствует**
 - Следующая сложность будет выбрана по прогрессии.
 
@@ -208,6 +211,7 @@ Java 21 · BigDecimal · Optional · Stream API · java.time · JUnit 5 · Maven
 | 41 | Поиск игрока через JDBC | JDBC: параметризованный запрос, чтение `ResultSet` | решена |
 | 42 | Регистрация игрока через JDBC | JDBC: параметризованный `INSERT`, сгенерированный ID | решена |
 | 43 | Перевод монет через JDBC | JDBC: транзакции, `commit`, `rollback`, целостность данных | решена |
+| 44 | Загрузка профиля игрока по HTTP | HTTP: GET, статусы ответа, Java `HttpClient` | решена |
 
 ## Текущая задача
 
