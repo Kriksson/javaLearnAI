@@ -54,7 +54,7 @@ Linux/macOS:
 - Имя: Кирилл
 - Исходный опыт: небольшой опыт в Java Core
 - Интересы: игры
-- Текущий практический уровень: уверенно решает учебные задачи на Java Core, применяет ООП, коллекции и Stream API, пишет JUnit-тесты, собирает Maven-проект, ведёт изменения через Git и работает с реляционными данными на SQL: выбирает, агрегирует и изменяет строки.
+- Текущий практический уровень: уверенно решает учебные задачи на Java Core, применяет ООП, коллекции и Stream API, пишет JUnit-тесты, собирает Maven-проект, ведёт изменения через Git, работает с SQL и выполняет параметризованные запросы к базе через JDBC.
 
 ### Приобретённый стек
 
@@ -68,8 +68,9 @@ Linux/macOS:
 [![Git](https://img.shields.io/badge/Git-2-F05032?style=flat-square&logo=git&logoColor=white)](https://git-scm.com/)
 [![GitHub](https://img.shields.io/badge/GitHub-Actions-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/Kriksson/javaLearnAI/actions)
 [![PostgreSQL](https://img.shields.io/badge/PostgreSQL-SQL-4169E1?style=flat-square&logo=postgresql&logoColor=white)](https://www.postgresql.org/)
+[![JDBC](https://img.shields.io/badge/JDBC-Java-ED8B00?style=flat-square&logo=openjdk&logoColor=white)](https://docs.oracle.com/en/java/javase/21/docs/api/java.sql/java/sql/package-summary.html)
 
-Java 21 · BigDecimal · Optional · Stream API · java.time · JUnit 5 · Maven · Git · GitHub Actions · SQL · PostgreSQL
+Java 21 · BigDecimal · Optional · Stream API · java.time · JUnit 5 · Maven · Git · GitHub Actions · SQL · PostgreSQL · JDBC
 
 - Подтверждённые навыки:
   - консольный ввод через `Scanner` и форматированный вывод;
@@ -149,10 +150,12 @@ Java 21 · BigDecimal · Optional · Stream API · java.time · JUnit 5 · Maven
   - фильтрация сгруппированных результатов через `HAVING`.
   - изменение существующих строк через `UPDATE` и `SET`;
   - условное удаление строк через `DELETE` и `WHERE`.
+  - параметризованный поиск через JDBC `PreparedStatement` и чтение строк из `ResultSet`;
+  - управление JDBC-ресурсами через `try-with-resources` без закрытия чужого соединения.
 
 ## Прогресс
 
-- Решено задач: **40**
+- Решено задач: **41**
 - Текущая задача: **отсутствует**
 - Следующая сложность будет выбрана по прогрессии.
 
@@ -198,6 +201,7 @@ Java 21 · BigDecimal · Optional · Stream API · java.time · JUnit 5 · Maven
 | 38 | Подсчёт заказов игроков | SQL: `LEFT JOIN`, `COUNT`, агрегирование связанных таблиц | решена |
 | 39 | Игроки с заданными расходами | SQL: `HAVING`, фильтрация агрегированных групп | решена |
 | 40 | Обновление статусов заказов | SQL: `UPDATE`, `DELETE`, условие `WHERE` для изменения строк | решена |
+| 41 | Поиск игрока через JDBC | JDBC: параметризованный запрос, чтение `ResultSet` | решена |
 
 ## Текущая задача
 
