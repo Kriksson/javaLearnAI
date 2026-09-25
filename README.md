@@ -54,7 +54,7 @@ Linux/macOS:
 - Имя: Кирилл
 - Исходный опыт: небольшой опыт в Java Core
 - Интересы: игры
-- Текущий практический уровень: уверенно решает учебные задачи на Java Core, применяет ООП, коллекции и Stream API, пишет JUnit-тесты, собирает Maven-проект, ведёт изменения через Git, работает с SQL и JDBC, отправляет HTTP-запросы через Java `HttpClient`.
+- Текущий практический уровень: уверенно решает учебные задачи на Java Core, применяет ООП, коллекции и Stream API, пишет JUnit-тесты, собирает Maven-проект, ведёт изменения через Git, работает с SQL и JDBC, отправляет HTTP-запросы и разбирает JSON.
 
 ### Приобретённый стек
 
@@ -70,8 +70,9 @@ Linux/macOS:
 [![PostgreSQL](https://img.shields.io/badge/PostgreSQL-SQL-4169E1?style=flat-square&logo=postgresql&logoColor=white)](https://www.postgresql.org/)
 [![JDBC](https://img.shields.io/badge/JDBC-Java-ED8B00?style=flat-square&logo=openjdk&logoColor=white)](https://docs.oracle.com/en/java/javase/21/docs/api/java.sql/java/sql/package-summary.html)
 [![HTTP Client](https://img.shields.io/badge/HTTP-Client-005571?style=flat-square&logo=openjdk&logoColor=white)](https://docs.oracle.com/en/java/javase/21/docs/api/java.net.http/java/net/http/HttpClient.html)
+[![Jackson](https://img.shields.io/badge/Jackson-JSON-2E8B57?style=flat-square)](https://github.com/FasterXML/jackson)
 
-Java 21 · BigDecimal · Optional · Stream API · java.time · JUnit 5 · Maven · Git · GitHub Actions · SQL · PostgreSQL · JDBC · HTTP Client
+Java 21 · BigDecimal · Optional · Stream API · java.time · JUnit 5 · Maven · Git · GitHub Actions · SQL · PostgreSQL · JDBC · HTTP Client · Jackson
 
 - Подтверждённые навыки:
   - консольный ввод через `Scanner` и форматированный вывод;
@@ -159,10 +160,12 @@ Java 21 · BigDecimal · Optional · Stream API · java.time · JUnit 5 · Maven
   - проверка числа изменённых строк и откат при неудачном переводе.
   - HTTP `GET` через Java `HttpClient`, формирование URI и заголовка `Accept`;
   - обработка статусов HTTP и чтение тела ответа в UTF-8.
+  - разбор JSON через Jackson `ObjectMapper` и `JsonNode`;
+  - проверка структуры и типов JSON-полей с преобразованием в `record`.
 
 ## Прогресс
 
-- Решено задач: **44**
+- Решено задач: **45**
 - Текущая задача: **отсутствует**
 - Следующая сложность будет выбрана по прогрессии.
 
@@ -212,6 +215,7 @@ Java 21 · BigDecimal · Optional · Stream API · java.time · JUnit 5 · Maven
 | 42 | Регистрация игрока через JDBC | JDBC: параметризованный `INSERT`, сгенерированный ID | решена |
 | 43 | Перевод монет через JDBC | JDBC: транзакции, `commit`, `rollback`, целостность данных | решена |
 | 44 | Загрузка профиля игрока по HTTP | HTTP: GET, статусы ответа, Java `HttpClient` | решена |
+| 45 | Разбор JSON-профиля игрока | JSON: `ObjectMapper`, `JsonNode`, проверка структуры | решена |
 
 ## Текущая задача
 
