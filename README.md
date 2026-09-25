@@ -162,10 +162,12 @@ Java 21 · BigDecimal · Optional · Stream API · java.time · JUnit 5 · Maven
   - обработка статусов HTTP и чтение тела ответа в UTF-8.
   - разбор JSON через Jackson `ObjectMapper` и `JsonNode`;
   - проверка структуры и типов JSON-полей с преобразованием в `record`.
+  - отправка HTTP `POST` с JSON-телом и заголовком `Content-Type`;
+  - сериализация JSON через Jackson `ObjectNode` и обработка ответа `201 Created`.
 
 ## Прогресс
 
-- Решено задач: **45**
+- Решено задач: **46**
 - Текущая задача: **отсутствует**
 - Следующая сложность будет выбрана по прогрессии.
 
@@ -216,6 +218,7 @@ Java 21 · BigDecimal · Optional · Stream API · java.time · JUnit 5 · Maven
 | 43 | Перевод монет через JDBC | JDBC: транзакции, `commit`, `rollback`, целостность данных | решена |
 | 44 | Загрузка профиля игрока по HTTP | HTTP: GET, статусы ответа, Java `HttpClient` | решена |
 | 45 | Разбор JSON-профиля игрока | JSON: `ObjectMapper`, `JsonNode`, проверка структуры | решена |
+| 46 | Регистрация игрока через HTTP API | HTTP `POST`, JSON-запрос, разбор ответа | решена |
 
 ## Текущая задача
 
