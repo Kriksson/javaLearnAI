@@ -165,10 +165,11 @@ Java 21 · BigDecimal · Optional · Stream API · java.time · JUnit 5 · Maven
   - отправка HTTP `POST` с JSON-телом и заголовком `Content-Type`;
   - сериализация JSON через Jackson `ObjectNode` и обработка ответа `201 Created`.
   - объединение HTTP `GET`, проверки статуса и разбора JSON в типизированный `Optional<PlayerProfile>`.
+  - отправка результата матча через HTTP `POST` и обработка конфликта `409` без разбора тела ответа.
 
 ## Прогресс
 
-- Решено задач: **47**
+- Решено задач: **48**
 - Текущая задача: **отсутствует**
 - Следующая задача продолжит закрепление HTTP и JSON без новых тем.
 
@@ -221,6 +222,7 @@ Java 21 · BigDecimal · Optional · Stream API · java.time · JUnit 5 · Maven
 | 45 | Разбор JSON-профиля игрока | JSON: `ObjectMapper`, `JsonNode`, проверка структуры | решена |
 | 46 | Регистрация игрока через HTTP API | HTTP `POST`, JSON-запрос, разбор ответа | решена |
 | 47 | Профиль игрока: HTTP + JSON | `GET`, JSON, `Optional`, проверка ответов | решена |
+| 48 | Отправка результата матча | `POST`, JSON, `Optional`, проверка ответов | решена |
 
 ## Текущая задача
 
