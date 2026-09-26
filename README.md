@@ -54,7 +54,7 @@ Linux/macOS:
 - Имя: Кирилл
 - Исходный опыт: небольшой опыт в Java Core
 - Интересы: игры
-- Текущий практический уровень: уверенно решает учебные задачи на Java Core, применяет ООП, коллекции и Stream API, пишет JUnit-тесты, собирает Maven-проект, ведёт изменения через Git, работает с SQL и JDBC, отправляет HTTP-запросы и разбирает JSON.
+- Текущий практический уровень: уверенно решает учебные задачи на Java Core, применяет ООП, коллекции и Stream API, пишет JUnit-тесты, собирает Maven-проект, ведёт изменения через Git, работает с SQL и JDBC, отправляет HTTP-запросы, разбирает JSON и реализует простой серверный HTTP-обработчик.
 
 ### Приобретённый стек
 
@@ -70,9 +70,10 @@ Linux/macOS:
 [![PostgreSQL](https://img.shields.io/badge/PostgreSQL-SQL-4169E1?style=flat-square&logo=postgresql&logoColor=white)](https://www.postgresql.org/)
 [![JDBC](https://img.shields.io/badge/JDBC-Java-ED8B00?style=flat-square&logo=openjdk&logoColor=white)](https://docs.oracle.com/en/java/javase/21/docs/api/java.sql/java/sql/package-summary.html)
 [![HTTP Client](https://img.shields.io/badge/HTTP-Client-005571?style=flat-square&logo=openjdk&logoColor=white)](https://docs.oracle.com/en/java/javase/21/docs/api/java.net.http/java/net/http/HttpClient.html)
+[![HTTP Server](https://img.shields.io/badge/HTTP-Server-005571?style=flat-square&logo=openjdk&logoColor=white)](https://docs.oracle.com/en/java/javase/21/docs/api/jdk.httpserver/com/sun/net/httpserver/HttpHandler.html)
 [![Jackson](https://img.shields.io/badge/Jackson-JSON-2E8B57?style=flat-square)](https://github.com/FasterXML/jackson)
 
-Java 21 · BigDecimal · Optional · Stream API · java.time · JUnit 5 · Maven · Git · GitHub Actions · SQL · PostgreSQL · JDBC · HTTP Client · Jackson
+Java 21 · BigDecimal · Optional · Stream API · java.time · JUnit 5 · Maven · Git · GitHub Actions · SQL · PostgreSQL · JDBC · HTTP Client · HTTP Server · Jackson
 
 - Подтверждённые навыки:
   - консольный ввод через `Scanner` и форматированный вывод;
@@ -170,12 +171,14 @@ Java 21 · BigDecimal · Optional · Stream API · java.time · JUnit 5 · Maven
   - проверка JSON boolean и обязательных полей ответа настроек игрока.
   - отправка JSON со специальными символами через Jackson и проверка согласованности ответа с запросом.
   - отправка JSON boolean и проверка согласованности нескольких полей HTTP-ответа.
+  - обработка входящих HTTP-запросов через `HttpHandler` и `HttpExchange`;
+  - формирование JSON-ответа сервера в UTF-8 со статусами `200`, `400`, `404` и `405`.
 
 ## Прогресс
 
-- Решено задач: **52**
+- Решено задач: **53**
 - Текущая задача: нет (следующая задача готовится).
-- Новый материал: серверная обработка HTTP-запросов будет в следующем задании.
+- Новый материал: чтение JSON-тела входящего HTTP-запроса будет в следующем задании.
 
 | № | Задача | Подтверждённые навыки | Статус |
 |---:|---|---|---|
@@ -231,6 +234,7 @@ Java 21 · BigDecimal · Optional · Stream API · java.time · JUnit 5 · Maven
 | 50 | Настройки игрока через HTTP | `GET`, JSON boolean, `Optional`, проверка полей | решена |
 | 51 | Приглашение игрока через HTTP | `POST`, JSON, `Optional`, проверка ответа | решена |
 | 52 | Ответ на приглашение через HTTP | `POST`, JSON boolean, `Optional`, согласованность полей | решена |
+| 53 | Первый серверный API игроков | `HttpHandler`, `HttpExchange`, JSON-ответ | решена |
 
 ## Текущая задача
 
