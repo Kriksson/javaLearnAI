@@ -54,7 +54,7 @@ Linux/macOS:
 - Имя: Кирилл
 - Исходный опыт: небольшой опыт в Java Core
 - Интересы: игры
-- Текущий практический уровень: уверенно решает учебные задачи на Java Core, применяет ООП, коллекции и Stream API, пишет JUnit-тесты, собирает Maven-проект, ведёт изменения через Git, работает с SQL и JDBC, отправляет HTTP-запросы, разбирает JSON и реализует простой серверный HTTP-обработчик.
+- Текущий практический уровень: уверенно решает учебные задачи на Java Core, применяет ООП, коллекции и Stream API, пишет JUnit-тесты, собирает Maven-проект, ведёт изменения через Git, работает с SQL и JDBC, отправляет HTTP-запросы, разбирает JSON, реализует серверные HTTP-обработчики и первый Spring Boot-контроллер.
 
 ### Приобретённый стек
 
@@ -72,8 +72,9 @@ Linux/macOS:
 [![HTTP Client](https://img.shields.io/badge/HTTP-Client-005571?style=flat-square&logo=openjdk&logoColor=white)](https://docs.oracle.com/en/java/javase/21/docs/api/java.net.http/java/net/http/HttpClient.html)
 [![HTTP Server](https://img.shields.io/badge/HTTP-Server-005571?style=flat-square&logo=openjdk&logoColor=white)](https://docs.oracle.com/en/java/javase/21/docs/api/jdk.httpserver/com/sun/net/httpserver/HttpHandler.html)
 [![Jackson](https://img.shields.io/badge/Jackson-JSON-2E8B57?style=flat-square)](https://github.com/FasterXML/jackson)
+[![Spring Boot](https://img.shields.io/badge/Spring_Boot-3.5-6DB33F?style=flat-square&logo=springboot&logoColor=white)](https://spring.io/projects/spring-boot)
 
-Java 21 · BigDecimal · Optional · Stream API · java.time · JUnit 5 · Maven · Git · GitHub Actions · SQL · PostgreSQL · JDBC · HTTP Client · HTTP Server · Jackson
+Java 21 · BigDecimal · Optional · Stream API · java.time · JUnit 5 · Maven · Git · GitHub Actions · SQL · PostgreSQL · JDBC · HTTP Client · HTTP Server · Jackson · Spring Boot
 
 - Подтверждённые навыки:
   - консольный ввод через `Scanner` и форматированный вывод;
@@ -174,12 +175,13 @@ Java 21 · BigDecimal · Optional · Stream API · java.time · JUnit 5 · Maven
   - обработка входящих HTTP-запросов через `HttpHandler` и `HttpExchange`;
   - формирование JSON-ответа сервера в UTF-8 со статусами `200`, `400`, `404` и `405`.
   - чтение JSON-тела входящего `POST`-запроса и обновление состояния по проверенным данным.
+  - Spring MVC: `@RestController`, `@GetMapping`, `@PathVariable` и типизированный JSON-ответ через `ResponseEntity`.
 
 ## Прогресс
 
-- Решено задач: **54**
+- Решено задач: **55**
 - Текущая задача: нет (следующая задача готовится).
-- Новый материал: следующий шаг серверной разработки готовится.
+- Новый материал: входящий JSON в Spring MVC через `@RequestBody` будет в следующем задании.
 
 | № | Задача | Подтверждённые навыки | Статус |
 |---:|---|---|---|
@@ -237,6 +239,7 @@ Java 21 · BigDecimal · Optional · Stream API · java.time · JUnit 5 · Maven
 | 52 | Ответ на приглашение через HTTP | `POST`, JSON boolean, `Optional`, согласованность полей | решена |
 | 53 | Первый серверный API игроков | `HttpHandler`, `HttpExchange`, JSON-ответ | решена |
 | 54 | Приём результата игрока через HTTP | `POST`, входящий JSON, обновление рекорда | решена |
+| 55 | Первый контроллер Spring Boot | Spring MVC, маршруты, автоматический JSON | решена |
 
 ## Текущая задача
 
