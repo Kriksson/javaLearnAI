@@ -54,7 +54,7 @@ Linux/macOS:
 - Имя: Кирилл
 - Исходный опыт: небольшой опыт в Java Core
 - Интересы: игры
-- Текущий практический уровень: уверенно решает учебные задачи на Java Core, применяет ООП, коллекции и Stream API, пишет JUnit-тесты, собирает Maven-проект, ведёт изменения через Git, работает с SQL и JDBC, отправляет HTTP-запросы, разбирает JSON и реализует Spring Boot API с сервисами и Bean Validation.
+- Текущий практический уровень: уверенно решает учебные задачи на Java Core, применяет ООП, коллекции и Stream API, пишет JUnit-тесты, собирает Maven-проект, ведёт изменения через Git, работает с SQL и JDBC, отправляет HTTP-запросы, разбирает JSON и реализует Spring Boot API с сервисами, валидацией и едиными ответами об ошибках.
 
 ### Приобретённый стек
 
@@ -183,12 +183,13 @@ Java 21 · BigDecimal · Optional · Stream API · java.time · JUnit 5 · Maven
   - Spring MVC: `@DeleteMapping`, ответ `204 No Content` и запрет удаления с `409 Conflict`.
   - Spring Boot: `@Service`, внедрение зависимости через конструктор и делегирование логики из контроллера.
   - Jakarta Bean Validation: `@Valid`, `@NotBlank`, `@NotNull`, `@Size`, `@Min` и `@Max` для входящего JSON.
+  - Spring MVC: `@RestControllerAdvice`, `@ExceptionHandler` и единый JSON-формат ошибок валидации и разбора запроса.
 
 ## Прогресс
 
-- Решено задач: **61**
-- Текущая задача: **№62 — Единый ответ об ошибках Spring Boot**
-- Новый материал: `@RestControllerAdvice` и `@ExceptionHandler`.
+- Решено задач: **62**
+- Текущая задача: **№63 — Чтение игроков из БД через Spring JDBC**
+- Новый материал: `@Repository` и `JdbcTemplate`.
 
 | № | Задача | Подтверждённые навыки | Статус |
 |---:|---|---|---|
@@ -253,11 +254,12 @@ Java 21 · BigDecimal · Optional · Stream API · java.time · JUnit 5 · Maven
 | 59 | Удаление игрока через Spring Boot | `@DeleteMapping`, `204 No Content`, конфликт `409` | решена |
 | 60 | Начисление очков через сервис Spring Boot | `@Service`, внедрение зависимости, разделение логики | решена |
 | 61 | Проверка заявки через Bean Validation | `@Valid`, декларативные ограничения полей | решена |
-| 62 | Единый ответ об ошибках Spring Boot | `@RestControllerAdvice`, `@ExceptionHandler` | активна |
+| 62 | Единый ответ об ошибках Spring Boot | `@RestControllerAdvice`, `@ExceptionHandler` | решена |
+| 63 | Чтение игроков из БД через Spring JDBC | `@Repository`, `JdbcTemplate`, чтение SQL | активна |
 
 ## Текущая задача
 
-№62 «Единый ответ об ошибках Spring Boot» — `tasks/active/task_062_spring_boot_api_errors/README.md`.
+№63 «Чтение игроков из БД через Spring JDBC» — `tasks/active/task_063_spring_jdbc_player_lookup/README.md`.
 
 ## Структура
 
