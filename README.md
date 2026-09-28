@@ -54,7 +54,7 @@ Linux/macOS:
 - Имя: Кирилл
 - Исходный опыт: небольшой опыт в Java Core
 - Интересы: игры
-- Текущий практический уровень: уверенно решает учебные задачи на Java Core, применяет ООП, коллекции и Stream API, пишет JUnit-тесты, собирает Maven-проект, ведёт изменения через Git, работает с SQL и JDBC, отправляет HTTP-запросы, разбирает JSON и реализует Spring Boot API с разделением контроллера и сервиса.
+- Текущий практический уровень: уверенно решает учебные задачи на Java Core, применяет ООП, коллекции и Stream API, пишет JUnit-тесты, собирает Maven-проект, ведёт изменения через Git, работает с SQL и JDBC, отправляет HTTP-запросы, разбирает JSON и реализует Spring Boot API с сервисами и Bean Validation.
 
 ### Приобретённый стек
 
@@ -73,8 +73,9 @@ Linux/macOS:
 [![HTTP Server](https://img.shields.io/badge/HTTP-Server-005571?style=flat-square&logo=openjdk&logoColor=white)](https://docs.oracle.com/en/java/javase/21/docs/api/jdk.httpserver/com/sun/net/httpserver/HttpHandler.html)
 [![Jackson](https://img.shields.io/badge/Jackson-JSON-2E8B57?style=flat-square)](https://github.com/FasterXML/jackson)
 [![Spring Boot](https://img.shields.io/badge/Spring_Boot-3.5-6DB33F?style=flat-square&logo=springboot&logoColor=white)](https://spring.io/projects/spring-boot)
+[![Bean Validation](https://img.shields.io/badge/Bean_Validation-Jakarta-6DB33F?style=flat-square)](https://beanvalidation.org/)
 
-Java 21 · BigDecimal · Optional · Stream API · java.time · JUnit 5 · Maven · Git · GitHub Actions · SQL · PostgreSQL · JDBC · HTTP Client · HTTP Server · Jackson · Spring Boot
+Java 21 · BigDecimal · Optional · Stream API · java.time · JUnit 5 · Maven · Git · GitHub Actions · SQL · PostgreSQL · JDBC · HTTP Client · HTTP Server · Jackson · Spring Boot · Bean Validation
 
 - Подтверждённые навыки:
   - консольный ввод через `Scanner` и форматированный вывод;
@@ -181,12 +182,13 @@ Java 21 · BigDecimal · Optional · Stream API · java.time · JUnit 5 · Maven
   - Spring MVC: `@RequestParam`, необязательные параметры URL, совместная фильтрация и сортировка JSON-массива.
   - Spring MVC: `@DeleteMapping`, ответ `204 No Content` и запрет удаления с `409 Conflict`.
   - Spring Boot: `@Service`, внедрение зависимости через конструктор и делегирование логики из контроллера.
+  - Jakarta Bean Validation: `@Valid`, `@NotBlank`, `@NotNull`, `@Size`, `@Min` и `@Max` для входящего JSON.
 
 ## Прогресс
 
-- Решено задач: **60**
-- Текущая задача: **№61 — Проверка заявки через Bean Validation**
-- Новый материал: `@Valid` и ограничения полей запроса.
+- Решено задач: **61**
+- Текущая задача: **№62 — Единый ответ об ошибках Spring Boot**
+- Новый материал: `@RestControllerAdvice` и `@ExceptionHandler`.
 
 | № | Задача | Подтверждённые навыки | Статус |
 |---:|---|---|---|
@@ -250,11 +252,12 @@ Java 21 · BigDecimal · Optional · Stream API · java.time · JUnit 5 · Maven
 | 58 | Поиск игроков через параметры запроса | `@RequestParam`, фильтрация, список JSON | решена |
 | 59 | Удаление игрока через Spring Boot | `@DeleteMapping`, `204 No Content`, конфликт `409` | решена |
 | 60 | Начисление очков через сервис Spring Boot | `@Service`, внедрение зависимости, разделение логики | решена |
-| 61 | Проверка заявки через Bean Validation | `@Valid`, декларативные ограничения полей | активна |
+| 61 | Проверка заявки через Bean Validation | `@Valid`, декларативные ограничения полей | решена |
+| 62 | Единый ответ об ошибках Spring Boot | `@RestControllerAdvice`, `@ExceptionHandler` | активна |
 
 ## Текущая задача
 
-№61 «Проверка заявки через Bean Validation» — `tasks/active/task_061_spring_boot_match_request_validation/README.md`.
+№62 «Единый ответ об ошибках Spring Boot» — `tasks/active/task_062_spring_boot_api_errors/README.md`.
 
 ## Структура
 
