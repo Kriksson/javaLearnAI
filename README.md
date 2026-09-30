@@ -184,12 +184,12 @@ Java 21 · BigDecimal · Optional · Stream API · java.time · JUnit 5 · Maven
   - Spring Boot: `@Service`, внедрение зависимости через конструктор и делегирование логики из контроллера.
   - Jakarta Bean Validation: `@Valid`, `@NotBlank`, `@NotNull`, `@Size`, `@Min` и `@Max` для входящего JSON.
   - Spring MVC: `@RestControllerAdvice`, `@ExceptionHandler` и единый JSON-формат ошибок валидации и разбора запроса.
+  - базовый Spring Boot endpoint: `@GetMapping`, `@PathVariable`, внедрение сервиса через конструктор и перевод `Optional.empty()` в `404`.
 
 ## Прогресс
 
-- Решено задач: **62**
-- Текущая задача: **№63 — Чтение игроков из БД через Spring JDBC**
-- Новый материал: `@Repository` и `JdbcTemplate`.
+- Решено задач: **63**
+- Следующая задача будет создана после публикации решения №63.
 
 | № | Задача | Подтверждённые навыки | Статус |
 |---:|---|---|---|
@@ -255,11 +255,11 @@ Java 21 · BigDecimal · Optional · Stream API · java.time · JUnit 5 · Maven
 | 60 | Начисление очков через сервис Spring Boot | `@Service`, внедрение зависимости, разделение логики | решена |
 | 61 | Проверка заявки через Bean Validation | `@Valid`, декларативные ограничения полей | решена |
 | 62 | Единый ответ об ошибках Spring Boot | `@RestControllerAdvice`, `@ExceptionHandler` | решена |
-| 63 | Чтение игроков из БД через Spring JDBC | `@Repository`, `JdbcTemplate`, чтение SQL | активна |
+| 63 | Награда за квест через Spring Boot | `@RestController`, `@GetMapping`, `@Service`, внедрение зависимости | решена |
 
 ## Текущая задача
 
-№63 «Чтение игроков из БД через Spring JDBC» — `tasks/active/task_063_spring_jdbc_player_lookup/README.md`.
+Следующая задача появится после публикации решения №63.
 
 ## Структура
 
