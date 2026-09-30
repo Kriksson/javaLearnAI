@@ -185,11 +185,13 @@ Java 21 · BigDecimal · Optional · Stream API · java.time · JUnit 5 · Maven
   - Jakarta Bean Validation: `@Valid`, `@NotBlank`, `@NotNull`, `@Size`, `@Min` и `@Max` для входящего JSON.
   - Spring MVC: `@RestControllerAdvice`, `@ExceptionHandler` и единый JSON-формат ошибок валидации и разбора запроса.
   - базовый Spring Boot endpoint: `@GetMapping`, `@PathVariable`, внедрение сервиса через конструктор и перевод `Optional.empty()` в `404`.
+  - проектирование Spring-компонентов по ролям: `@Repository`, `@Service`, `@RestController` и конструкторное внедрение;
+  - хранение свойства награды в enum и формирование API-ответов из данных репозитория.
 
 ## Прогресс
 
-- Решено задач: **63**
-- Следующая задача будет создана после публикации решения №63.
+- Решено задач: **64**
+- Следующая задача будет создана после публикации решения №64.
 
 | № | Задача | Подтверждённые навыки | Статус |
 |---:|---|---|---|
@@ -256,10 +258,11 @@ Java 21 · BigDecimal · Optional · Stream API · java.time · JUnit 5 · Maven
 | 61 | Проверка заявки через Bean Validation | `@Valid`, декларативные ограничения полей | решена |
 | 62 | Единый ответ об ошибках Spring Boot | `@RestControllerAdvice`, `@ExceptionHandler` | решена |
 | 63 | Награда за квест через Spring Boot | `@RestController`, `@GetMapping`, `@Service`, внедрение зависимости | решена |
+| 64 | Самостоятельный мини-проект: API каталога квестов | проектирование слоёв, `@Repository`, `@Service`, enum с наградой и REST-контроллер | решена |
 
 ## Текущая задача
 
-Следующая задача появится после публикации решения №63.
+Следующая задача появится после публикации решения №64.
 
 ## Структура
 
