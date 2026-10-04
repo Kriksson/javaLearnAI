@@ -105,7 +105,7 @@ JAVA_HOME=/home/kriksson/.jdks/temurin-21.0.12.1 PATH=/home/kriksson/.jdks/temur
 - Имя: Кирилл
 - Исходный опыт: небольшой опыт в Java Core
 - Интересы: игры
-- Текущий практический уровень: уверенно решает задачи на Java Core, ООП, коллекции и Stream API; освоил SQL, JDBC, HTTP и JSON; самостоятельно создаёт Spring Boot REST API с валидацией и внешней конфигурацией, читает и записывает данные через JdbcTemplate, проверяет HTTP-контракт и состояние базы тестами MockMvc, а также получает генерируемый БД BIGINT ID через Spring JDBC.
+- Текущий практический уровень: уверенно решает задачи на Java Core, ООП, коллекции и Stream API; освоил SQL, JDBC, HTTP и JSON; самостоятельно создаёт Spring Boot REST API с валидацией и внешней конфигурацией, читает и изменяет данные через JdbcTemplate, отображает результат SQL-изменения на HTTP-статусы и проверяет контракт через MockMvc; получает генерируемый БД BIGINT ID через Spring JDBC.
 
 ### Приобретённый стек
 
@@ -128,8 +128,9 @@ JAVA_HOME=/home/kriksson/.jdks/temurin-21.0.12.1 PATH=/home/kriksson/.jdks/temur
 [![Spring JDBC](https://img.shields.io/badge/Spring_JDBC-JdbcTemplate-6DB33F?style=flat-square&logo=spring&logoColor=white)](https://docs.spring.io/spring-framework/reference/6.2/data-access/jdbc/core.html)
 [![H2](https://img.shields.io/badge/H2-2.3.232-09476B?style=flat-square)](https://h2database.com/)
 [![Generated IDs](https://img.shields.io/badge/Spring_JDBC-GeneratedKeyHolder-6DB33F?style=flat-square&logo=spring&logoColor=white)](https://docs.spring.io/spring-framework/reference/data-access/jdbc/core.html#jdbc-auto-generated-keys)
+[![Conditional update](https://img.shields.io/badge/Spring_JDBC-UPDATE_row_count-6DB33F?style=flat-square&logo=spring&logoColor=white)](https://docs.spring.io/spring-framework/reference/data-access/jdbc/core.html)
 
-Java 21 · BigDecimal · Optional · Stream API · java.time · JUnit 5 · Maven · Git · GitHub Actions · SQL · PostgreSQL · JDBC · HTTP Client · HTTP Server · Jackson · Spring Boot · Bean Validation · Spring JDBC · H2 · GeneratedKeyHolder · SQL IDENTITY
+Java 21 · BigDecimal · Optional · Stream API · java.time · JUnit 5 · Maven · Git · GitHub Actions · SQL · PostgreSQL · JDBC · HTTP Client · HTTP Server · Jackson · Spring Boot · Bean Validation · Spring JDBC · H2 · GeneratedKeyHolder · SQL IDENTITY · JdbcTemplate UPDATE row count
 
 - Подтверждённые навыки:
   - консольный ввод через `Scanner` и форматированный вывод;
@@ -252,12 +253,13 @@ Java 21 · BigDecimal · Optional · Stream API · java.time · JUnit 5 · Maven
   - Spring JDBC: параметризованный `INSERT` через `JdbcTemplate.update` и проверка количества добавленных строк;
   - преобразование `DuplicateKeyException` в HTTP `409` с сохранением существующих записей;
   - регистрация рекрута из валидированного JSON с `201 Created`, `Location` и последующим чтением из SQL-таблицы.
-  - получение выданного базой `BIGINT IDENTITY` через Spring JDBC `GeneratedKeyHolder`.
+  - получение выданного базой `BIGINT IDENTITY` через Spring JDBC `GeneratedKeyHolder`;
+  - условный `UPDATE` через `JdbcTemplate.update`, проверка числа изменённых строк и ответы `204`/`404` для существующего и отсутствующего ID.
 
 ## Прогресс
 
-- Решено задач: **70**
-- Последняя решённая задача: [№70 — ID рекрута создаёт база](tasks/completed/task_070_spring_jdbc_generated_recruit_id/README.md).
+- Решено задач: **71**
+- Последняя решённая задача: [№71 — Изменение уровня рекрута через Spring JDBC](tasks/completed/task_071_spring_jdbc_update_recruit_level/README.md).
 
 | № | Задача | Подтверждённые навыки | Статус |
 |---:|---|---|---|
@@ -331,14 +333,15 @@ Java 21 · BigDecimal · Optional · Stream API · java.time · JUnit 5 · Maven
 | 68 | Рекрут по ID через Spring JDBC | самостоятельная сборка приложения, `JdbcTemplate.query`, H2, `schema.sql`, актуальные данные из SQL | решена |
 | 69 | Регистрация рекрута через Spring JDBC | `JdbcTemplate.update`, параметризованный `INSERT`, `DuplicateKeyException`, валидация, `201` и `409` | решена |
 | 70 | ID рекрута создаёт база | SQL `IDENTITY`, `GeneratedKeyHolder`, фактический `BIGINT ID` в `Location` и JSON | решена |
+| 71 | Изменение уровня рекрута через Spring JDBC | условный `JdbcTemplate.update`, число изменённых строк, `204`, `404` и сохранение остальных полей | решена |
 
 ## Последняя решённая задача
 
-[Открыть архив задачи №70](tasks/completed/task_070_spring_jdbc_generated_recruit_id/README.md).
+[Открыть архив задачи №71](tasks/completed/task_071_spring_jdbc_update_recruit_level/README.md).
 
 ## Текущая задача
 
-Следующая задача будет создана после публикации и проверки успешного решения №70.
+Следующая задача будет создана после публикации и проверки успешного решения №71.
 
 ## Структура
 
