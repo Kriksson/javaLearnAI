@@ -4,13 +4,26 @@
 
 ## Как работаем
 
-1. Тренер создаёт задачу, заготовки классов и JUnit-тесты.
-2. Ученик реализует решение и пишет: **«Решил»**.
+1. Тренер создаёт условие, отдельные учебные примеры и JUnit-тесты.
+2. Ученик самостоятельно проектирует и собирает проект с нуля, реализует решение и пишет: **«Решил»**.
 3. Тренер проверяет код и запускает все тесты.
 4. Успешная задача переносится в `tasks/completed/` вместе с решением и тестами.
 5. Обновляются общий прогресс и подтверждённые навыки, затем выполняются commit и push.
 
 Новые задания могут смешивать знания из разных разделов программы. После уверенного Java Core программа расширена на следующий этап backend-разработки.
+
+## Формат задач: проектирование и сборка с нуля
+
+Предпочтение Кирилла для текущей и следующих задач — самостоятельно создавать проект и весь код приложения.
+
+- Ученик сам выбирает классы, методы, модели, роли компонентов и связи между ними в рамках требований задачи.
+- Ученик вручную создаёт пакеты и исходные файлы, стартовый класс, конфигурацию приложения и SQL-схему, если они нужны.
+- Ученик сам подключает зависимости, настраивает Maven, собирает и запускает приложение. Для отдельного нового проекта он также создаёт `pom.xml` и структуру каталогов; существующий учебный Maven-проект можно использовать как окружение проверки.
+- Тренер предоставляет условие, внешний контракт, критерии готовности и автоматические тесты. Заготовки классов с `TODO`, готовая структура приложения и конфигурация решения не выдаются.
+- Условие описывает необходимые роли и поведение. Имена внутренних классов и методов ученик выбирает сам; обязательные имена фиксируются только там, где без них нельзя определить внешний контракт или запустить проверку.
+- Новые понятия объясняются на небольших работающих примерах из другого сценария. Эти примеры остаются в учебном материале; файлы решения ученик создаёт сам.
+
+До создания приложения тесты могут завершаться ошибкой отсутствующей конфигурации или реализации. Это ожидаемое начальное состояние; задача засчитывается только после успешного запуска тестов и проверки ограничений.
 
 ## Границы курса
 
@@ -25,7 +38,37 @@
 - современный Java: лямбды, Stream API, дата и время;
 - SQL, PostgreSQL и проектирование реляционных данных;
 - JDBC и работа Java-приложения с базой данных;
-- HTTP, REST API и Spring Boot.
+- HTTP, REST API и Spring Boot;
+- Spring JDBC, Spring Data JPA / Hibernate и транзакции;
+- безопасность API, интеграционные тесты, контейнеризация и CI;
+- самостоятельные backend-проекты от проектирования до запуска.
+
+### Целевой стек Java backend junior
+
+Это ориентир для следующих задач и итоговых проектов. Освоение каждого пункта подтверждается практическим решением; наличие технологии в плане само по себе не означает, что она уже освоена.
+
+| Область | Технологии и навыки | Практический результат |
+|---|---|---|
+| Java | Java 21, ООП, коллекции, дженерики, исключения, Stream API, `java.time`; основы JVM, потоков и `ExecutorService` | Самостоятельно проектировать модель, обрабатывать ошибки и понимать базовые проблемы общего изменяемого состояния |
+| Сборка и инструменты | Maven, Maven Wrapper, Git/GitHub, IntelliJ IDEA, отладчик, Linux и командная строка | Создавать проект, управлять зависимостями, собирать JAR, отлаживать код и работать с ветками |
+| HTTP и API | HTTP/REST, JSON/Jackson, Spring Boot, Spring MVC, Bean Validation | Создавать CRUD API с DTO, фильтрацией, пагинацией, корректными статусами и единым форматом ошибок |
+| SQL и база данных | PostgreSQL, SQL, связи и ограничения, индексы, `EXPLAIN`, транзакции | Проектировать схему, писать запросы, обеспечивать целостность данных и разбирать медленные запросы на базовом уровне |
+| Доступ к данным | JDBC / `JdbcTemplate`, Spring Data JPA, Hibernate, `@Transactional` | Связывать API с базой, моделировать отношения, управлять транзакциями и замечать проблему N+1 |
+| Миграции | Flyway как основной инструмент; знакомство с Liquibase | Версионировать схему и разворачивать базу вместе с приложением |
+| Безопасность | Spring Security, аутентификация и авторизация, роли, хеширование паролей, основы сессий и bearer-токенов | Ограничивать доступ к endpoint, различать `401` и `403`, хранить пароли корректно и использовать стандартные механизмы защиты |
+| Тестирование | JUnit 5, Mockito, MockMvc, Spring Boot Test, Testcontainers с PostgreSQL | Писать unit- и интеграционные тесты, проверять HTTP-контракт, SQL и откат транзакций |
+| Документация API | OpenAPI/Swagger, `curl` или Postman, README проекта | Описывать запросы и ответы и давать воспроизводимые команды запуска и проверки |
+| Запуск приложения | Docker, Docker Compose, переменные окружения, Spring profiles | Собрать образ приложения и поднять приложение с PostgreSQL одной командой |
+| Диагностика | SLF4J/Logback, уровни логирования, Spring Boot Actuator | Читать логи, находить причины ошибок и проверять состояние приложения через health endpoint |
+| CI | GitHub Actions: сборка, тесты и создание артефакта или Docker-образа | Автоматически проверять изменения и получать готовый результат сборки |
+
+Порядок backend-практики: Spring MVC и валидация → Spring JDBC и PostgreSQL → JPA/Hibernate и транзакции → миграции → безопасность → Testcontainers, Docker и CI → итоговый проект. Знакомые инструменты тестирования, Git и Maven используются на каждом этапе.
+
+Готовность к итоговому проекту: ученик с нуля создаёт REST API с PostgreSQL, миграциями, ролями доступа, тестами, документацией и запуском через Docker Compose; умеет объяснить архитектуру и исправить найденную ошибку.
+
+Дополнительные темы после основного стека: Redis, Kafka/RabbitMQ, Gradle, углублённая многопоточность и микросервисы. Их вводим по потребности проекта. Kubernetes и сложная распределённая инфраструктура остаются за границами базового курса.
+
+Материал для практики: [Spring Boot и SQL/JPA](https://docs.spring.io/spring-boot/3.5/reference/data/sql.html), [миграции и инициализация базы](https://docs.spring.io/spring-boot/3.5/how-to/data-initialization.html), [Spring Security](https://docs.spring.io/spring-security/reference/servlet/index.html), [Testcontainers в Spring Boot](https://docs.spring.io/spring-boot/3.5/reference/testing/testcontainers.html), [модель приложения Docker Compose](https://docs.docker.com/compose/intro/compose-application-model/).
 
 ## Команды
 
@@ -49,12 +92,20 @@ Linux/macOS:
 ./mvnw test
 ```
 
+В текущем Linux-окружении установленный полный JDK 21 и локальный Maven-кеш задаются явно; исходный код компилируется для Java 21:
+
+```shell
+JAVA_HOME=/home/kriksson/.jdks/temurin-21.0.12.1 PATH=/home/kriksson/.jdks/temurin-21.0.12.1/bin:$PATH MAVEN_USER_HOME="$PWD/.maven-home" bash ./mvnw -Dmaven.repo.local="$PWD/.maven-home/repository" clean test
+```
+
+Для запуска из IntelliJ IDEA выбери этот JDK 21 в Project SDK и настройках запуска. Spring Boot 3.5.16 поддерживает Java 17–25; прежняя рекомендация использовать JDK 27 исправлена. [Требования Spring Boot](https://docs.spring.io/spring-boot/3.5/system-requirements.html).
+
 ## Профиль ученика
 
 - Имя: Кирилл
 - Исходный опыт: небольшой опыт в Java Core
 - Интересы: игры
-- Текущий практический уровень: уверенно решает задачи на Java Core, ООП, коллекции и Stream API; освоил SQL, JDBC, HTTP и JSON; проектирует Spring Boot REST API с вложенной валидацией, внешней конфигурацией и интеграционными тестами MockMvc.
+- Текущий практический уровень: уверенно решает задачи на Java Core, ООП, коллекции и Stream API; освоил SQL, JDBC, HTTP и JSON; самостоятельно создаёт Spring Boot REST API с валидацией, внешней конфигурацией и чтением данных через JdbcTemplate, проверяет HTTP-контракт и актуальность данных тестами MockMvc.
 
 ### Приобретённый стек
 
@@ -74,8 +125,10 @@ Linux/macOS:
 [![Jackson](https://img.shields.io/badge/Jackson-JSON-2E8B57?style=flat-square)](https://github.com/FasterXML/jackson)
 [![Spring Boot](https://img.shields.io/badge/Spring_Boot-3.5-6DB33F?style=flat-square&logo=springboot&logoColor=white)](https://spring.io/projects/spring-boot)
 [![Bean Validation](https://img.shields.io/badge/Bean_Validation-Jakarta-6DB33F?style=flat-square)](https://beanvalidation.org/)
+[![Spring JDBC](https://img.shields.io/badge/Spring_JDBC-JdbcTemplate-6DB33F?style=flat-square&logo=spring&logoColor=white)](https://docs.spring.io/spring-framework/reference/6.2/data-access/jdbc/core.html)
+[![H2](https://img.shields.io/badge/H2-2.3.232-09476B?style=flat-square)](https://h2database.com/)
 
-Java 21 · BigDecimal · Optional · Stream API · java.time · JUnit 5 · Maven · Git · GitHub Actions · SQL · PostgreSQL · JDBC · HTTP Client · HTTP Server · Jackson · Spring Boot · Bean Validation
+Java 21 · BigDecimal · Optional · Stream API · java.time · JUnit 5 · Maven · Git · GitHub Actions · SQL · PostgreSQL · JDBC · HTTP Client · HTTP Server · Jackson · Spring Boot · Bean Validation · Spring JDBC · H2
 
 - Подтверждённые навыки:
   - консольный ввод через `Scanner` и форматированный вывод;
@@ -192,11 +245,14 @@ Java 21 · BigDecimal · Optional · Stream API · java.time · JUnit 5 · Maven
   - `201 Created`, заголовок `Location` и сериализация созданного ресурса в JSON;
   - реализация состояния ресурса через `PUT`, ответы `404` для отсутствующих ID и `409` для повторного действия;
   - интеграционные тесты REST-контракта через `MockMvc`, включая границы, невалидный JSON и неизвестные ID.
+  - Spring JDBC: параметризованный `JdbcTemplate.query`, преобразование строки `ResultSet` в модель и поиск через `Optional`;
+  - самостоятельная настройка H2 и создание таблицы с начальными данными через `schema.sql` при запуске Spring Boot;
+  - связка REST API и SQL: чтение актуальной записи после изменения базы через другое соединение, без изменения данных при `GET`.
 
 ## Прогресс
 
-- Решено задач: **67**
-- Последняя решённая задача: [№67 — Лимит мест в рейде из конфигурации](tasks/completed/task_067_spring_raid_capacity_config/README.md).
+- Решено задач: **68**
+- Последняя решённая задача: [№68 — Рекрут по ID через Spring JDBC](tasks/completed/task_068_spring_jdbc_guild_roster/README.md).
 
 | № | Задача | Подтверждённые навыки | Статус |
 |---:|---|---|---|
@@ -267,10 +323,15 @@ Java 21 · BigDecimal · Optional · Stream API · java.time · JUnit 5 · Maven
 | 65 | Самостоятельный мини-проект: доска заявок гильдии | проектирование Spring-компонентов, состояние заявки, `201 Created`, `Location`, `MockMvc` | решена |
 | 66 | Заявка на рейд с вложенной валидацией | каскадная проверка вложенного DTO через `@Valid` и `@NotNull`, проверка JSON границ через `MockMvc` | решена |
 | 67 | Лимит мест в рейде из конфигурации | `@ConfigurationProperties`, сканирование настроек и лимит отдельно для каждого рейда | решена |
+| 68 | Рекрут по ID через Spring JDBC | самостоятельная сборка приложения, `JdbcTemplate.query`, H2, `schema.sql`, актуальные данные из SQL | решена |
 
 ## Последняя решённая задача
 
-[Открыть архив задачи №67](tasks/completed/task_067_spring_raid_capacity_config/README.md).
+[Открыть архив задачи №68](tasks/completed/task_068_spring_jdbc_guild_roster/README.md).
+
+## Текущая задача
+
+Задача №68 завершена. Следующая задача будет создана после отправки подтверждённого решения в GitHub.
 
 ## Структура
 
