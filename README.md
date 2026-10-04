@@ -54,7 +54,7 @@ Linux/macOS:
 - Имя: Кирилл
 - Исходный опыт: небольшой опыт в Java Core
 - Интересы: игры
-- Текущий практический уровень: уверенно решает задачи на Java Core, ООП, коллекции и Stream API; освоил SQL, JDBC, HTTP и JSON; проектирует Spring Boot REST API с вложенной валидацией и интеграционными тестами MockMvc.
+- Текущий практический уровень: уверенно решает задачи на Java Core, ООП, коллекции и Stream API; освоил SQL, JDBC, HTTP и JSON; проектирует Spring Boot REST API с вложенной валидацией, внешней конфигурацией и интеграционными тестами MockMvc.
 
 ### Приобретённый стек
 
@@ -184,6 +184,7 @@ Java 21 · BigDecimal · Optional · Stream API · java.time · JUnit 5 · Maven
   - Spring Boot: `@Service`, внедрение зависимости через конструктор и делегирование логики из контроллера.
   - Jakarta Bean Validation: `@Valid`, `@NotBlank`, `@NotNull`, `@Size`, `@Min` и `@Max` для входящего JSON.
   - каскадная валидация вложенных объектов через `@Valid` вместе с отдельной проверкой обязательности через `@NotNull`.
+  - Spring Boot: привязка внешних настроек к `record` через `@ConfigurationProperties`, регистрация через `@ConfigurationPropertiesScan` и использование настройки в проверке вместимости.
   - Spring MVC: `@RestControllerAdvice`, `@ExceptionHandler` и единый JSON-формат ошибок валидации и разбора запроса.
   - базовый Spring Boot endpoint: `@GetMapping`, `@PathVariable`, внедрение сервиса через конструктор и перевод `Optional.empty()` в `404`.
   - проектирование Spring-компонентов по ролям: `@Repository`, `@Service`, `@RestController` и конструкторное внедрение;
@@ -194,8 +195,8 @@ Java 21 · BigDecimal · Optional · Stream API · java.time · JUnit 5 · Maven
 
 ## Прогресс
 
-- Решено задач: **66**
-- Следующая задача будет создана после публикации решения №66.
+- Решено задач: **67**
+- Последняя решённая задача: [№67 — Лимит мест в рейде из конфигурации](tasks/completed/task_067_spring_raid_capacity_config/README.md).
 
 | № | Задача | Подтверждённые навыки | Статус |
 |---:|---|---|---|
@@ -265,10 +266,11 @@ Java 21 · BigDecimal · Optional · Stream API · java.time · JUnit 5 · Maven
 | 64 | Самостоятельный мини-проект: API каталога квестов | проектирование слоёв, `@Repository`, `@Service`, enum с наградой и REST-контроллер | решена |
 | 65 | Самостоятельный мини-проект: доска заявок гильдии | проектирование Spring-компонентов, состояние заявки, `201 Created`, `Location`, `MockMvc` | решена |
 | 66 | Заявка на рейд с вложенной валидацией | каскадная проверка вложенного DTO через `@Valid` и `@NotNull`, проверка JSON границ через `MockMvc` | решена |
+| 67 | Лимит мест в рейде из конфигурации | `@ConfigurationProperties`, сканирование настроек и лимит отдельно для каждого рейда | решена |
 
-## Текущая задача
+## Последняя решённая задача
 
-Следующая задача будет создана после публикации решения №66.
+[Открыть архив задачи №67](tasks/completed/task_067_spring_raid_capacity_config/README.md).
 
 ## Структура
 
