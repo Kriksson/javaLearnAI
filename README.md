@@ -105,7 +105,7 @@ JAVA_HOME=/home/kriksson/.jdks/temurin-21.0.12.1 PATH=/home/kriksson/.jdks/temur
 - Имя: Кирилл
 - Исходный опыт: небольшой опыт в Java Core
 - Интересы: игры
-- Текущий практический уровень: уверенно решает задачи на Java Core, ООП, коллекции и Stream API; освоил SQL, JDBC, HTTP и JSON; самостоятельно создаёт Spring Boot REST API с валидацией и внешней конфигурацией, читает и изменяет данные через JdbcTemplate, отображает результат SQL-изменения на HTTP-статусы и проверяет контракт через MockMvc; получает генерируемый БД BIGINT ID через Spring JDBC.
+- Текущий практический уровень: уверенно решает задачи на Java Core, ООП, коллекции и Stream API; освоил SQL, JDBC, HTTP и JSON; самостоятельно создаёт Spring Boot REST API с валидацией и внешней конфигурацией, читает и изменяет данные через JdbcTemplate, отображает результат SQL-изменения на HTTP-статусы и проверяет контракт через MockMvc; получает генерируемый БД BIGINT ID через Spring JDBC; применяет `@Transactional` для атомарных изменений нескольких строк и проверяет откат через интеграционный тест.
 
 ### Приобретённый стек
 
@@ -128,6 +128,7 @@ JAVA_HOME=/home/kriksson/.jdks/temurin-21.0.12.1 PATH=/home/kriksson/.jdks/temur
 [![Spring JDBC](https://img.shields.io/badge/Spring_JDBC-JdbcTemplate-6DB33F?style=flat-square&logo=spring&logoColor=white)](https://docs.spring.io/spring-framework/reference/6.2/data-access/jdbc/core.html)
 [![H2](https://img.shields.io/badge/H2-2.3.232-09476B?style=flat-square)](https://h2database.com/)
 [![Generated IDs](https://img.shields.io/badge/Spring_JDBC-GeneratedKeyHolder-6DB33F?style=flat-square&logo=spring&logoColor=white)](https://docs.spring.io/spring-framework/reference/data-access/jdbc/core.html#jdbc-auto-generated-keys)
+[![Spring Transactions](https://img.shields.io/badge/Spring-Transactional-6DB33F?style=flat-square&logo=spring&logoColor=white)](https://docs.spring.io/spring-framework/reference/data-access/transaction/declarative.html)
 [![Conditional update](https://img.shields.io/badge/Spring_JDBC-UPDATE_row_count-6DB33F?style=flat-square&logo=spring&logoColor=white)](https://docs.spring.io/spring-framework/reference/data-access/jdbc/core.html)
 
 Java 21 · BigDecimal · Optional · Stream API · java.time · JUnit 5 · Maven · Git · GitHub Actions · SQL · PostgreSQL · JDBC · HTTP Client · HTTP Server · Jackson · Spring Boot · Bean Validation · Spring JDBC · H2 · GeneratedKeyHolder · SQL IDENTITY · JdbcTemplate UPDATE row count
@@ -258,8 +259,8 @@ Java 21 · BigDecimal · Optional · Stream API · java.time · JUnit 5 · Maven
 
 ## Прогресс
 
-- Решено задач: **71**
-- Последняя решённая задача: [№71 — Изменение уровня рекрута через Spring JDBC](tasks/completed/task_071_spring_jdbc_update_recruit_level/README.md).
+- Решено задач: **72**
+- Последняя решённая задача: [№72 — Атомарный перевод монеты между сундуками](tasks/completed/task_072_spring_jdbc_atomic_coin_transfer/README.md).
 
 | № | Задача | Подтверждённые навыки | Статус |
 |---:|---|---|---|
@@ -334,14 +335,15 @@ Java 21 · BigDecimal · Optional · Stream API · java.time · JUnit 5 · Maven
 | 69 | Регистрация рекрута через Spring JDBC | `JdbcTemplate.update`, параметризованный `INSERT`, `DuplicateKeyException`, валидация, `201` и `409` | решена |
 | 70 | ID рекрута создаёт база | SQL `IDENTITY`, `GeneratedKeyHolder`, фактический `BIGINT ID` в `Location` и JSON | решена |
 | 71 | Изменение уровня рекрута через Spring JDBC | условный `JdbcTemplate.update`, число изменённых строк, `204`, `404` и сохранение остальных полей | решена |
+| 72 | Атомарный перевод монеты между сундуками | Spring `@Transactional`, откат нескольких SQL-изменений, `409`/`404`, проверка транзакции интеграционным тестом | решена |
 
 ## Последняя решённая задача
 
-[Открыть архив задачи №71](tasks/completed/task_071_spring_jdbc_update_recruit_level/README.md).
+[Открыть архив задачи №72](tasks/completed/task_072_spring_jdbc_atomic_coin_transfer/README.md).
 
 ## Текущая задача
 
-Следующая задача будет создана после публикации и проверки успешного решения №71.
+Следующая задача будет создана после публикации успешного решения №72.
 
 ## Структура
 
