@@ -105,7 +105,7 @@ JAVA_HOME=/home/kriksson/.jdks/temurin-21.0.12.1 PATH=/home/kriksson/.jdks/temur
 - Имя: Кирилл
 - Исходный опыт: небольшой опыт в Java Core
 - Интересы: игры
-- Текущий практический уровень: уверенно решает задачи на Java Core, ООП, коллекции и Stream API; освоил SQL, JDBC, HTTP и JSON; самостоятельно создаёт Spring Boot REST API с валидацией, внешней конфигурацией, чтением и записью через JdbcTemplate, обрабатывает конфликт первичного ключа и проверяет HTTP-контракт и состояние базы тестами MockMvc.
+- Текущий практический уровень: уверенно решает задачи на Java Core, ООП, коллекции и Stream API; освоил SQL, JDBC, HTTP и JSON; самостоятельно создаёт Spring Boot REST API с валидацией и внешней конфигурацией, читает и записывает данные через JdbcTemplate, проверяет HTTP-контракт и состояние базы тестами MockMvc, а также получает генерируемый БД BIGINT ID через Spring JDBC.
 
 ### Приобретённый стек
 
@@ -127,8 +127,9 @@ JAVA_HOME=/home/kriksson/.jdks/temurin-21.0.12.1 PATH=/home/kriksson/.jdks/temur
 [![Bean Validation](https://img.shields.io/badge/Bean_Validation-Jakarta-6DB33F?style=flat-square)](https://beanvalidation.org/)
 [![Spring JDBC](https://img.shields.io/badge/Spring_JDBC-JdbcTemplate-6DB33F?style=flat-square&logo=spring&logoColor=white)](https://docs.spring.io/spring-framework/reference/6.2/data-access/jdbc/core.html)
 [![H2](https://img.shields.io/badge/H2-2.3.232-09476B?style=flat-square)](https://h2database.com/)
+[![Generated IDs](https://img.shields.io/badge/Spring_JDBC-GeneratedKeyHolder-6DB33F?style=flat-square&logo=spring&logoColor=white)](https://docs.spring.io/spring-framework/reference/data-access/jdbc/core.html#jdbc-auto-generated-keys)
 
-Java 21 · BigDecimal · Optional · Stream API · java.time · JUnit 5 · Maven · Git · GitHub Actions · SQL · PostgreSQL · JDBC · HTTP Client · HTTP Server · Jackson · Spring Boot · Bean Validation · Spring JDBC · H2
+Java 21 · BigDecimal · Optional · Stream API · java.time · JUnit 5 · Maven · Git · GitHub Actions · SQL · PostgreSQL · JDBC · HTTP Client · HTTP Server · Jackson · Spring Boot · Bean Validation · Spring JDBC · H2 · GeneratedKeyHolder · SQL IDENTITY
 
 - Подтверждённые навыки:
   - консольный ввод через `Scanner` и форматированный вывод;
@@ -251,11 +252,12 @@ Java 21 · BigDecimal · Optional · Stream API · java.time · JUnit 5 · Maven
   - Spring JDBC: параметризованный `INSERT` через `JdbcTemplate.update` и проверка количества добавленных строк;
   - преобразование `DuplicateKeyException` в HTTP `409` с сохранением существующих записей;
   - регистрация рекрута из валидированного JSON с `201 Created`, `Location` и последующим чтением из SQL-таблицы.
+  - получение выданного базой `BIGINT IDENTITY` через Spring JDBC `GeneratedKeyHolder`.
 
 ## Прогресс
 
-- Решено задач: **69**
-- Последняя решённая задача: [№69 — Регистрация рекрута через Spring JDBC](tasks/completed/task_069_spring_jdbc_recruit_registration/README.md).
+- Решено задач: **70**
+- Последняя решённая задача: [№70 — ID рекрута создаёт база](tasks/completed/task_070_spring_jdbc_generated_recruit_id/README.md).
 
 | № | Задача | Подтверждённые навыки | Статус |
 |---:|---|---|---|
@@ -328,14 +330,15 @@ Java 21 · BigDecimal · Optional · Stream API · java.time · JUnit 5 · Maven
 | 67 | Лимит мест в рейде из конфигурации | `@ConfigurationProperties`, сканирование настроек и лимит отдельно для каждого рейда | решена |
 | 68 | Рекрут по ID через Spring JDBC | самостоятельная сборка приложения, `JdbcTemplate.query`, H2, `schema.sql`, актуальные данные из SQL | решена |
 | 69 | Регистрация рекрута через Spring JDBC | `JdbcTemplate.update`, параметризованный `INSERT`, `DuplicateKeyException`, валидация, `201` и `409` | решена |
+| 70 | ID рекрута создаёт база | SQL `IDENTITY`, `GeneratedKeyHolder`, фактический `BIGINT ID` в `Location` и JSON | решена |
 
 ## Последняя решённая задача
 
-[Открыть архив задачи №69](tasks/completed/task_069_spring_jdbc_recruit_registration/README.md).
+[Открыть архив задачи №70](tasks/completed/task_070_spring_jdbc_generated_recruit_id/README.md).
 
 ## Текущая задача
 
-Задача №69 завершена. Следующая задача будет создана после отправки подтверждённого решения в GitHub.
+Следующая задача будет создана после публикации и проверки успешного решения №70.
 
 ## Структура
 
