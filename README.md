@@ -105,7 +105,7 @@ JAVA_HOME=/home/kriksson/.jdks/temurin-21.0.12.1 PATH=/home/kriksson/.jdks/temur
 - Имя: Кирилл
 - Исходный опыт: небольшой опыт в Java Core
 - Интересы: игры
-- Текущий практический уровень: уверенно решает задачи на Java Core, ООП, коллекции и Stream API; освоил SQL, JDBC, HTTP и JSON; самостоятельно создаёт Spring Boot REST API с валидацией, внешней конфигурацией и чтением данных через JdbcTemplate, проверяет HTTP-контракт и актуальность данных тестами MockMvc.
+- Текущий практический уровень: уверенно решает задачи на Java Core, ООП, коллекции и Stream API; освоил SQL, JDBC, HTTP и JSON; самостоятельно создаёт Spring Boot REST API с валидацией, внешней конфигурацией, чтением и записью через JdbcTemplate, обрабатывает конфликт первичного ключа и проверяет HTTP-контракт и состояние базы тестами MockMvc.
 
 ### Приобретённый стек
 
@@ -248,11 +248,14 @@ Java 21 · BigDecimal · Optional · Stream API · java.time · JUnit 5 · Maven
   - Spring JDBC: параметризованный `JdbcTemplate.query`, преобразование строки `ResultSet` в модель и поиск через `Optional`;
   - самостоятельная настройка H2 и создание таблицы с начальными данными через `schema.sql` при запуске Spring Boot;
   - связка REST API и SQL: чтение актуальной записи после изменения базы через другое соединение, без изменения данных при `GET`.
+  - Spring JDBC: параметризованный `INSERT` через `JdbcTemplate.update` и проверка количества добавленных строк;
+  - преобразование `DuplicateKeyException` в HTTP `409` с сохранением существующих записей;
+  - регистрация рекрута из валидированного JSON с `201 Created`, `Location` и последующим чтением из SQL-таблицы.
 
 ## Прогресс
 
-- Решено задач: **68**
-- Последняя решённая задача: [№68 — Рекрут по ID через Spring JDBC](tasks/completed/task_068_spring_jdbc_guild_roster/README.md).
+- Решено задач: **69**
+- Последняя решённая задача: [№69 — Регистрация рекрута через Spring JDBC](tasks/completed/task_069_spring_jdbc_recruit_registration/README.md).
 
 | № | Задача | Подтверждённые навыки | Статус |
 |---:|---|---|---|
@@ -324,14 +327,15 @@ Java 21 · BigDecimal · Optional · Stream API · java.time · JUnit 5 · Maven
 | 66 | Заявка на рейд с вложенной валидацией | каскадная проверка вложенного DTO через `@Valid` и `@NotNull`, проверка JSON границ через `MockMvc` | решена |
 | 67 | Лимит мест в рейде из конфигурации | `@ConfigurationProperties`, сканирование настроек и лимит отдельно для каждого рейда | решена |
 | 68 | Рекрут по ID через Spring JDBC | самостоятельная сборка приложения, `JdbcTemplate.query`, H2, `schema.sql`, актуальные данные из SQL | решена |
+| 69 | Регистрация рекрута через Spring JDBC | `JdbcTemplate.update`, параметризованный `INSERT`, `DuplicateKeyException`, валидация, `201` и `409` | решена |
 
 ## Последняя решённая задача
 
-[Открыть архив задачи №68](tasks/completed/task_068_spring_jdbc_guild_roster/README.md).
+[Открыть архив задачи №69](tasks/completed/task_069_spring_jdbc_recruit_registration/README.md).
 
 ## Текущая задача
 
-Задача №68 завершена. Следующая задача будет создана после отправки подтверждённого решения в GitHub.
+Задача №69 завершена. Следующая задача будет создана после отправки подтверждённого решения в GitHub.
 
 ## Структура
 
