@@ -105,7 +105,7 @@ JAVA_HOME=/home/kriksson/.jdks/temurin-21.0.12.1 PATH=/home/kriksson/.jdks/temur
 - Имя: Кирилл
 - Исходный опыт: небольшой опыт в Java Core
 - Интересы: игры
-- Текущий практический уровень: уверенно решает задачи на Java Core, ООП, коллекции и Stream API; освоил SQL, JDBC, HTTP и JSON; самостоятельно создаёт Spring Boot REST API с валидацией и внешней конфигурацией, читает и изменяет данные через JdbcTemplate, отображает результат SQL-изменения на HTTP-статусы и проверяет контракт через MockMvc; получает генерируемый БД BIGINT ID через Spring JDBC; применяет `@Transactional` для атомарных изменений нескольких строк и проверяет откат через интеграционный тест.
+- Текущий практический уровень: уверенно решает задачи на Java Core, ООП, коллекции и Stream API; освоил SQL, JDBC, HTTP и JSON; самостоятельно создаёт Spring Boot REST API с валидацией и внешней конфигурацией, читает и изменяет данные через JdbcTemplate, отображает результат SQL-изменения на HTTP-статусы и проверяет контракт через MockMvc; получает генерируемый БД BIGINT ID через Spring JDBC; применяет `@Transactional` для атомарных изменений нескольких строк и проверяет откат через интеграционный тест; самостоятельно отображает JPA-сущность на таблицу через `@Entity`, `@Table`, `@Id`, `@GeneratedValue` и `@Column`, использует `JpaRepository.findById` и Hibernate для создания схемы H2.
 
 ### Приобретённый стек
 
@@ -129,9 +129,11 @@ JAVA_HOME=/home/kriksson/.jdks/temurin-21.0.12.1 PATH=/home/kriksson/.jdks/temur
 [![H2](https://img.shields.io/badge/H2-2.3.232-09476B?style=flat-square)](https://h2database.com/)
 [![Generated IDs](https://img.shields.io/badge/Spring_JDBC-GeneratedKeyHolder-6DB33F?style=flat-square&logo=spring&logoColor=white)](https://docs.spring.io/spring-framework/reference/data-access/jdbc/core.html#jdbc-auto-generated-keys)
 [![Spring Transactions](https://img.shields.io/badge/Spring-Transactional-6DB33F?style=flat-square&logo=spring&logoColor=white)](https://docs.spring.io/spring-framework/reference/data-access/transaction/declarative.html)
+[![Spring Data JPA](https://img.shields.io/badge/Spring_Data-JPA-6DB33F?style=flat-square&logo=spring&logoColor=white)](https://docs.spring.io/spring-data/jpa/reference/)
+[![Hibernate](https://img.shields.io/badge/Hibernate-ORM-59666C?style=flat-square&logo=hibernate&logoColor=white)](https://hibernate.org/orm/documentation/)
 [![Conditional update](https://img.shields.io/badge/Spring_JDBC-UPDATE_row_count-6DB33F?style=flat-square&logo=spring&logoColor=white)](https://docs.spring.io/spring-framework/reference/data-access/jdbc/core.html)
 
-Java 21 · BigDecimal · Optional · Stream API · java.time · JUnit 5 · Maven · Git · GitHub Actions · SQL · PostgreSQL · JDBC · HTTP Client · HTTP Server · Jackson · Spring Boot · Bean Validation · Spring JDBC · H2 · GeneratedKeyHolder · SQL IDENTITY · JdbcTemplate UPDATE row count
+Java 21 · BigDecimal · Optional · Stream API · java.time · JUnit 5 · Maven · Git · GitHub Actions · SQL · PostgreSQL · JDBC · HTTP Client · HTTP Server · Jackson · Spring Boot · Bean Validation · Spring JDBC · H2 · GeneratedKeyHolder · SQL IDENTITY · JdbcTemplate UPDATE row count · Spring Data JPA · Hibernate
 
 - Подтверждённые навыки:
   - консольный ввод через `Scanner` и форматированный вывод;
@@ -257,10 +259,12 @@ Java 21 · BigDecimal · Optional · Stream API · java.time · JUnit 5 · Maven
   - получение выданного базой `BIGINT IDENTITY` через Spring JDBC `GeneratedKeyHolder`;
   - условный `UPDATE` через `JdbcTemplate.update`, проверка числа изменённых строк и ответы `204`/`404` для существующего и отсутствующего ID.
 
+  - JPA-сущности с явным отображением колонок, генерация схемы Hibernate и поиск через Spring Data `JpaRepository.findById`.
+
 ## Прогресс
 
-- Решено задач: **72**
-- Последняя решённая задача: [№72 — Атомарный перевод монеты между сундуками](tasks/completed/task_072_spring_jdbc_atomic_coin_transfer/README.md).
+- Решено задач: **73**
+- Последняя решённая задача: [№73 — Найти хранителя через Spring Data JPA](tasks/completed/task_073_spring_data_jpa_keeper_lookup/README.md).
 
 | № | Задача | Подтверждённые навыки | Статус |
 |---:|---|---|---|
@@ -336,14 +340,15 @@ Java 21 · BigDecimal · Optional · Stream API · java.time · JUnit 5 · Maven
 | 70 | ID рекрута создаёт база | SQL `IDENTITY`, `GeneratedKeyHolder`, фактический `BIGINT ID` в `Location` и JSON | решена |
 | 71 | Изменение уровня рекрута через Spring JDBC | условный `JdbcTemplate.update`, число изменённых строк, `204`, `404` и сохранение остальных полей | решена |
 | 72 | Атомарный перевод монеты между сундуками | Spring `@Transactional`, откат нескольких SQL-изменений, `409`/`404`, проверка транзакции интеграционным тестом | решена |
+| 73 | Найти хранителя через Spring Data JPA | JPA-сущность и явное отображение колонок, Spring Data `findById`, генерация схемы Hibernate, чтение через REST и MockMvc | решена |
 
 ## Последняя решённая задача
 
-[Открыть архив задачи №72](tasks/completed/task_072_spring_jdbc_atomic_coin_transfer/README.md).
+[Открыть архив задачи №73](tasks/completed/task_073_spring_data_jpa_keeper_lookup/README.md).
 
 ## Текущая задача
 
-Следующая задача будет создана после публикации успешного решения №72.
+Следующая задача будет создана после публикации успешного решения №73.
 
 ## Структура
 
