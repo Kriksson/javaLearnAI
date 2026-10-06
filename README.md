@@ -105,7 +105,9 @@ JAVA_HOME=/home/kriksson/.jdks/temurin-21.0.12.1 PATH=/home/kriksson/.jdks/temur
 - Имя: Кирилл
 - Исходный опыт: небольшой опыт в Java Core
 - Интересы: игры
-- Текущий практический уровень: уверенно решает задачи на Java Core, ООП, коллекции и Stream API; освоил SQL, JDBC, HTTP и JSON; самостоятельно создаёт Spring Boot REST API с валидацией и внешней конфигурацией, читает и изменяет данные через JdbcTemplate, отображает результат SQL-изменения на HTTP-статусы и проверяет контракт через MockMvc; получает генерируемый БД BIGINT ID через Spring JDBC; применяет `@Transactional` для атомарных изменений нескольких строк и проверяет откат через интеграционный тест; самостоятельно отображает JPA-сущность на таблицу через `@Entity`, `@Table`, `@Id`, `@GeneratedValue` и `@Column`, использует `JpaRepository.findById` и `save`, получает ID от базы и возвращает его в `201 Created` с `Location`, настраивает Hibernate для создания схемы H2; связывает сущности через `@ManyToOne` и `@JoinColumn`, возвращает данные связанной гильдии через REST и проверяет целостность внешнего ключа.
+- Текущий практический уровень: уверенно решает задачи на Java Core, ООП, коллекции и Stream API; освоил SQL, JDBC, HTTP и JSON; самостоятельно создаёт Spring Boot REST API с валидацией и внешней конфигурацией, читает и изменяет данные через JdbcTemplate, отображает результат SQL-изменения на HTTP-статусы и проверяет контракт через MockMvc; получает генерируемый БД BIGINT ID через Spring JDBC; применяет `@Transactional` для атомарных изменений нескольких строк и проверяет откат через интеграционный тест; самостоятельно отображает JPA-сущность на таблицу через `@Entity`, `@Table`, `@Id`, `@GeneratedValue` и `@Column`, использует `JpaRepository.findById` и `save`, получает ID от базы и возвращает его в `201 Created` с `Location`, настраивает Hibernate для создания схемы H2; связывает сущности через `@ManyToOne` и `@JoinColumn`, возвращает данные связанной гильдии через REST и проверяет целостность внешнего ключа; выбирает хранителей по ID связанной гильдии через производный метод Spring Data с сортировкой и преобразует сущности в DTO.
+
+- Ближайшая практика по просьбе ученика: дополнительно закрепить связи JPA и построение методов репозитория; сохранить небольшую сложность.
 
 ### Приобретённый стек
 
@@ -130,11 +132,12 @@ JAVA_HOME=/home/kriksson/.jdks/temurin-21.0.12.1 PATH=/home/kriksson/.jdks/temur
 [![Generated IDs](https://img.shields.io/badge/Spring_JDBC-GeneratedKeyHolder-6DB33F?style=flat-square&logo=spring&logoColor=white)](https://docs.spring.io/spring-framework/reference/data-access/jdbc/core.html#jdbc-auto-generated-keys)
 [![Spring Transactions](https://img.shields.io/badge/Spring-Transactional-6DB33F?style=flat-square&logo=spring&logoColor=white)](https://docs.spring.io/spring-framework/reference/data-access/transaction/declarative.html)
 [![Spring Data JPA](https://img.shields.io/badge/Spring_Data-JPA-6DB33F?style=flat-square&logo=spring&logoColor=white)](https://docs.spring.io/spring-data/jpa/reference/)
+[![Derived queries](https://img.shields.io/badge/Spring_Data-Derived_queries-6DB33F?style=flat-square&logo=spring&logoColor=white)](https://docs.spring.io/spring-data/jpa/reference/3.5/repositories/query-methods-details.html)
 [![JPA relations](https://img.shields.io/badge/JPA-ManyToOne-59666C?style=flat-square)](https://jakarta.ee/specifications/persistence/)
 [![Hibernate](https://img.shields.io/badge/Hibernate-ORM-59666C?style=flat-square&logo=hibernate&logoColor=white)](https://hibernate.org/orm/documentation/)
 [![Conditional update](https://img.shields.io/badge/Spring_JDBC-UPDATE_row_count-6DB33F?style=flat-square&logo=spring&logoColor=white)](https://docs.spring.io/spring-framework/reference/data-access/jdbc/core.html)
 
-Java 21 · BigDecimal · Optional · Stream API · java.time · JUnit 5 · Maven · Git · GitHub Actions · SQL · PostgreSQL · JDBC · HTTP Client · HTTP Server · Jackson · Spring Boot · Bean Validation · Spring JDBC · H2 · GeneratedKeyHolder · SQL IDENTITY · JdbcTemplate UPDATE row count · Spring Data JPA · Hibernate · ManyToOne
+Java 21 · BigDecimal · Optional · Stream API · java.time · JUnit 5 · Maven · Git · GitHub Actions · SQL · PostgreSQL · JDBC · HTTP Client · HTTP Server · Jackson · Spring Boot · Bean Validation · Spring JDBC · H2 · GeneratedKeyHolder · SQL IDENTITY · JdbcTemplate UPDATE row count · Spring Data JPA · Hibernate · ManyToOne · Spring Data derived queries
 
 - Подтверждённые навыки:
   - консольный ввод через `Scanner` и форматированный вывод;
@@ -265,10 +268,12 @@ Java 21 · BigDecimal · Optional · Stream API · java.time · JUnit 5 · Maven
 
   - связь JPA-сущностей через `@ManyToOne` и `@JoinColumn`, вложенный JSON-ответ и целостность внешнего ключа.
 
+  - производный метод Spring Data с поиском по ID связанной сущности и сортировкой, проверка родительской записи через `existsById`, преобразование списка сущностей в DTO.
+
 ## Прогресс
 
-- Решено задач: **75**
-- Последняя решённая задача: [№75 — Хранитель в гильдии через JPA-связь](tasks/completed/task_075_jpa_keeper_guild_relation/README.md).
+- Решено задач: **76**
+- Последняя решённая задача: [№76 — Хранители одной гильдии](tasks/completed/task_076_jpa_guild_keepers_list/README.md).
 
 | № | Задача | Подтверждённые навыки | Статус |
 |---:|---|---|---|
@@ -349,13 +354,15 @@ Java 21 · BigDecimal · Optional · Stream API · java.time · JUnit 5 · Maven
 
 | 75 | Хранитель в гильдии через JPA-связь | `@ManyToOne`, `@JoinColumn`, внешний ключ, вложенный JSON и `404` | решена |
 
+| 76 | Хранители одной гильдии | производный запрос по связи, `OrderBy`, `existsById`, DTO, актуальные данные и `200`/`404` | решена |
+
 ## Последняя решённая задача
 
-[Открыть архив задачи №75](tasks/completed/task_075_jpa_keeper_guild_relation/README.md).
+[Открыть архив задачи №76](tasks/completed/task_076_jpa_guild_keepers_list/README.md).
 
 ## Текущая задача
 
-Задача №75 завершена. Следующее задание — выборка хранителей одной гильдии через производный метод Spring Data; условие и тесты создаются после отправки подтверждённого решения.
+Задача №76 завершена. После отправки решения создаётся №77: дополнительная практика связи JPA и поиска по нескольким условиям в производном методе Spring Data.
 
 ## Структура
 
