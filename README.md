@@ -105,9 +105,9 @@ JAVA_HOME=/home/kriksson/.jdks/temurin-21.0.12.1 PATH=/home/kriksson/.jdks/temur
 - Имя: Кирилл
 - Исходный опыт: небольшой опыт в Java Core
 - Интересы: игры
-- Текущий практический уровень: уверенно решает задачи на Java Core, ООП, коллекции и Stream API; освоил SQL, JDBC, HTTP и JSON; самостоятельно создаёт Spring Boot REST API с валидацией и внешней конфигурацией, читает и изменяет данные через JdbcTemplate, отображает результат SQL-изменения на HTTP-статусы и проверяет контракт через MockMvc; получает генерируемый БД BIGINT ID через Spring JDBC; применяет `@Transactional` для атомарных изменений нескольких строк и проверяет откат через интеграционный тест; самостоятельно отображает JPA-сущность на таблицу через `@Entity`, `@Table`, `@Id`, `@GeneratedValue` и `@Column`, использует `JpaRepository.findById` и `save`, получает ID от базы и возвращает его в `201 Created` с `Location`, настраивает Hibernate для создания схемы H2; связывает сущности через `@ManyToOne` и `@JoinColumn`, возвращает данные связанной гильдии через REST и проверяет целостность внешнего ключа; выбирает хранителей по ID связанной гильдии через производный метод Spring Data с сортировкой и преобразует сущности в DTO; объединяет три условия равенства через `And`, проверяет параметры URL и различает отсутствие гильдии и отсутствие совпадений.
+- Текущий практический уровень: уверенно решает задачи на Java Core, ООП, коллекции и Stream API; освоил SQL, JDBC, HTTP и JSON; самостоятельно создаёт Spring Boot REST API с валидацией и внешней конфигурацией, читает и изменяет данные через JdbcTemplate, отображает результат SQL-изменения на HTTP-статусы и проверяет контракт через MockMvc; получает генерируемый БД BIGINT ID через Spring JDBC; применяет `@Transactional` для атомарных изменений нескольких строк и проверяет откат через интеграционный тест; самостоятельно отображает JPA-сущность на таблицу через `@Entity`, `@Table`, `@Id`, `@GeneratedValue` и `@Column`, использует `JpaRepository.findById` и `save`, получает ID от базы и возвращает его в `201 Created` с `Location`, настраивает Hibernate для создания схемы H2; связывает сущности через `@ManyToOne` и `@JoinColumn`, возвращает данные связанной гильдии через REST и проверяет целостность внешнего ключа; выбирает хранителей по ID связанной гильдии через производный метод Spring Data с сортировкой и преобразует сущности в DTO; объединяет три условия равенства через `And`, проверяет параметры URL и различает отсутствие гильдии и отсутствие совпадений; использует `GreaterThanEqual` и сортировку по двум полям `OrderByLevelDescIdAsc`.
 
-- Ближайшая практика по просьбе ученика: дополнительно закрепить связи JPA и построение методов репозитория; сохранить небольшую сложность.
+- Ближайшая практика: по просьбе ученика двигаться дальше; изменение JPA-сущности и её связи в транзакционном сервисе, dirty checking. Сохранить базовую сложность.
 
 ### Приобретённый стек
 
@@ -134,6 +134,7 @@ JAVA_HOME=/home/kriksson/.jdks/temurin-21.0.12.1 PATH=/home/kriksson/.jdks/temur
 [![Spring Data JPA](https://img.shields.io/badge/Spring_Data-JPA-6DB33F?style=flat-square&logo=spring&logoColor=white)](https://docs.spring.io/spring-data/jpa/reference/)
 [![Derived queries](https://img.shields.io/badge/Spring_Data-Derived_queries-6DB33F?style=flat-square&logo=spring&logoColor=white)](https://docs.spring.io/spring-data/jpa/reference/3.5/repositories/query-methods-details.html)
 [![Combined filters](https://img.shields.io/badge/Spring_Data-And_filters-6DB33F?style=flat-square&logo=spring&logoColor=white)](https://docs.spring.io/spring-data/jpa/reference/3.5/repositories/query-methods-details.html)
+[![Range queries](https://img.shields.io/badge/Spring_Data-GreaterThanEqual-6DB33F?style=flat-square&logo=spring&logoColor=white)](https://docs.spring.io/spring-data/jpa/reference/3.5/repositories/query-keywords-reference.html)
 [![JPA relations](https://img.shields.io/badge/JPA-ManyToOne-59666C?style=flat-square)](https://jakarta.ee/specifications/persistence/)
 [![Hibernate](https://img.shields.io/badge/Hibernate-ORM-59666C?style=flat-square&logo=hibernate&logoColor=white)](https://hibernate.org/orm/documentation/)
 [![Conditional update](https://img.shields.io/badge/Spring_JDBC-UPDATE_row_count-6DB33F?style=flat-square&logo=spring&logoColor=white)](https://docs.spring.io/spring-framework/reference/data-access/jdbc/core.html)
@@ -273,10 +274,12 @@ Java 21 · BigDecimal · Optional · Stream API · java.time · JUnit 5 · Maven
 
   - производный запрос Spring Data с тремя условиями через `And`: ID гильдии, точное имя и уровень; проверка обязательных параметров URL, пустых строк, длины и отрицательных значений.
 
+  - производный запрос с `GreaterThanEqual`, включение граничного уровня и порядок по уровню по убыванию, затем по ID по возрастанию; изоляция гильдий и проверка актуальных данных.
+
 ## Прогресс
 
-- Решено задач: **77**
-- Последняя решённая задача: [№77 — Поиск хранителей в гильдии](tasks/completed/task_077_jpa_guild_keeper_filter/README.md).
+- Решено задач: **78**
+- Последняя решённая задача: [№78 — Хранители для сложного рейда](tasks/completed/task_078_jpa_guild_keeper_minimum_level/README.md).
 
 | № | Задача | Подтверждённые навыки | Статус |
 |---:|---|---|---|
@@ -361,13 +364,15 @@ Java 21 · BigDecimal · Optional · Stream API · java.time · JUnit 5 · Maven
 
 | 77 | Поиск хранителей в гильдии | три условия через `And`, путь по связи, точное сравнение, валидация параметров URL и DTO | решена |
 
+| 78 | Хранители для сложного рейда | `GreaterThanEqual`, два поля в `OrderBy`, границы уровня, изоляция гильдий и DTO | решена |
+
 ## Последняя решённая задача
 
-[Открыть архив задачи №77](tasks/completed/task_077_jpa_guild_keeper_filter/README.md).
+[Открыть архив задачи №78](tasks/completed/task_078_jpa_guild_keeper_minimum_level/README.md).
 
 ## Текущая задача
 
-Задача №77 подтверждена. Следующая практика №78 готовится по просьбе ученика: закрепление JPA-связи и производных методов на поиске по минимальному уровню.
+Задача №78 подтверждена. Следующая задача №79 готовится: изменение принадлежности хранителя через JPA и dirty checking внутри транзакционного сервиса.
 
 ## Структура
 
