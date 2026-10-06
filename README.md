@@ -1,6 +1,3 @@
-Warning: truncated output (original token count: 11299)
-Total output lines: 363
-
 # Практическое изучение Java
 
 Персональный тренажёр с гибкой прогрессией: каждое задание закрепляет освоенные навыки и добавляет новые понятия из выбранной программы.
@@ -108,7 +105,7 @@ JAVA_HOME=/home/kriksson/.jdks/temurin-21.0.12.1 PATH=/home/kriksson/.jdks/temur
 - Имя: Кирилл
 - Исходный опыт: небольшой опыт в Java Core
 - Интересы: игры
-- Текущий практический уровень: уверенно решает задачи на Java Core, ООП, коллекции и Stream API; освоил SQL, JDBC, HTTP и JSON; самостоятельно создаёт Spring Boot REST API с валидацией и внешней конфигурацией, читает и изменяет данные через JdbcTemplate, отображает результат SQL-изменения на HTTP-статусы и проверяет контракт через MockMvc; получает генерируемый БД BIGINT ID через Spring JDBC; применяет `@Transactional` для атомарных изменений нескольких строк и проверяет откат через интеграционный тест; самостоятельно отображает JPA-сущность на таблицу через `@Entity`, `@Table`, `@Id`, `@GeneratedValue` и `@Column`, использует `JpaRepository.findById` и `save`, получает ID от базы и возвращает его в `201 Created` с `Location`, настраивает Hibernate для создания схемы H2.
+- Текущий практический уровень: уверенно решает задачи на Java Core, ООП, коллекции и Stream API; освоил SQL, JDBC, HTTP и JSON; самостоятельно создаёт Spring Boot REST API с валидацией и внешней конфигурацией, читает и изменяет данные через JdbcTemplate, отображает результат SQL-изменения на HTTP-статусы и проверяет контракт через MockMvc; получает генерируемый БД BIGINT ID через Spring JDBC; применяет `@Transactional` для атомарных изменений нескольких строк и проверяет откат через интеграционный тест; самостоятельно отображает JPA-сущность на таблицу через `@Entity`, `@Table`, `@Id`, `@GeneratedValue` и `@Column`, использует `JpaRepository.findById` и `save`, получает ID от базы и возвращает его в `201 Created` с `Location`, настраивает Hibernate для создания схемы H2; связывает сущности через `@ManyToOne` и `@JoinColumn`, возвращает данные связанной гильдии через REST и проверяет целостность внешнего ключа.
 
 ### Приобретённый стек
 
@@ -133,10 +130,11 @@ JAVA_HOME=/home/kriksson/.jdks/temurin-21.0.12.1 PATH=/home/kriksson/.jdks/temur
 [![Generated IDs](https://img.shields.io/badge/Spring_JDBC-GeneratedKeyHolder-6DB33F?style=flat-square&logo=spring&logoColor=white)](https://docs.spring.io/spring-framework/reference/data-access/jdbc/core.html#jdbc-auto-generated-keys)
 [![Spring Transactions](https://img.shields.io/badge/Spring-Transactional-6DB33F?style=flat-square&logo=spring&logoColor=white)](https://docs.spring.io/spring-framework/reference/data-access/transaction/declarative.html)
 [![Spring Data JPA](https://img.shields.io/badge/Spring_Data-JPA-6DB33F?style=flat-square&logo=spring&logoColor=white)](https://docs.spring.io/spring-data/jpa/reference/)
+[![JPA relations](https://img.shields.io/badge/JPA-ManyToOne-59666C?style=flat-square)](https://jakarta.ee/specifications/persistence/)
 [![Hibernate](https://img.shields.io/badge/Hibernate-ORM-59666C?style=flat-square&logo=hibernate&logoColor=white)](https://hibernate.org/orm/documentation/)
 [![Conditional update](https://img.shields.io/badge/Spring_JDBC-UPDATE_row_count-6DB33F?style=flat-square&logo=spring&logoColor=white)](https://docs.spring.io/spring-framework/reference/data-access/jdbc/core.html)
 
-Java 21 · BigDecimal · Optional · Stream API · java.time · JUnit 5 · Maven · Git · GitHub Actions · SQL · PostgreSQL · JDBC · HTTP Client · HTTP Server · Jackson · Spring Boot · Bean Validation · Spring JDBC · H2 · GeneratedKeyHolder · SQL IDENTITY · JdbcTemplate UPDATE row count · Spring Data JPA · Hibernate
+Java 21 · BigDecimal · Optional · Stream API · java.time · JUnit 5 · Maven · Git · GitHub Actions · SQL · PostgreSQL · JDBC · HTTP Client · HTTP Server · Jackson · Spring Boot · Bean Validation · Spring JDBC · H2 · GeneratedKeyHolder · SQL IDENTITY · JdbcTemplate UPDATE row count · Spring Data JPA · Hibernate · ManyToOne
 
 - Подтверждённые навыки:
   - консольный ввод через `Scanner` и форматированный вывод;
@@ -154,7 +152,65 @@ Java 21 · BigDecimal · Optional · Stream API · java.time · JUnit 5 · Maven
   - обработка `IOException`, сериализация объектов в строки и проверка формата файла;
   - наследование через `extends`, вызов `super` и переопределение методов;
   - полиморфные вызовы и расширение поведения базового класса.
-  - абс…1299 tokens truncated… связанных записей через `COUNT` с сохранением сущностей без связей.
+  - абстрактные классы и абстрактные методы;
+  - полиморфная работа с разными потомками в `List<CombatUnit>`.
+  - переопределение `equals`, `hashCode` и `toString` для идентичности объектов;
+  - хранение уникальных объектов в `Set`/`HashSet`.
+  - перечисления `enum` с состоянием и конструктором;
+  - статические поля, методы и константы класса.
+  - параметр типа `T` и обобщённые классы;
+  - типобезопасное хранение элементов в `List<T>`.
+  - естественный порядок объектов через `Comparable<T>`;
+  - сортировка копии коллекции через `Collections.sort`.
+  - интерфейсы как общий контракт для разных классов;
+  - полиморфная обработка объектов через `List<Upgradeable>`.
+  - unit-тесты на JUnit 5 с `@Test`, `assertEquals` и `assertThrows`;
+  - проверка обычных, граничных и ошибочных сценариев.
+  - моделирование состояний через `enum` и допустимые переходы;
+  - объединение классов, `Map` и тестов в мини-проект.
+  - параметризованные unit-тесты с `@ParameterizedTest`, `@ValueSource` и `@NullSource`;
+  - проверка набора входных данных без дублирования тестового кода.
+  - анализ сообщений о падении unit-тестов;
+  - поиск и точечное исправление ошибок в существующем коде.
+  - Maven-координаты `groupId:artifactId:version`;
+  - фазы Maven `clean`, `test` и `package`, создание JAR.
+  - настройка Maven-плагинов через `build/plugins`;
+  - анализ итоговой конфигурации через effective POM.
+  - Maven-профили и свойства окружения;
+  - включение профиля через `-P` и проверка свойства через `help:evaluate`.
+  - создание Git-ветки, тематический коммит и публикация ветки в GitHub.
+  - слияние готовой ветки в `main` через merge-коммит;
+  - публикация обновлённой ветки `main`.
+  - чтение состояния Git при конфликте слияния;
+  - ручное разрешение конфликта и создание merge-коммита.
+  - просмотр незакоммиченных изменений через `git diff`;
+  - восстановление одного файла из `HEAD` через `git restore`.
+  - неизменяемые модели данных через `record`;
+  - составной `Comparator` и сортировка копии коллекции по нескольким полям.
+  - агрегация данных в `Map` через `merge`;
+  - неизменяемые снимки `Map` и сортировка записей `Map.Entry`.
+  - точные денежные расчёты через `BigDecimal`;
+  - сравнение и суммирование денежных значений без `double`.
+  - представление отсутствующего результата через `Optional`;
+  - API поиска без возврата `null`.
+  - собственные checked-исключения и объявление `throws`;
+  - сохранение целостного состояния при неудачной операции.
+  - FIFO-очередь через `Deque` и `ArrayDeque`;
+  - координация `Deque` и `Set` для уникальности элементов в очереди.
+  - очередь с приоритетом через `PriorityQueue`;
+  - создание упорядоченного снимка коллекции по `Comparator`.
+  - лямбда-выражения и Stream-конвейеры;
+  - агрегация данных через `groupingBy` и `summingInt`.
+  - работа с календарными датами через `LocalDate`;
+  - сравнение периодов и подсчёт дней через `ChronoUnit`.
+  - проектирование таблиц SQL через `CREATE TABLE`;
+  - первичные и внешние ключи, `NOT NULL`, `UNIQUE` и `CHECK`;
+  - точные денежные значения через `DECIMAL` и целостность реляционных данных.
+  - выборка и фильтрация данных через `SELECT` и `WHERE`;
+  - сортировка результатов через `ORDER BY`;
+  - группировка и агрегирование через `GROUP BY` и `SUM`.
+  - объединение связанных таблиц через `LEFT JOIN`;
+  - подсчёт связанных записей через `COUNT` с сохранением сущностей без связей.
   - фильтрация сгруппированных результатов через `HAVING`.
   - изменение существующих строк через `UPDATE` и `SET`;
   - условное удаление строк через `DELETE` и `WHERE`.
@@ -207,10 +263,12 @@ Java 21 · BigDecimal · Optional · Stream API · java.time · JUnit 5 · Maven
   - JPA-сущности с явным отображением колонок, генерация схемы Hibernate и поиск через Spring Data `JpaRepository.findById`.
   - создание JPA-сущности через `JpaRepository.save`, получение identity ID и REST-ответ `201 Created` с `Location`.
 
+  - связь JPA-сущностей через `@ManyToOne` и `@JoinColumn`, вложенный JSON-ответ и целостность внешнего ключа.
+
 ## Прогресс
 
-- Решено задач: **74**
-- Последняя решённая задача: [№74 — Создать хранителя через Spring Data JPA](tasks/completed/task_074_spring_data_jpa_keeper_create/README.md).
+- Решено задач: **75**
+- Последняя решённая задача: [№75 — Хранитель в гильдии через JPA-связь](tasks/completed/task_075_jpa_keeper_guild_relation/README.md).
 
 | № | Задача | Подтверждённые навыки | Статус |
 |---:|---|---|---|
@@ -289,13 +347,15 @@ Java 21 · BigDecimal · Optional · Stream API · java.time · JUnit 5 · Maven
 | 73 | Найти хранителя через Spring Data JPA | JPA-сущность и явное отображение колонок, Spring Data `findById`, генерация схемы Hibernate, чтение через REST и MockMvc | решена |
 | 74 | Создать хранителя через Spring Data JPA | `JpaRepository.save`, identity ID, `201 Created`, `Location`, интеграционная проверка через MockMvc | решена |
 
+| 75 | Хранитель в гильдии через JPA-связь | `@ManyToOne`, `@JoinColumn`, внешний ключ, вложенный JSON и `404` | решена |
+
 ## Последняя решённая задача
 
-[Открыть архив задачи №74](tasks/completed/task_074_spring_data_jpa_keeper_create/README.md).
+[Открыть архив задачи №75](tasks/completed/task_075_jpa_keeper_guild_relation/README.md).
 
 ## Текущая задача
 
-Следующая задача будет создана после публикации успешного решения №74.
+Задача №75 завершена. Следующее задание — выборка хранителей одной гильдии через производный метод Spring Data; условие и тесты создаются после отправки подтверждённого решения.
 
 ## Структура
 
