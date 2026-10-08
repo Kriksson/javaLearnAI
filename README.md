@@ -105,11 +105,14 @@ JAVA_HOME=/home/kriksson/.jdks/temurin-21.0.12.1 PATH=/home/kriksson/.jdks/temur
 - Имя: Кирилл
 - Исходный опыт: небольшой опыт в Java Core
 - Интересы: игры
-- Текущий практический уровень: уверенно решает задачи на Java Core, ООП, коллекции и Stream API; освоил SQL, JDBC, HTTP и JSON; самостоятельно создаёт Spring Boot REST API с валидацией и внешней конфигурацией, читает и изменяет данные через JdbcTemplate, отображает результат SQL-изменения на HTTP-статусы и проверяет контракт через MockMvc; получает генерируемый БД BIGINT ID через Spring JDBC; применяет `@Transactional` для атомарных изменений нескольких строк и проверяет откат через интеграционный тест; самостоятельно отображает JPA-сущность на таблицу через `@Entity`, `@Table`, `@Id`, `@GeneratedValue` и `@Column`, использует `JpaRepository.findById` и `save`, получает ID от базы и возвращает его в `201 Created` с `Location`, настраивает Hibernate для создания схемы H2; связывает сущности через `@ManyToOne` и `@JoinColumn`, возвращает данные связанной гильдии через REST и проверяет целостность внешнего ключа; выбирает хранителей по ID связанной гильдии через производный метод Spring Data с сортировкой и преобразует сущности в DTO; объединяет три условия равенства через `And`, проверяет параметры URL и различает отсутствие гильдии и отсутствие совпадений; использует `GreaterThanEqual` и сортировку по двум полям `OrderByLevelDescIdAsc`; изменяет связь управляемой JPA-сущности внутри транзакционного сервиса без явного `save()`, применяя dirty checking; выполняет постраничную выборку через `Pageable` / `PageRequest`, преобразует `Page<сущность>` в DTO и возвращает корректные общие количества; загружает LAZY-связь через `@EntityGraph`, возвращает вложенный DTO и устраняет N+1 при постраничном чтении с отключённым Open Session in View; подключает приложение к PostgreSQL через JDBC-драйвер и переменные окружения, сохраняет данные после повторного открытия контекста; создаёт схему первой SQL-миграцией Flyway, задаёт ограничения базы и проверяет соответствие сущностям через Hibernate `validate`; обновляет существующую схему миграцией V2 с DEFAULT и CHECK, сохраняя строки, историю V1 и генерацию ID.
+- Текущий практический уровень: уверенно решает задачи на Java Core, ООП, коллекции и Stream API; освоил SQL, JDBC, HTTP и JSON; самостоятельно создаёт Spring Boot REST API с валидацией и внешней конфигурацией, читает и изменяет данные через JdbcTemplate, отображает результат SQL-изменения на HTTP-статусы и проверяет контракт через MockMvc; получает генерируемый БД BIGINT ID через Spring JDBC; применяет `@Transactional` для атомарных изменений нескольких строк и проверяет откат через интеграционный тест; самостоятельно отображает JPA-сущность на таблицу через `@Entity`, `@Table`, `@Id`, `@GeneratedValue` и `@Column`, использует `JpaRepository.findById` и `save`, получает ID от базы и возвращает его в `201 Created` с `Location`, настраивает Hibernate для создания схемы H2; связывает сущности через `@ManyToOne` и `@JoinColumn`, возвращает данные связанной гильдии через REST и проверяет целостность внешнего ключа; выбирает хранителей по ID связанной гильдии через производный метод Spring Data с сортировкой и преобразует сущности в DTO; объединяет три условия равенства через `And`, проверяет параметры URL и различает отсутствие гильдии и отсутствие совпадений; использует `GreaterThanEqual` и сортировку по двум полям `OrderByLevelDescIdAsc`; изменяет связь управляемой JPA-сущности внутри транзакционного сервиса без явного `save()`, применяя dirty checking; выполняет постраничную выборку через `Pageable` / `PageRequest`, преобразует `Page<сущность>` в DTO и возвращает корректные общие количества; загружает LAZY-связь через `@EntityGraph`, возвращает вложенный DTO и устраняет N+1 при постраничном чтении с отключённым Open Session in View; подключает приложение к PostgreSQL через JDBC-драйвер и переменные окружения, сохраняет данные после повторного открытия контекста; создаёт схему первой SQL-миграцией Flyway, задаёт ограничения базы и проверяет соответствие сущностям через Hibernate `validate`; обновляет существующую схему миграцией V2 с DEFAULT и CHECK, сохраняя строки, историю V1 и генерацию ID. Настраивает HTTP Basic, пользователей в памяти с BCrypt-хешами из конфигурации, публичные маршруты и доступ по ролям через SecurityFilterChain; различает 401 и 403.
 
-- Ближайшая практика: первое подключение Spring Security, HTTP Basic и разграничение чтения по ролям. Базовая сложность и ручная сборка с нуля; пользователей сначала настраиваем в памяти, Docker и Testcontainers вводятся отдельно.
+- Ближайшая практика: банковское API с пользователями и ролями в PostgreSQL, собственный UserDetailsService и получение текущего пользователя через Principal. Базовая сложность, ручная сборка с нуля; Docker и Testcontainers вводятся отдельно.
 
 ### Приобретённый стек
+
+[![Spring Security](https://img.shields.io/badge/Spring_Security-HTTP_Basic_%26_roles-6DB33F?style=flat-square&logo=springsecurity&logoColor=white)](https://docs.spring.io/spring-security/reference/6.5/servlet/index.html)
+[![BCrypt](https://img.shields.io/badge/Passwords-BCrypt-6DB33F?style=flat-square)](https://docs.spring.io/spring-security/reference/6.5/features/authentication/password-storage.html)
 
 [![Flyway](https://img.shields.io/badge/Flyway-SQL_migrations-CC0200?style=flat-square&logo=flyway&logoColor=white)](https://documentation.red-gate.com/flyway/)
 [![PostgreSQL JDBC](https://img.shields.io/badge/PostgreSQL-JDBC_driver-4169E1?style=flat-square&logo=postgresql&logoColor=white)](https://jdbc.postgresql.org/)
@@ -144,7 +147,7 @@ JAVA_HOME=/home/kriksson/.jdks/temurin-21.0.12.1 PATH=/home/kriksson/.jdks/temur
 [![Hibernate](https://img.shields.io/badge/Hibernate-ORM-59666C?style=flat-square&logo=hibernate&logoColor=white)](https://hibernate.org/orm/documentation/)
 [![Conditional update](https://img.shields.io/badge/Spring_JDBC-UPDATE_row_count-6DB33F?style=flat-square&logo=spring&logoColor=white)](https://docs.spring.io/spring-framework/reference/data-access/jdbc/core.html)
 
-Java 21 · BigDecimal · Optional · Stream API · java.time · JUnit 5 · Maven · Git · GitHub Actions · SQL · PostgreSQL · JDBC · HTTP Client · HTTP Server · Jackson · Spring Boot · Bean Validation · Spring JDBC · H2 · GeneratedKeyHolder · SQL IDENTITY · JdbcTemplate UPDATE row count · Spring Data JPA · Hibernate · ManyToOne · Spring Data derived queries · Flyway · Hibernate schema validation
+Java 21 · BigDecimal · Optional · Stream API · java.time · JUnit 5 · Maven · Git · GitHub Actions · SQL · PostgreSQL · JDBC · HTTP Client · HTTP Server · Jackson · Spring Boot · Bean Validation · Spring JDBC · H2 · GeneratedKeyHolder · SQL IDENTITY · JdbcTemplate UPDATE row count · Spring Data JPA · Hibernate · ManyToOne · Spring Data derived queries · Flyway · Hibernate schema validation · Spring Security · HTTP Basic · BCrypt
 
 - Подтверждённые навыки:
   - консольный ввод через `Scanner` и форматированный вывод;
@@ -293,10 +296,12 @@ Java 21 · BigDecimal · Optional · Stream API · java.time · JUnit 5 · Maven
 
   - обновление базы с данными с V1 до V2, добавление колонки с DEFAULT/NOT NULL/CHECK, сохранение строк, истории V1 и последовательности ID, обновление сущности и DTO.
 
+  - HTTP Basic, BCrypt-хеши паролей из конфигурации, пользователи в памяти, SecurityFilterChain, публичный маршрут, hasAnyRole/hasRole и ответы 401/403; подтверждены 8 интеграционных тестов.
+
 ## Прогресс
 
-- Решено задач: **84**
-- Последняя решённая задача: [№84 — Миграция V2: монеты существующих рекрутов](tasks/completed/task_084_flyway_recruit_coins/README.md).
+- Решено задач: **85**
+- Последняя решённая задача: [№85 — Первое подключение Spring Security](tasks/completed/task_085_security_recruit_read/README.md).
 
 | № | Задача | Подтверждённые навыки | Статус |
 |---:|---|---|---|
@@ -391,14 +396,15 @@ Java 21 · BigDecimal · Optional · Stream API · java.time · JUnit 5 · Maven
 | 82 | Рекруты в PostgreSQL | Внешний PostgreSQL, JDBC-драйвер, переменные окружения, сохранение схемы и данных между запусками | решена |
 | 83 | Первая миграция Flyway | V1, история миграций, SQL-ограничения, `ddl-auto=validate`, сохранение данных и проверка несовместимой схемы | решена |
 | 84 | Миграция V2: монеты существующих рекрутов | ALTER TABLE, DEFAULT/NOT NULL/CHECK, сохранение данных и истории V1, обновление сущности и DTO | решена |
+| 85 | Первое подключение Spring Security | HTTP Basic, BCrypt, пользователи в памяти, SecurityFilterChain, доступ по ролям и 401/403 | решена |
 
 ## Последняя решённая задача
 
-[Открыть архив задачи №84](tasks/completed/task_084_flyway_recruit_coins/README.md).
+[Открыть архив задачи №85](tasks/completed/task_085_security_recruit_read/README.md).
 
 ## Текущая задача
 
-Следующий шаг №85 — HTTP Basic и роли в Spring Security. Условие и тесты подготавливаются после публикации решения №84.
+№85 завершена. Следующая задача №86 готовится: банк, пользователи в PostgreSQL и вход через Spring Security.
 
 ## Структура
 
