@@ -105,12 +105,13 @@ JAVA_HOME=/home/kriksson/.jdks/temurin-21.0.12.1 PATH=/home/kriksson/.jdks/temur
 - Имя: Кирилл
 - Исходный опыт: небольшой опыт в Java Core
 - Интересы: игры
-- Текущий практический уровень: уверенно решает задачи на Java Core, ООП, коллекции и Stream API; освоил SQL, JDBC, HTTP и JSON; самостоятельно создаёт Spring Boot REST API с валидацией и внешней конфигурацией, читает и изменяет данные через JdbcTemplate, отображает результат SQL-изменения на HTTP-статусы и проверяет контракт через MockMvc; получает генерируемый БД BIGINT ID через Spring JDBC; применяет `@Transactional` для атомарных изменений нескольких строк и проверяет откат через интеграционный тест; самостоятельно отображает JPA-сущность на таблицу через `@Entity`, `@Table`, `@Id`, `@GeneratedValue` и `@Column`, использует `JpaRepository.findById` и `save`, получает ID от базы и возвращает его в `201 Created` с `Location`, настраивает Hibernate для создания схемы H2; связывает сущности через `@ManyToOne` и `@JoinColumn`, возвращает данные связанной гильдии через REST и проверяет целостность внешнего ключа; выбирает хранителей по ID связанной гильдии через производный метод Spring Data с сортировкой и преобразует сущности в DTO; объединяет три условия равенства через `And`, проверяет параметры URL и различает отсутствие гильдии и отсутствие совпадений; использует `GreaterThanEqual` и сортировку по двум полям `OrderByLevelDescIdAsc`; изменяет связь управляемой JPA-сущности внутри транзакционного сервиса без явного `save()`, применяя dirty checking; выполняет постраничную выборку через `Pageable` / `PageRequest`, преобразует `Page<сущность>` в DTO и возвращает корректные общие количества; загружает LAZY-связь через `@EntityGraph`, возвращает вложенный DTO и устраняет N+1 при постраничном чтении с отключённым Open Session in View; подключает приложение к PostgreSQL через JDBC-драйвер и переменные окружения, сохраняет данные после повторного открытия контекста.
+- Текущий практический уровень: уверенно решает задачи на Java Core, ООП, коллекции и Stream API; освоил SQL, JDBC, HTTP и JSON; самостоятельно создаёт Spring Boot REST API с валидацией и внешней конфигурацией, читает и изменяет данные через JdbcTemplate, отображает результат SQL-изменения на HTTP-статусы и проверяет контракт через MockMvc; получает генерируемый БД BIGINT ID через Spring JDBC; применяет `@Transactional` для атомарных изменений нескольких строк и проверяет откат через интеграционный тест; самостоятельно отображает JPA-сущность на таблицу через `@Entity`, `@Table`, `@Id`, `@GeneratedValue` и `@Column`, использует `JpaRepository.findById` и `save`, получает ID от базы и возвращает его в `201 Created` с `Location`, настраивает Hibernate для создания схемы H2; связывает сущности через `@ManyToOne` и `@JoinColumn`, возвращает данные связанной гильдии через REST и проверяет целостность внешнего ключа; выбирает хранителей по ID связанной гильдии через производный метод Spring Data с сортировкой и преобразует сущности в DTO; объединяет три условия равенства через `And`, проверяет параметры URL и различает отсутствие гильдии и отсутствие совпадений; использует `GreaterThanEqual` и сортировку по двум полям `OrderByLevelDescIdAsc`; изменяет связь управляемой JPA-сущности внутри транзакционного сервиса без явного `save()`, применяя dirty checking; выполняет постраничную выборку через `Pageable` / `PageRequest`, преобразует `Page<сущность>` в DTO и возвращает корректные общие количества; загружает LAZY-связь через `@EntityGraph`, возвращает вложенный DTO и устраняет N+1 при постраничном чтении с отключённым Open Session in View; подключает приложение к PostgreSQL через JDBC-драйвер и переменные окружения, сохраняет данные после повторного открытия контекста; создаёт схему первой SQL-миграцией Flyway, задаёт ограничения базы и проверяет соответствие сущностям через Hibernate `validate`.
 
-- Ближайшая практика: первая SQL-миграция Flyway в PostgreSQL и проверка схемы Hibernate через `ddl-auto=validate`. Базовая сложность и ручная сборка с нуля; Docker и Testcontainers вводятся отдельно.
+- Ближайшая практика: миграция V2 для существующей таблицы PostgreSQL, сохранение старых рекрутов и добавление колонки со значением по умолчанию. Базовая сложность и ручная сборка с нуля; Docker и Testcontainers вводятся отдельно.
 
 ### Приобретённый стек
 
+[![Flyway](https://img.shields.io/badge/Flyway-SQL_migrations-CC0200?style=flat-square&logo=flyway&logoColor=white)](https://documentation.red-gate.com/flyway/)
 [![PostgreSQL JDBC](https://img.shields.io/badge/PostgreSQL-JDBC_driver-4169E1?style=flat-square&logo=postgresql&logoColor=white)](https://jdbc.postgresql.org/)
 [![Java 21](https://img.shields.io/badge/Java-21-ED8B00?style=flat-square&logo=openjdk&logoColor=white)](https://openjdk.org/projects/jdk/21/)
 [![BigDecimal](https://img.shields.io/badge/BigDecimal-Java-ED8B00?style=flat-square&logo=openjdk&logoColor=white)](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/math/BigDecimal.html)
@@ -143,7 +144,7 @@ JAVA_HOME=/home/kriksson/.jdks/temurin-21.0.12.1 PATH=/home/kriksson/.jdks/temur
 [![Hibernate](https://img.shields.io/badge/Hibernate-ORM-59666C?style=flat-square&logo=hibernate&logoColor=white)](https://hibernate.org/orm/documentation/)
 [![Conditional update](https://img.shields.io/badge/Spring_JDBC-UPDATE_row_count-6DB33F?style=flat-square&logo=spring&logoColor=white)](https://docs.spring.io/spring-framework/reference/data-access/jdbc/core.html)
 
-Java 21 · BigDecimal · Optional · Stream API · java.time · JUnit 5 · Maven · Git · GitHub Actions · SQL · PostgreSQL · JDBC · HTTP Client · HTTP Server · Jackson · Spring Boot · Bean Validation · Spring JDBC · H2 · GeneratedKeyHolder · SQL IDENTITY · JdbcTemplate UPDATE row count · Spring Data JPA · Hibernate · ManyToOne · Spring Data derived queries
+Java 21 · BigDecimal · Optional · Stream API · java.time · JUnit 5 · Maven · Git · GitHub Actions · SQL · PostgreSQL · JDBC · HTTP Client · HTTP Server · Jackson · Spring Boot · Bean Validation · Spring JDBC · H2 · GeneratedKeyHolder · SQL IDENTITY · JdbcTemplate UPDATE row count · Spring Data JPA · Hibernate · ManyToOne · Spring Data derived queries · Flyway · Hibernate schema validation
 
 - Подтверждённые навыки:
   - консольный ввод через `Scanner` и форматированный вывод;
@@ -288,10 +289,12 @@ Java 21 · BigDecimal · Optional · Stream API · java.time · JUnit 5 · Maven
 
   - Spring Boot JPA с настоящим PostgreSQL, JDBC-драйвер, подключение из переменных окружения и сохранение данных между запусками контекста.
 
+  - первая версионированная SQL-миграция Flyway, история применения и неизменность истории при повторных запусках; ограничения PostgreSQL и проверка схемы Hibernate через `ddl-auto=validate`.
+
 ## Прогресс
 
-- Решено задач: **82**
-- Последняя решённая задача: [№82 — Рекруты в PostgreSQL](tasks/completed/task_082_postgresql_recruit_api/README.md).
+- Решено задач: **83**
+- Последняя решённая задача: [№83 — Первая миграция Flyway](tasks/completed/task_083_flyway_recruit_schema/README.md).
 
 | № | Задача | Подтверждённые навыки | Статус |
 |---:|---|---|---|
@@ -384,14 +387,15 @@ Java 21 · BigDecimal · Optional · Stream API · java.time · JUnit 5 · Maven
 
 | 81 | Страница хранителей без N+1 | LAZY, `@EntityGraph`, вложенный DTO, отключённый Open Session in View, проверка SQL-запросов | решена |
 | 82 | Рекруты в PostgreSQL | Внешний PostgreSQL, JDBC-драйвер, переменные окружения, сохранение схемы и данных между запусками | решена |
+| 83 | Первая миграция Flyway | V1, история миграций, SQL-ограничения, `ddl-auto=validate`, сохранение данных и проверка несовместимой схемы | решена |
 
 ## Последняя решённая задача
 
-[Открыть архив задачи №82](tasks/completed/task_082_postgresql_recruit_api/README.md).
+[Открыть архив задачи №83](tasks/completed/task_083_flyway_recruit_schema/README.md).
 
 ## Текущая задача
 
-Следующий шаг №83 — первая миграция Flyway для PostgreSQL и `ddl-auto=validate`. Условие и тесты подготавливаются после публикации решения №82.
+Следующий шаг №84 — миграция V2, добавление монет рекрутам и сохранение существующих данных. Условие и тесты подготавливаются после публикации решения №83.
 
 ## Структура
 
