@@ -105,9 +105,9 @@ JAVA_HOME=/home/kriksson/.jdks/temurin-21.0.12.1 PATH=/home/kriksson/.jdks/temur
 - Имя: Кирилл
 - Исходный опыт: небольшой опыт в Java Core
 - Интересы: игры
-- Текущий практический уровень: уверенно решает задачи на Java Core, ООП, коллекции и Stream API; освоил SQL, JDBC, HTTP и JSON; самостоятельно создаёт Spring Boot REST API с валидацией и внешней конфигурацией, читает и изменяет данные через JdbcTemplate, отображает результат SQL-изменения на HTTP-статусы и проверяет контракт через MockMvc; получает генерируемый БД BIGINT ID через Spring JDBC; применяет `@Transactional` для атомарных изменений нескольких строк и проверяет откат через интеграционный тест; самостоятельно отображает JPA-сущность на таблицу через `@Entity`, `@Table`, `@Id`, `@GeneratedValue` и `@Column`, использует `JpaRepository.findById` и `save`, получает ID от базы и возвращает его в `201 Created` с `Location`, настраивает Hibernate для создания схемы H2; связывает сущности через `@ManyToOne` и `@JoinColumn`, возвращает данные связанной гильдии через REST и проверяет целостность внешнего ключа; выбирает хранителей по ID связанной гильдии через производный метод Spring Data с сортировкой и преобразует сущности в DTO; объединяет три условия равенства через `And`, проверяет параметры URL и различает отсутствие гильдии и отсутствие совпадений; использует `GreaterThanEqual` и сортировку по двум полям `OrderByLevelDescIdAsc`; изменяет связь управляемой JPA-сущности внутри транзакционного сервиса без явного `save()`, применяя dirty checking; выполняет постраничную выборку через `Pageable` / `PageRequest`, преобразует `Page<сущность>` в DTO и возвращает корректные общие количества.
+- Текущий практический уровень: уверенно решает задачи на Java Core, ООП, коллекции и Stream API; освоил SQL, JDBC, HTTP и JSON; самостоятельно создаёт Spring Boot REST API с валидацией и внешней конфигурацией, читает и изменяет данные через JdbcTemplate, отображает результат SQL-изменения на HTTP-статусы и проверяет контракт через MockMvc; получает генерируемый БД BIGINT ID через Spring JDBC; применяет `@Transactional` для атомарных изменений нескольких строк и проверяет откат через интеграционный тест; самостоятельно отображает JPA-сущность на таблицу через `@Entity`, `@Table`, `@Id`, `@GeneratedValue` и `@Column`, использует `JpaRepository.findById` и `save`, получает ID от базы и возвращает его в `201 Created` с `Location`, настраивает Hibernate для создания схемы H2; связывает сущности через `@ManyToOne` и `@JoinColumn`, возвращает данные связанной гильдии через REST и проверяет целостность внешнего ключа; выбирает хранителей по ID связанной гильдии через производный метод Spring Data с сортировкой и преобразует сущности в DTO; объединяет три условия равенства через `And`, проверяет параметры URL и различает отсутствие гильдии и отсутствие совпадений; использует `GreaterThanEqual` и сортировку по двум полям `OrderByLevelDescIdAsc`; изменяет связь управляемой JPA-сущности внутри транзакционного сервиса без явного `save()`, применяя dirty checking; выполняет постраничную выборку через `Pageable` / `PageRequest`, преобразует `Page<сущность>` в DTO и возвращает корректные общие количества; загружает LAZY-связь через `@EntityGraph`, возвращает вложенный DTO и устраняет N+1 при постраничном чтении с отключённым Open Session in View.
 
-- Ближайшая практика: N+1 и загрузка связанных гильдий через `@EntityGraph` при постраничном чтении. Базовая сложность, ручная сборка с нуля.
+- Ближайшая практика: Spring Boot JPA с PostgreSQL, внешние параметры подключения и сохранение данных между запусками приложения. Базовая сложность, ручная сборка с нуля; миграции и Testcontainers вводятся позже.
 
 ### Приобретённый стек
 
@@ -137,6 +137,7 @@ JAVA_HOME=/home/kriksson/.jdks/temurin-21.0.12.1 PATH=/home/kriksson/.jdks/temur
 [![Range queries](https://img.shields.io/badge/Spring_Data-GreaterThanEqual-6DB33F?style=flat-square&logo=spring&logoColor=white)](https://docs.spring.io/spring-data/jpa/reference/3.5/repositories/query-keywords-reference.html)
 [![Dirty checking](https://img.shields.io/badge/JPA-Dirty_checking-59666C?style=flat-square)](https://docs.spring.io/spring-data/jpa/reference/3.5/jpa/transactions.html)
 [![JPA Pagination](https://img.shields.io/badge/Spring_Data-Pageable_%26_Page-6DB33F?style=flat-square)](https://docs.spring.io/spring-data/commons/reference/3.5/repositories/query-methods-details.html)
+[![EntityGraph](https://img.shields.io/badge/JPA-EntityGraph_%26_N%2B1-59666C?style=flat-square)](https://docs.spring.io/spring-data/jpa/reference/3.5/jpa/query-methods.html#jpa.entity-graph)
 [![JPA relations](https://img.shields.io/badge/JPA-ManyToOne-59666C?style=flat-square)](https://jakarta.ee/specifications/persistence/)
 [![Hibernate](https://img.shields.io/badge/Hibernate-ORM-59666C?style=flat-square&logo=hibernate&logoColor=white)](https://hibernate.org/orm/documentation/)
 [![Conditional update](https://img.shields.io/badge/Spring_JDBC-UPDATE_row_count-6DB33F?style=flat-square&logo=spring&logoColor=white)](https://docs.spring.io/spring-framework/reference/data-access/jdbc/core.html)
@@ -282,10 +283,12 @@ Java 21 · BigDecimal · Optional · Stream API · java.time · JUnit 5 · Maven
 
   - постраничная выборка через `Pageable` / `PageRequest` и `Page`, преобразование через `Page.map`, DTO страницы с `long totalElements`, пустые страницы и проверка параметров URL.
 
+  - LAZY-связь и `@EntityGraph` для постраничного чтения без N+1, вложенный DTO гильдии и не более двух SQL-запросов с отключённым Open Session in View.
+
 ## Прогресс
 
-- Решено задач: **80**
-- Последняя решённая задача: [№80 — Хранители гильдии по страницам](tasks/completed/task_080_jpa_guild_keeper_page/README.md).
+- Решено задач: **81**
+- Последняя решённая задача: [№81 — Страница хранителей без N+1](tasks/completed/task_081_jpa_keeper_guild_page/README.md).
 
 | № | Задача | Подтверждённые навыки | Статус |
 |---:|---|---|---|
@@ -376,13 +379,15 @@ Java 21 · BigDecimal · Optional · Stream API · java.time · JUnit 5 · Maven
 
 | 80 | Хранители гильдии по страницам | `Pageable`, `PageRequest`, `Page`, `Page.map`, общие количества, стабильные страницы и DTO | решена |
 
+| 81 | Страница хранителей без N+1 | LAZY, `@EntityGraph`, вложенный DTO, отключённый Open Session in View, проверка SQL-запросов | решена |
+
 ## Последняя решённая задача
 
-[Открыть архив задачи №80](tasks/completed/task_080_jpa_guild_keeper_page/README.md).
+[Открыть архив задачи №81](tasks/completed/task_081_jpa_keeper_guild_page/README.md).
 
 ## Текущая задача
 
-Задача №80 подтверждена. Следующая задача №81 готовится: постраничный список хранителей с данными гильдий, N+1 и `@EntityGraph`.
+Задача №81 подтверждена. Следующая задача №82 готовится: создание и чтение рекрута через Spring Boot JPA с PostgreSQL и сохранением данных между запусками.
 
 ## Структура
 
