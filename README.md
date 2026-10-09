@@ -117,11 +117,13 @@ JAVA_HOME=/home/kriksson/.jdks/temurin-21.0.12.1 PATH=/home/kriksson/.jdks/temur
 - Имя: Кирилл
 - Исходный опыт: небольшой опыт в Java Core
 - Интересы: игры
-- Текущий практический уровень: уверенно решает задачи на Java Core, ООП, коллекции и Stream API; освоил SQL, JDBC, HTTP и JSON; самостоятельно создаёт Spring Boot REST API с валидацией и внешней конфигурацией, читает и изменяет данные через JdbcTemplate, отображает результат SQL-изменения на HTTP-статусы и проверяет контракт через MockMvc; получает генерируемый БД BIGINT ID через Spring JDBC; применяет `@Transactional` для атомарных изменений нескольких строк и проверяет откат через интеграционный тест; самостоятельно отображает JPA-сущность на таблицу через `@Entity`, `@Table`, `@Id`, `@GeneratedValue` и `@Column`, использует `JpaRepository.findById` и `save`, получает ID от базы и возвращает его в `201 Created` с `Location`, настраивает Hibernate для создания схемы H2; связывает сущности через `@ManyToOne` и `@JoinColumn`, возвращает данные связанной гильдии через REST и проверяет целостность внешнего ключа; выбирает хранителей по ID связанной гильдии через производный метод Spring Data с сортировкой и преобразует сущности в DTO; объединяет три условия равенства через `And`, проверяет параметры URL и различает отсутствие гильдии и отсутствие совпадений; использует `GreaterThanEqual` и сортировку по двум полям `OrderByLevelDescIdAsc`; изменяет связь управляемой JPA-сущности внутри транзакционного сервиса без явного `save()`, применяя dirty checking; выполняет постраничную выборку через `Pageable` / `PageRequest`, преобразует `Page<сущность>` в DTO и возвращает корректные общие количества; загружает LAZY-связь через `@EntityGraph`, возвращает вложенный DTO и устраняет N+1 при постраничном чтении с отключённым Open Session in View; подключает приложение к PostgreSQL через JDBC-драйвер и переменные окружения, сохраняет данные после повторного открытия контекста; создаёт схему первой SQL-миграцией Flyway, задаёт ограничения базы и проверяет соответствие сущностям через Hibernate `validate`; обновляет существующую схему миграцией V2 с DEFAULT и CHECK, сохраняя строки, историю V1 и генерацию ID. Настраивает HTTP Basic, пользователей в памяти с BCrypt-хешами из конфигурации, публичные маршруты и доступ по ролям через SecurityFilterChain; различает 401 и 403. Загружает пользователей, сохранённые BCrypt-хеши и роли из PostgreSQL через собственный UserDetailsService; получает текущий логин через Principal и проверяет актуальность данных при изменении базы. Реализует регистрацию клиента с BCrypt-хешем через внедрённый PasswordEncoder, назначает роль на сервере и использует стандартную CSRF-защиту POST с токеном и HTTP-сессией. Защищает публичный метод Spring-сервиса через @EnableMethodSecurity и @PreAuthorize; подтверждает ограничения роли при HTTP-запросах и прямых вызовах Spring bean.
+- Текущий практический уровень: уверенно решает задачи на Java Core, ООП, коллекции и Stream API; освоил SQL, JDBC, HTTP и JSON; самостоятельно создаёт Spring Boot REST API с валидацией и внешней конфигурацией, читает и изменяет данные через JdbcTemplate, отображает результат SQL-изменения на HTTP-статусы и проверяет контракт через MockMvc; получает генерируемый БД BIGINT ID через Spring JDBC; применяет `@Transactional` для атомарных изменений нескольких строк и проверяет откат через интеграционный тест; самостоятельно отображает JPA-сущность на таблицу через `@Entity`, `@Table`, `@Id`, `@GeneratedValue` и `@Column`, использует `JpaRepository.findById` и `save`, получает ID от базы и возвращает его в `201 Created` с `Location`, настраивает Hibernate для создания схемы H2; связывает сущности через `@ManyToOne` и `@JoinColumn`, возвращает данные связанной гильдии через REST и проверяет целостность внешнего ключа; выбирает хранителей по ID связанной гильдии через производный метод Spring Data с сортировкой и преобразует сущности в DTO; объединяет три условия равенства через `And`, проверяет параметры URL и различает отсутствие гильдии и отсутствие совпадений; использует `GreaterThanEqual` и сортировку по двум полям `OrderByLevelDescIdAsc`; изменяет связь управляемой JPA-сущности внутри транзакционного сервиса без явного `save()`, применяя dirty checking; выполняет постраничную выборку через `Pageable` / `PageRequest`, преобразует `Page<сущность>` в DTO и возвращает корректные общие количества; загружает LAZY-связь через `@EntityGraph`, возвращает вложенный DTO и устраняет N+1 при постраничном чтении с отключённым Open Session in View; подключает приложение к PostgreSQL через JDBC-драйвер и переменные окружения, сохраняет данные после повторного открытия контекста; создаёт схему первой SQL-миграцией Flyway, задаёт ограничения базы и проверяет соответствие сущностям через Hibernate `validate`; обновляет существующую схему миграцией V2 с DEFAULT и CHECK, сохраняя строки, историю V1 и генерацию ID. Настраивает HTTP Basic, пользователей в памяти с BCrypt-хешами из конфигурации, публичные маршруты и доступ по ролям через SecurityFilterChain; различает 401 и 403. Загружает пользователей, сохранённые BCrypt-хеши и роли из PostgreSQL через собственный UserDetailsService; получает текущий логин через Principal и проверяет актуальность данных при изменении базы. Реализует регистрацию клиента с BCrypt-хешем через внедрённый PasswordEncoder, назначает роль на сервере и использует стандартную CSRF-защиту POST с токеном и HTTP-сессией. Защищает публичный метод Spring-сервиса через @EnableMethodSecurity и @PreAuthorize; подтверждает ограничения роли при HTTP-запросах и прямых вызовах Spring bean. Использует параметр метода через @P в выражении доступа, сравнивает его с authentication.name и разрешает чтение владельцу или аудитору; различает ошибку входа и отсутствие запрошенного профиля.
 
-- Ближайшая практика: доступ к банковскому профилю по параметру метода — клиент читает свой профиль, аудитор читает любой. Базовая сложность, ручная сборка с нуля; Docker и Testcontainers вводятся отдельно.
+- Ближайшая практика: исполняемый Spring Boot JAR и первый Docker-образ банковского API; запуск контейнера, публикация порта и конфигурация через переменные окружения. Базовая сложность, ручная сборка с нуля. Compose и PostgreSQL в контейнере — отдельные следующие шаги.
 
 ### Приобретённый стек
+
+[![Owner access](https://img.shields.io/badge/Spring_Security-Ownership_%26_SpEL-6DB33F?style=flat-square&logo=springsecurity&logoColor=white)](https://docs.spring.io/spring-security/reference/6.5/servlet/authorization/method-security.html#using-method-parameters)
 
 [![Method security](https://img.shields.io/badge/Spring_Security-PreAuthorize_%26_method_security-6DB33F?style=flat-square&logo=springsecurity&logoColor=white)](https://docs.spring.io/spring-security/reference/6.5/servlet/authorization/method-security.html)
 
@@ -165,7 +167,7 @@ JAVA_HOME=/home/kriksson/.jdks/temurin-21.0.12.1 PATH=/home/kriksson/.jdks/temur
 [![Hibernate](https://img.shields.io/badge/Hibernate-ORM-59666C?style=flat-square&logo=hibernate&logoColor=white)](https://hibernate.org/orm/documentation/)
 [![Conditional update](https://img.shields.io/badge/Spring_JDBC-UPDATE_row_count-6DB33F?style=flat-square&logo=spring&logoColor=white)](https://docs.spring.io/spring-framework/reference/data-access/jdbc/core.html)
 
-Java 21 · BigDecimal · Optional · Stream API · java.time · JUnit 5 · Maven · Git · GitHub Actions · SQL · PostgreSQL · JDBC · HTTP Client · HTTP Server · Jackson · Spring Boot · Bean Validation · Spring JDBC · H2 · GeneratedKeyHolder · SQL IDENTITY · JdbcTemplate UPDATE row count · Spring Data JPA · Hibernate · ManyToOne · Spring Data derived queries · Flyway · Hibernate schema validation · Spring Security · HTTP Basic · BCrypt · UserDetailsService · Principal · CSRF · Client registration · Method security
+Java 21 · BigDecimal · Optional · Stream API · java.time · JUnit 5 · Maven · Git · GitHub Actions · SQL · PostgreSQL · JDBC · HTTP Client · HTTP Server · Jackson · Spring Boot · Bean Validation · Spring JDBC · H2 · GeneratedKeyHolder · SQL IDENTITY · JdbcTemplate UPDATE row count · Spring Data JPA · Hibernate · ManyToOne · Spring Data derived queries · Flyway · Hibernate schema validation · Spring Security · HTTP Basic · BCrypt · UserDetailsService · Principal · CSRF · Client registration · Method security · Ownership checks
 
 - Подтверждённые навыки:
   - консольный ввод через `Scanner` и форматированный вывод;
@@ -322,10 +324,12 @@ Java 21 · BigDecimal · Optional · Stream API · java.time · JUnit 5 · Maven
 
   - @EnableMethodSecurity и @PreAuthorize на публичном методе Spring-сервиса, защита через Spring proxy и проверка прямых вызовов без HTTP; подтверждены 8 интеграционных тестов.
 
+  - параметр метода в @PreAuthorize через @P, сравнение с authentication.name, доступ владельца или AUDITOR, явная ошибка отсутствия профиля и прямые проверки защищённого сервиса; подтверждены 12 интеграционных тестов.
+
 ## Прогресс
 
-- Решено задач: **88**
-- Последняя решённая задача: [№88 — Банк: защита метода сервиса](tasks/completed/task_088_bank_method_security/README.md).
+- Решено задач: **89**
+- Последняя решённая задача: [№89 — Банк: доступ к своему профилю](tasks/completed/task_089_bank_profile_access/README.md).
 
 | № | Задача | Подтверждённые навыки | Статус |
 |---:|---|---|---|
@@ -422,14 +426,15 @@ Java 21 · BigDecimal · Optional · Stream API · java.time · JUnit 5 · Maven
 | 86 | Банк: вход пользователей из PostgreSQL | UserDetailsService, BCrypt-хеши и роли из базы, Principal, актуальные учётные данные | решена |
 | 87 | Банк: регистрация клиента | BCrypt при сохранении, роль на сервере, CSRF-токен и сессия, DTO регистрации и профиля | решена |
 | 88 | Банк: защита метода сервиса | @EnableMethodSecurity, @PreAuthorize, Spring proxy, доступ AUDITOR и прямые вызовы сервиса | решена |
+| 89 | Банк: доступ к своему профилю | параметр в @PreAuthorize, @P, authentication.name, доступ владельца или AUDITOR, разные ошибки входа и отсутствия данных | решена |
 
 ## Последняя решённая задача
 
-[Открыть архив задачи №88](tasks/completed/task_088_bank_method_security/README.md).
+[Открыть архив задачи №89](tasks/completed/task_089_bank_profile_access/README.md).
 
 ## Текущая задача
 
-[№89 — Банк: доступ к своему профилю](tasks/active/task_089_bank_profile_access/README.md). Базовая сложность: параметр метода в выражении @PreAuthorize, сравнение с authentication.name и доступ аудитора. Приложение, миграцию и конфигурацию ученик создаёт с нуля.
+[№90 — Банк: первый Docker-образ API](tasks/active/task_090_bank_docker_image/README.md). Базовая сложность: исполняемый Spring Boot JAR, Dockerfile, запуск контейнера, публикация порта и переменные окружения. Код, настройки сборки и Dockerfile ученик создаёт с нуля.
 
 ## Структура
 
