@@ -36,11 +36,13 @@
 - ООП: инкапсуляция, наследование, `Object`, статика, константы, перечисления, абстракция и полиморфизм;
 - дженерики, unit-тесты, анализ проблем и итоговые проекты.
 - современный Java: лямбды, Stream API, дата и время;
-- SQL, PostgreSQL и проектирование реляционных данных;
+- SQL, PostgreSQL и проектирование реляционных данных; углублённые запросы, индексы, планы выполнения и конкурентные транзакции;
 - JDBC и работа Java-приложения с базой данных;
 - HTTP, REST API и Spring Boot;
 - Spring JDBC, Spring Data JPA / Hibernate и транзакции;
-- безопасность API, интеграционные тесты, контейнеризация и CI;
+- безопасность API, OAuth 2.0 / OpenID Connect и интеграционные тесты;
+- Docker и Docker Compose: сборка образов и запуск приложения с PostgreSQL;
+- CI/CD через GitHub Actions: проверки, публикация образов и развёртывание;
 - самостоятельные backend-проекты от проектирования до запуска.
 
 ### Целевой стек Java backend junior
@@ -52,23 +54,33 @@
 | Java | Java 21, ООП, коллекции, дженерики, исключения, Stream API, `java.time`; основы JVM, потоков и `ExecutorService` | Самостоятельно проектировать модель, обрабатывать ошибки и понимать базовые проблемы общего изменяемого состояния |
 | Сборка и инструменты | Maven, Maven Wrapper, Git/GitHub, IntelliJ IDEA, отладчик, Linux и командная строка | Создавать проект, управлять зависимостями, собирать JAR, отлаживать код и работать с ветками |
 | HTTP и API | HTTP/REST, JSON/Jackson, Spring Boot, Spring MVC, Bean Validation | Создавать CRUD API с DTO, фильтрацией, пагинацией, корректными статусами и единым форматом ошибок |
-| SQL и база данных | PostgreSQL, SQL, связи и ограничения, индексы, `EXPLAIN`, транзакции | Проектировать схему, писать запросы, обеспечивать целостность данных и разбирать медленные запросы на базовом уровне |
+| SQL и база данных | PostgreSQL, проектирование и нормализация схемы, JOIN и агрегирование, подзапросы и EXISTS, CTE, оконные функции, составные и частичные индексы, `EXPLAIN (ANALYZE, BUFFERS)`, MVCC, уровни изоляции, блокировки и deadlock | Писать отчёты сложнее CRUD, читать планы выполнения, обоснованно выбирать индексы и проверять поведение конкурентных транзакций |
 | Доступ к данным | JDBC / `JdbcTemplate`, Spring Data JPA, Hibernate, `@Transactional` | Связывать API с базой, моделировать отношения, управлять транзакциями и замечать проблему N+1 |
 | Миграции | Flyway как основной инструмент; знакомство с Liquibase | Версионировать схему и разворачивать базу вместе с приложением |
 | Безопасность | Spring Security, аутентификация и авторизация, роли, хеширование паролей, основы сессий и bearer-токенов | Ограничивать доступ к endpoint, различать `401` и `403`, хранить пароли корректно и использовать стандартные механизмы защиты |
+| OAuth 2.0 и OpenID Connect | Роли client / authorization server / resource server, Authorization Code с PKCE, scopes, access / refresh / ID token; Spring Security OAuth2 Client и Resource Server, проверка JWT | Подключить вход через провайдера OpenID Connect и защитить отдельное API access-токеном, проверяя его подпись, issuer, audience, срок действия и права |
 | Тестирование | JUnit 5, Mockito, MockMvc, Spring Boot Test, Testcontainers с PostgreSQL | Писать unit- и интеграционные тесты, проверять HTTP-контракт, SQL и откат транзакций |
 | Документация API | OpenAPI/Swagger, `curl` или Postman, README проекта | Описывать запросы и ответы и давать воспроизводимые команды запуска и проверки |
-| Запуск приложения | Docker, Docker Compose, переменные окружения, Spring profiles | Собрать образ приложения и поднять приложение с PostgreSQL одной командой |
+| Docker и Compose | Dockerfile, сборка в несколько этапов, образы и контейнеры, registry и теги; `compose.yaml`, сети, volumes, healthcheck, зависимости сервисов, переменные окружения и Spring profiles | Самостоятельно собрать образ, поднять API с PostgreSQL одной командой, сохранить данные при пересоздании контейнеров и диагностировать запуск через логи |
 | Диагностика | SLF4J/Logback, уровни логирования, Spring Boot Actuator | Читать логи, находить причины ошибок и проверять состояние приложения через health endpoint |
-| CI | GitHub Actions: сборка, тесты и создание артефакта или Docker-образа | Автоматически проверять изменения и получать готовый результат сборки |
+| CI/CD | GitHub Actions: сборка, unit- и интеграционные тесты с PostgreSQL, артефакты, публикация Docker-образа, environments и secrets, развёртывание на Linux через Compose, проверка health и откат версии | Построить путь от коммита до работающего тестового окружения: проверить код, опубликовать версию, развернуть её, проверить запуск и вернуть предыдущую версию при неудаче |
 
-Порядок backend-практики: Spring MVC и валидация → Spring JDBC и PostgreSQL → JPA/Hibernate и транзакции → миграции → безопасность → Testcontainers, Docker и CI → итоговый проект. Знакомые инструменты тестирования, Git и Maven используются на каждом этапе.
+Docker и Compose, углублённый SQL, CI/CD и OAuth 2.0 / OpenID Connect входят в основную программу. Это будущие учебные блоки; подтверждённые навыки добавляются только после успешных практических задач.
 
-Готовность к итоговому проекту: ученик с нуля создаёт REST API с PostgreSQL, миграциями, ролями доступа, тестами, документацией и запуском через Docker Compose; умеет объяснить архитектуру и исправить найденную ошибку.
+Порядок backend-практики: Spring MVC и валидация → Spring JDBC и PostgreSQL → JPA/Hibernate и транзакции → миграции → Spring Security → Docker и Compose, Testcontainers → OAuth 2.0 / OpenID Connect → CI/CD и развёртывание → итоговый проект. Углублённый SQL возвращается отдельными задачами после освоения доступа к данным. Порядок гибкий; знакомые инструменты тестирования, Git и Maven используются на каждом этапе.
+
+### Практические границы новых блоков
+
+- **Docker и Compose:** ручное создание Dockerfile и `compose.yaml`; API и PostgreSQL в отдельных контейнерах; адреса сервисов внутри сети; хранение базы в volume; ожидание готовности PostgreSQL; внешняя конфигурация, просмотр логов и обновление образа.
+- **SQL глубже базового уровня:** отчёты через JOIN, подзапросы, CTE и оконные функции; разбор `EXPLAIN (ANALYZE, BUFFERS)`; сравнение запросов до и после индекса; изоляция транзакций, блокировки строк и воспроизводимые ситуации конкурентного изменения данных.
+- **CI/CD:** CI собирает и проверяет изменение, CD доставляет проверенную версию в окружение. Практика включает интеграционные тесты с PostgreSQL, публикацию образа с конкретным тегом, развёртывание на учебном Linux-сервере, применение миграций, проверку health и откат приложения. Откат образа и откат схемы базы рассматриваются отдельно; миграции не считаются автоматически обратимыми.
+- **OAuth 2.0 / OpenID Connect:** сначала назначение протоколов и путь запроса, затем Authorization Code с PKCE, вход через провайдера и Resource Server. Различаем выдачу прав доступа через OAuth 2.0 и аутентификацию через OpenID Connect, access token для API и ID token для клиента. Учимся использовать стандартные компоненты Spring Security и локального учебного провайдера; собственный OAuth-сервер и криптографию не пишем.
+
+Готовность к итоговому проекту: ученик с нуля создаёт REST API с PostgreSQL, миграциями, ролями доступа, тестами и документацией; умеет реализовать сложный SQL-отчёт и объяснить план запроса, подключить OpenID Connect / OAuth 2.0, собрать приложение через Docker Compose и настроить CI/CD до учебного окружения; объясняет архитектуру, диагностирует ошибки и выполняет откат версии приложения.
 
 Дополнительные темы после основного стека: Redis, Kafka/RabbitMQ, Gradle, углублённая многопоточность и микросервисы. Их вводим по потребности проекта. Kubernetes и сложная распределённая инфраструктура остаются за границами базового курса.
 
-Материал для практики: [Spring Boot и SQL/JPA](https://docs.spring.io/spring-boot/3.5/reference/data/sql.html), [миграции и инициализация базы](https://docs.spring.io/spring-boot/3.5/how-to/data-initialization.html), [Spring Security](https://docs.spring.io/spring-security/reference/servlet/index.html), [Testcontainers в Spring Boot](https://docs.spring.io/spring-boot/3.5/reference/testing/testcontainers.html), [модель приложения Docker Compose](https://docs.docker.com/compose/intro/compose-application-model/).
+Материал для практики: [Spring Boot и SQL/JPA](https://docs.spring.io/spring-boot/3.5/reference/data/sql.html), [миграции и инициализация базы](https://docs.spring.io/spring-boot/3.5/how-to/data-initialization.html), [Spring Security](https://docs.spring.io/spring-security/reference/servlet/index.html), [Testcontainers в Spring Boot](https://docs.spring.io/spring-boot/3.5/reference/testing/testcontainers.html), [модель приложения Docker Compose](https://docs.docker.com/compose/intro/compose-application-model/), [оконные функции PostgreSQL](https://www.postgresql.org/docs/current/tutorial-window.html), [OAuth 2.0 в Spring Security](https://docs.spring.io/spring-security/reference/6.5/servlet/oauth2/index.html), [развёртывание через GitHub Actions](https://docs.github.com/en/actions/how-tos/deploy/configure-and-manage-deployments/control-deployments).
 
 ## Команды
 
@@ -388,26 +400,22 @@ Java 21 · BigDecimal · Optional · Stream API · java.time · JUnit 5 · Maven
 | 73 | Найти хранителя через Spring Data JPA | JPA-сущность и явное отображение колонок, Spring Data `findById`, генерация схемы Hibernate, чтение через REST и MockMvc | решена |
 | 74 | Создать хранителя через Spring Data JPA | `JpaRepository.save`, identity ID, `201 Created`, `Location`, интеграционная проверка через MockMvc | решена |
 
+Продолжение прогресса:
+
+| № | Задача | Подтверждённые навыки | Статус |
+|---:|---|---|---|
 | 75 | Хранитель в гильдии через JPA-связь | `@ManyToOne`, `@JoinColumn`, внешний ключ, вложенный JSON и `404` | решена |
-
 | 76 | Хранители одной гильдии | производный запрос по связи, `OrderBy`, `existsById`, DTO, актуальные данные и `200`/`404` | решена |
-
 | 77 | Поиск хранителей в гильдии | три условия через `And`, путь по связи, точное сравнение, валидация параметров URL и DTO | решена |
-
 | 78 | Хранители для сложного рейда | `GreaterThanEqual`, два поля в `OrderBy`, границы уровня, изоляция гильдий и DTO | решена |
-
 | 79 | Перевод хранителя в другую гильдию | managed entity, dirty checking, транзакционный сервис, изменение связи без `save()`, идемпотентный `PUT` | решена |
-
 | 80 | Хранители гильдии по страницам | `Pageable`, `PageRequest`, `Page`, `Page.map`, общие количества, стабильные страницы и DTO | решена |
-
 | 81 | Страница хранителей без N+1 | LAZY, `@EntityGraph`, вложенный DTO, отключённый Open Session in View, проверка SQL-запросов | решена |
 | 82 | Рекруты в PostgreSQL | Внешний PostgreSQL, JDBC-драйвер, переменные окружения, сохранение схемы и данных между запусками | решена |
 | 83 | Первая миграция Flyway | V1, история миграций, SQL-ограничения, `ddl-auto=validate`, сохранение данных и проверка несовместимой схемы | решена |
 | 84 | Миграция V2: монеты существующих рекрутов | ALTER TABLE, DEFAULT/NOT NULL/CHECK, сохранение данных и истории V1, обновление сущности и DTO | решена |
 | 85 | Первое подключение Spring Security | HTTP Basic, BCrypt, пользователи в памяти, SecurityFilterChain, доступ по ролям и 401/403 | решена |
-
 | 86 | Банк: вход пользователей из PostgreSQL | UserDetailsService, BCrypt-хеши и роли из базы, Principal, актуальные учётные данные | решена |
-
 | 87 | Банк: регистрация клиента | BCrypt при сохранении, роль на сервере, CSRF-токен и сессия, DTO регистрации и профиля | решена |
 
 ## Последняя решённая задача
