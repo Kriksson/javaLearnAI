@@ -123,6 +123,8 @@ JAVA_HOME=/home/kriksson/.jdks/temurin-21.0.12.1 PATH=/home/kriksson/.jdks/temur
 
 ### Приобретённый стек
 
+[![PostgreSQL in Compose](https://img.shields.io/badge/PostgreSQL-Compose_network-4169E1?style=flat-square&logo=postgresql&logoColor=white)](https://docs.docker.com/compose/how-tos/networking/)
+
 [![Docker Compose](https://img.shields.io/badge/Docker-Compose_%26_environment-2496ED?style=flat-square&logo=docker&logoColor=white)](https://docs.docker.com/compose/intro/compose-application-model/)
 
 [![Docker Engine](https://img.shields.io/badge/Docker-Engine_%26_Dockerfile-2496ED?style=flat-square&logo=docker&logoColor=white)](https://docs.docker.com/get-started/docker-concepts/the-basics/what-is-an-image/)
@@ -335,10 +337,12 @@ Java 21 · BigDecimal · Optional · Stream API · java.time · JUnit 5 · Maven
 
   - Docker Compose для одного API, локальная сборка образа через build, подстановка настроек из файла окружения, приоритет терминала, публикация свободного порта и пересоздание контейнера без пересборки; подтверждены 9 контейнерных тестов.
 
+  - API и PostgreSQL 17 в отдельных контейнерах Compose, подключение по имени сервиса db без публикации порта базы, согласованные настройки соединения, Flyway V1 и актуальный SQL-счётчик через Spring JDBC; подтверждены 9 контейнерных тестов.
+
 ## Прогресс
 
-- Решено задач: **91**
-- Последняя решённая задача: [№91 — Банк: запуск API через Docker Compose](tasks/completed/task_091_bank_compose_config/README.md).
+- Решено задач: **92**
+- Последняя решённая задача: [№92 — Банк: API и PostgreSQL в Docker Compose](tasks/completed/task_092_bank_compose_postgres/README.md).
 
 | № | Задача | Подтверждённые навыки | Статус |
 |---:|---|---|---|
@@ -438,14 +442,15 @@ Java 21 · BigDecimal · Optional · Stream API · java.time · JUnit 5 · Maven
 | 89 | Банк: доступ к своему профилю | параметр в @PreAuthorize, @P, authentication.name, доступ владельца или AUDITOR, разные ошибки входа и отсутствия данных | решена |
 | 90 | Банк: первый Docker-образ API | исполняемый JAR, repackage, Dockerfile, .dockerignore, Docker Engine, публикация порта и окружение | решена |
 | 91 | Банк: запуск API через Docker Compose | build, compose.yaml, файл окружения, интерполяция, приоритет терминала, пересоздание контейнера и сохранённый образ | решена |
+| 92 | Банк: API и PostgreSQL в Docker Compose | два контейнера, DNS сервиса db, переменные соединения, Flyway V1, SQL COUNT и пересоздание API | решена |
 
 ## Последняя решённая задача
 
-[Открыть архив задачи №91](tasks/completed/task_091_bank_compose_config/README.md).
+[Открыть архив задачи №92](tasks/completed/task_092_bank_compose_postgres/README.md).
 
 ## Текущая задача
 
-Следующая практика №92: API и PostgreSQL в Docker Compose. Условие и тесты создаются после отправки архива №91.
+№93 — Банк: сохранение PostgreSQL в именованном volume. Условие и тесты будут созданы после публикации завершённой №92.
 
 ## Структура
 
