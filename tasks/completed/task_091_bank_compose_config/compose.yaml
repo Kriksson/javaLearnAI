@@ -1,0 +1,9 @@
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "127.0.0.1:${BANK_HTTP_PORT:-8085}:8080"
+    environment:
+      BANK_REGION: ${BANK_REGION-Local}
