@@ -1,0 +1,21 @@
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "127.0.0.1:${BANK_HTTP_PORT:-8085}:8080"
+    environment:
+      SPRING_DATASOURCE_URL: "jdbc:postgresql://db:5432/${BANK_DB_NAME:-bank_lab}"
+      SPRING_DATASOURCE_USERNAME: "${BANK_DB_USER:-bank_app}"
+      SPRING_DATASOURCE_PASSWORD: "${BANK_DB_PASSWORD:-learning-only}"
+  db:
+    image: postgres:17-alpine
+    volumes:
+      - bank_data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_DB: "${BANK_DB_NAME:-bank_lab}"
+      POSTGRES_USER: "${BANK_DB_USER:-bank_app}"
+      POSTGRES_PASSWORD: "${BANK_DB_PASSWORD:-learning-only}"
+volumes:
+  bank_data:
