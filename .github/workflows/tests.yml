@@ -26,3 +26,17 @@ jobs:
 
       - name: Verify archived Actuator task 097
         run: bash ./mvnw --batch-mode --no-transfer-progress -f tasks/completed/task_097_bank_actuator_probes/pom.xml test
+
+      - name: Verify archived logging task 098
+        run: bash ./mvnw --batch-mode --no-transfer-progress -f tasks/completed/task_098_bank_expense_logging/pom.xml clean test
+
+      - name: Keep course test reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: course-test-reports
+          path: |
+            tasks/completed/task_097_bank_actuator_probes/target/surefire-reports/
+            tasks/completed/task_098_bank_expense_logging/target/surefire-reports/
+          retention-days: 7
+          if-no-files-found: warn
