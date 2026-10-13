@@ -23,3 +23,6 @@ jobs:
 
       - name: Run tests
         run: bash ./mvnw --batch-mode --no-transfer-progress test
+
+      - name: Verify archived Actuator task 097
+        run: bash ./mvnw --batch-mode --no-transfer-progress -f tasks/completed/task_097_bank_actuator_probes/pom.xml test
