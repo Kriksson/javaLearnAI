@@ -39,6 +39,9 @@ jobs:
       - name: Verify archived SMS concurrency task 101
         run: bash ./mvnw --batch-mode --no-transfer-progress -DfailIfNoTests=true -f tasks/completed/task_101_bank_sms_concurrency/pom.xml clean test
 
+      - name: Verify archived SMS retry and DLT task 102
+        run: bash ./mvnw --batch-mode --no-transfer-progress -DfailIfNoTests=true -f tasks/completed/task_102_bank_sms_retry_dlt/pom.xml clean test
+
       - name: Keep course test reports
         if: always()
         uses: actions/upload-artifact@v4
@@ -50,5 +53,6 @@ jobs:
             tasks/completed/task_099_bank_kafka_notifications/target/surefire-reports/
             tasks/completed/task_100_bank_kafka_groups/target/surefire-reports/
             tasks/completed/task_101_bank_sms_concurrency/target/surefire-reports/
+            tasks/completed/task_102_bank_sms_retry_dlt/target/surefire-reports/
           retention-days: 7
           if-no-files-found: warn
