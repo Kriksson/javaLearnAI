@@ -10,6 +10,7 @@ import org.apache.kafka.clients.consumer.KafkaConsumer;
 import org.apache.kafka.clients.producer.KafkaProducer;
 import org.apache.kafka.clients.producer.ProducerConfig;
 import org.apache.kafka.clients.producer.ProducerRecord;
+import org.apache.kafka.common.ConsumerGroupState;
 import org.apache.kafka.common.TopicPartition;
 import org.apache.kafka.common.serialization.StringDeserializer;
 import org.apache.kafka.common.serialization.StringSerializer;
@@ -83,16 +84,25 @@ class BankSmsConcurrencyTest {
         GATEWAY.release();
         assertTrue(registry.getListenerContainers().stream().anyMatch(c -> GROUP.equals(c.getGroupId())),
                 "Нужен listener группы " + GROUP);
-        await().atMost(Duration.ofSeconds(20)).untilAsserted(() -> {
-            var assigned = new HashSet<TopicPartition>();
-            for (MessageListenerContainer container : registry.getListenerContainers()) {
-                if (GROUP.equals(container.getGroupId())) {
-                    assertTrue(container.isRunning());
-                    if (container.getAssignedPartitions() != null) assigned.addAll(container.getAssignedPartitions());
+        try (var admin = AdminClient.create(Map.of("bootstrap.servers", KAFKA.getBootstrapServers()))) {
+            await().atMost(Duration.ofSeconds(20)).untilAsserted(() -> {
+                var assigned = new HashSet<TopicPartition>();
+                for (MessageListenerContainer container : registry.getListenerContainers()) {
+                    if (GROUP.equals(container.getGroupId())) {
+                        assertTrue(container.isRunning());
+                        if (container.getAssignedPartitions() != null) assigned.addAll(container.getAssignedPartitions());
+                    }
                 }
-            }
-            assertEquals(Set.copyOf(PARTITIONS), assigned);
-        });
+                assertEquals(Set.copyOf(PARTITIONS), assigned);
+                // Один consumer тоже может читать все partitions. Ждём завершения
+                // присоединения всех трёх, прежде чем удерживать HTTP-ответы.
+                var group = admin.describeConsumerGroups(List.of(GROUP)).all()
+                        .get(5, TimeUnit.SECONDS).get(GROUP);
+                assertEquals(ConsumerGroupState.STABLE, group.state());
+                assertEquals(3, group.members().size());
+                group.members().forEach(member -> assertEquals(1, member.assignment().topicPartitions().size()));
+            });
+        }
     }
 
     @AfterAll
@@ -185,7 +195,8 @@ class BankSmsConcurrencyTest {
             JsonNode marker = publishDirectly(markerId, "Другая partition", 1);
             eventuallyEquals(markerId, json.createArrayNode().add(marker));
             await().during(Duration.ofMillis(300)).atMost(Duration.ofSeconds(2)).untilAsserted(() -> {
-                assertEquals(1, GATEWAY.callsFor(id).size(), "Следующая запись той же partition ждёт завершения первой");
+                assertEquals(1, GATEWAY.callsFor(id).size(),
+                        () -> "Следующая запись той же partition ждёт завершения первой: " + GATEWAY.callsFor(id));
                 assertEquals(json.createArrayNode(), read(id));
             });
         } finally {
