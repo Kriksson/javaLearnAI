@@ -1,8 +1,39 @@
-# Практическое изучение Java
+<picture>
+  <source media="(prefers-reduced-motion: reduce) and (max-width: 600px)" srcset="docs/readme/hero-mobile.svg">
+  <source media="(prefers-reduced-motion: reduce)" srcset="docs/readme/hero.svg">
+  <source media="(max-width: 600px)" srcset="docs/readme/motion/hero-mobile.svg">
+  <img src="docs/readme/motion/hero.svg" alt="javaLearnAI" width="100%">
+</picture>
 
-Персональный тренажёр с гибкой прогрессией: каждое задание закрепляет освоенные навыки и добавляет новые понятия из выбранной программы.
+Персональный тренажёр по Java Backend: задачи, решения, примеры и подтверждённый прогресс. Код приложения, конфигурацию, миграции и сборку пишу самостоятельно; автоматические тесты и учебную инфраструктуру готовит ИИ-тренер.
 
-## Как работаем
+<h2 id="архив-и-проверка">
+<picture>
+  <source media="(prefers-reduced-motion: reduce) and (max-width: 600px)" srcset="docs/readme/headings/section-1-mobile.svg">
+  <source media="(prefers-reduced-motion: reduce)" srcset="docs/readme/headings/section-1.svg">
+  <source media="(max-width: 600px)" srcset="docs/readme/motion/headings/section-1-mobile.svg">
+  <img src="docs/readme/motion/headings/section-1.svg" alt="Архив и проверка" width="100%">
+</picture>
+</h2>
+
+В репозитории сохранены 102 завершённые задачи. Последняя — [№102: повторная отправка SMS и DLT](tasks/completed/task_102_bank_sms_retry_dlt/README.md). Активной задачи сейчас нет.
+
+Для проверки архивной задачи запускайте её собственный `pom.xml`. Например, из корня репозитория с JDK 21 и работающим Docker:
+
+```bash
+bash ./mvnw -f tasks/completed/task_102_bank_sms_retry_dlt/pom.xml test
+```
+
+Корневой `mvnw test` проверяет рабочую область текущей задачи; при пустом `src/test` он не проверяет весь архив. Условия и отдельные примеры остаются рядом с решениями.
+
+<h2 id="как-работаем">
+<picture>
+  <source media="(prefers-reduced-motion: reduce) and (max-width: 600px)" srcset="docs/readme/headings/section-2-mobile.svg">
+  <source media="(prefers-reduced-motion: reduce)" srcset="docs/readme/headings/section-2.svg">
+  <source media="(max-width: 600px)" srcset="docs/readme/motion/headings/section-2-mobile.svg">
+  <img src="docs/readme/motion/headings/section-2.svg" alt="Как работаем" width="100%">
+</picture>
+</h2>
 
 1. Тренер создаёт условие, отдельные учебные примеры, все автоматические тесты и необходимую тестовую инфраструктуру.
 2. Ученик самостоятельно проектирует и собирает проект с нуля, реализует решение и пишет: **«Решил»**.
@@ -14,7 +45,14 @@
 
 Новые задания могут смешивать знания из разных разделов программы. После уверенного Java Core программа расширена на следующий этап backend-разработки.
 
-## Формат задач: проектирование и сборка с нуля
+<h2 id="формат-задач-проектирование-и-сборка-с-нуля">
+<picture>
+  <source media="(prefers-reduced-motion: reduce) and (max-width: 600px)" srcset="docs/readme/headings/section-3-mobile.svg">
+  <source media="(prefers-reduced-motion: reduce)" srcset="docs/readme/headings/section-3.svg">
+  <source media="(max-width: 600px)" srcset="docs/readme/motion/headings/section-3-mobile.svg">
+  <img src="docs/readme/motion/headings/section-3.svg" alt="Формат задач: проектирование и сборка с нуля" width="100%">
+</picture>
+</h2>
 
 Предпочтение Кирилла для текущей и следующих задач — самостоятельно создавать проект и весь код приложения.
 
@@ -27,7 +65,14 @@
 
 До создания приложения тесты могут завершаться ошибкой отсутствующей конфигурации или реализации. Это ожидаемое начальное состояние; задача засчитывается только после успешного запуска тестов и проверки ограничений.
 
-## Границы курса
+<h2 id="границы-курса">
+<picture>
+  <source media="(prefers-reduced-motion: reduce) and (max-width: 600px)" srcset="docs/readme/headings/section-4-mobile.svg">
+  <source media="(prefers-reduced-motion: reduce)" srcset="docs/readme/headings/section-4.svg">
+  <source media="(max-width: 600px)" srcset="docs/readme/motion/headings/section-4-mobile.svg">
+  <img src="docs/readme/motion/headings/section-4.svg" alt="Границы курса" width="100%">
+</picture>
+</h2>
 
 Пройденный фундамент и следующие этапы обучения:
 
@@ -84,7 +129,14 @@ Docker и Compose, углублённый SQL, CI/CD и OAuth 2.0 / OpenID Conne
 
 Материал для практики: [Spring Boot и SQL/JPA](https://docs.spring.io/spring-boot/3.5/reference/data/sql.html), [миграции и инициализация базы](https://docs.spring.io/spring-boot/3.5/how-to/data-initialization.html), [Spring Security](https://docs.spring.io/spring-security/reference/servlet/index.html), [Testcontainers в Spring Boot](https://docs.spring.io/spring-boot/3.5/reference/testing/testcontainers.html), [модель приложения Docker Compose](https://docs.docker.com/compose/intro/compose-application-model/), [оконные функции PostgreSQL](https://www.postgresql.org/docs/current/tutorial-window.html), [OAuth 2.0 в Spring Security](https://docs.spring.io/spring-security/reference/6.5/servlet/oauth2/index.html), [развёртывание через GitHub Actions](https://docs.github.com/en/actions/how-tos/deploy/configure-and-manage-deployments/control-deployments).
 
-## Команды
+<h2 id="команды">
+<picture>
+  <source media="(prefers-reduced-motion: reduce) and (max-width: 600px)" srcset="docs/readme/headings/section-5-mobile.svg">
+  <source media="(prefers-reduced-motion: reduce)" srcset="docs/readme/headings/section-5.svg">
+  <source media="(max-width: 600px)" srcset="docs/readme/motion/headings/section-5-mobile.svg">
+  <img src="docs/readme/motion/headings/section-5.svg" alt="Команды" width="100%">
+</picture>
+</h2>
 
 - `Решил` / `Проверь задание` — проверить, архивировать и отправить успешное решение.
 - `Ещё задание` / `Следующая задача` — получить следующий шаг прогрессии.
@@ -92,7 +144,14 @@ Docker и Compose, углублённый SQL, CI/CD и OAuth 2.0 / OpenID Conne
 - `Подсказка`, `Упрости`, `Объясни ...` — получить помощь без готового решения.
 - `Покажи прогресс` — увидеть общий счётчик, навыки и текущую задачу.
 
-## Проверка
+<h2 id="проверка">
+<picture>
+  <source media="(prefers-reduced-motion: reduce) and (max-width: 600px)" srcset="docs/readme/headings/section-6-mobile.svg">
+  <source media="(prefers-reduced-motion: reduce)" srcset="docs/readme/headings/section-6.svg">
+  <source media="(max-width: 600px)" srcset="docs/readme/motion/headings/section-6-mobile.svg">
+  <img src="docs/readme/motion/headings/section-6.svg" alt="Проверка" width="100%">
+</picture>
+</h2>
 
 Windows:
 
@@ -114,7 +173,14 @@ JAVA_HOME=/home/kriksson/.jdks/temurin-21.0.12.1 PATH=/home/kriksson/.jdks/temur
 
 Для запуска из IntelliJ IDEA выбери этот JDK 21 в Project SDK и настройках запуска. Spring Boot 3.5.16 поддерживает Java 17–25; прежняя рекомендация использовать JDK 27 исправлена. [Требования Spring Boot](https://docs.spring.io/spring-boot/3.5/system-requirements.html).
 
-## Профиль ученика
+<h2 id="профиль-ученика">
+<picture>
+  <source media="(prefers-reduced-motion: reduce) and (max-width: 600px)" srcset="docs/readme/headings/section-7-mobile.svg">
+  <source media="(prefers-reduced-motion: reduce)" srcset="docs/readme/headings/section-7.svg">
+  <source media="(max-width: 600px)" srcset="docs/readme/motion/headings/section-7-mobile.svg">
+  <img src="docs/readme/motion/headings/section-7.svg" alt="Профиль ученика" width="100%">
+</picture>
+</h2>
 
 - Имя: Кирилл
 - Исходный опыт: небольшой опыт в Java Core
@@ -125,66 +191,66 @@ JAVA_HOME=/home/kriksson/.jdks/temurin-21.0.12.1 PATH=/home/kriksson/.jdks/temur
 
 ### Приобретённый стек
 
-[![Apache Kafka](https://img.shields.io/badge/Apache_Kafka-Spring_Kafka-231F20?style=flat-square&logo=apachekafka&logoColor=white)](https://docs.spring.io/spring-boot/3.5/reference/messaging/kafka.html)
+[![Apache Kafka](https://img.shields.io/badge/Apache_Kafka-Spring_Kafka-231F20?style=flat-square&logo=apachekafka&logoColor=white&color=161b22&labelColor=303b49&logoColor=d4a478)](https://docs.spring.io/spring-boot/3.5/reference/messaging/kafka.html)
 
-[![PostgreSQL in Compose](https://img.shields.io/badge/PostgreSQL-Compose_network-4169E1?style=flat-square&logo=postgresql&logoColor=white)](https://docs.docker.com/compose/how-tos/networking/)
+[![PostgreSQL in Compose](https://img.shields.io/badge/PostgreSQL-Compose_network-4169E1?style=flat-square&logo=postgresql&logoColor=white&color=161b22&labelColor=303b49&logoColor=d4a478)](https://docs.docker.com/compose/how-tos/networking/)
 
-[![SLF4J](https://img.shields.io/badge/SLF4J-Logback_%26_levels-1572B6?style=flat-square)](https://slf4j.org/manual.html)
+[![SLF4J](https://img.shields.io/badge/SLF4J-Logback_%26_levels-1572B6?style=flat-square&color=161b22&labelColor=303b49&logoColor=d4a478)](https://slf4j.org/manual.html)
 
-[![Actuator](https://img.shields.io/badge/Spring_Boot-Actuator_health_%26_probes-6DB33F?style=flat-square&logo=springboot&logoColor=white)](https://docs.spring.io/spring-boot/3.5/reference/actuator/endpoints.html)
+[![Actuator](https://img.shields.io/badge/Spring_Boot-Actuator_health_%26_probes-6DB33F?style=flat-square&logo=springboot&logoColor=white&color=161b22&labelColor=303b49&logoColor=d4a478)](https://docs.spring.io/spring-boot/3.5/reference/actuator/endpoints.html)
 
-[![Testcontainers](https://img.shields.io/badge/Testcontainers-PostgreSQL_%26_Kafka-2496ED?style=flat-square&logo=docker&logoColor=white)](https://java.testcontainers.org/modules/databases/postgres/)
-[![Docker Multi-stage](https://img.shields.io/badge/Docker-Multi--stage_%26_Maven-2496ED?style=flat-square&logo=docker&logoColor=white)](https://docs.docker.com/build/building/multi-stage/)
-[![Docker Healthcheck](https://img.shields.io/badge/Docker-Healthcheck_%26_dependencies-2496ED?style=flat-square&logo=docker&logoColor=white)](https://docs.docker.com/compose/how-tos/startup-order/)
-[![Docker Volumes](https://img.shields.io/badge/Docker-Named_volumes-2496ED?style=flat-square&logo=docker&logoColor=white)](https://docs.docker.com/engine/storage/volumes/)
-[![Docker Compose](https://img.shields.io/badge/Docker-Compose_%26_environment-2496ED?style=flat-square&logo=docker&logoColor=white)](https://docs.docker.com/compose/intro/compose-application-model/)
+[![Testcontainers](https://img.shields.io/badge/Testcontainers-PostgreSQL_%26_Kafka-2496ED?style=flat-square&logo=docker&logoColor=white&color=161b22&labelColor=303b49&logoColor=d4a478)](https://java.testcontainers.org/modules/databases/postgres/)
+[![Docker Multi-stage](https://img.shields.io/badge/Docker-Multi--stage_%26_Maven-2496ED?style=flat-square&logo=docker&logoColor=white&color=161b22&labelColor=303b49&logoColor=d4a478)](https://docs.docker.com/build/building/multi-stage/)
+[![Docker Healthcheck](https://img.shields.io/badge/Docker-Healthcheck_%26_dependencies-2496ED?style=flat-square&logo=docker&logoColor=white&color=161b22&labelColor=303b49&logoColor=d4a478)](https://docs.docker.com/compose/how-tos/startup-order/)
+[![Docker Volumes](https://img.shields.io/badge/Docker-Named_volumes-2496ED?style=flat-square&logo=docker&logoColor=white&color=161b22&labelColor=303b49&logoColor=d4a478)](https://docs.docker.com/engine/storage/volumes/)
+[![Docker Compose](https://img.shields.io/badge/Docker-Compose_%26_environment-2496ED?style=flat-square&logo=docker&logoColor=white&color=161b22&labelColor=303b49&logoColor=d4a478)](https://docs.docker.com/compose/intro/compose-application-model/)
 
-[![Docker Engine](https://img.shields.io/badge/Docker-Engine_%26_Dockerfile-2496ED?style=flat-square&logo=docker&logoColor=white)](https://docs.docker.com/get-started/docker-concepts/the-basics/what-is-an-image/)
-[![Executable JAR](https://img.shields.io/badge/Spring_Boot-Executable_JAR-6DB33F?style=flat-square&logo=springboot&logoColor=white)](https://docs.spring.io/spring-boot/3.5/maven-plugin/packaging.html)
+[![Docker Engine](https://img.shields.io/badge/Docker-Engine_%26_Dockerfile-2496ED?style=flat-square&logo=docker&logoColor=white&color=161b22&labelColor=303b49&logoColor=d4a478)](https://docs.docker.com/get-started/docker-concepts/the-basics/what-is-an-image/)
+[![Executable JAR](https://img.shields.io/badge/Spring_Boot-Executable_JAR-6DB33F?style=flat-square&logo=springboot&logoColor=white&color=161b22&labelColor=303b49&logoColor=d4a478)](https://docs.spring.io/spring-boot/3.5/maven-plugin/packaging.html)
 
-[![Owner access](https://img.shields.io/badge/Spring_Security-Ownership_%26_SpEL-6DB33F?style=flat-square&logo=springsecurity&logoColor=white)](https://docs.spring.io/spring-security/reference/6.5/servlet/authorization/method-security.html#using-method-parameters)
+[![Owner access](https://img.shields.io/badge/Spring_Security-Ownership_%26_SpEL-6DB33F?style=flat-square&logo=springsecurity&logoColor=white&color=161b22&labelColor=303b49&logoColor=d4a478)](https://docs.spring.io/spring-security/reference/6.5/servlet/authorization/method-security.html#using-method-parameters)
 
-[![Method security](https://img.shields.io/badge/Spring_Security-PreAuthorize_%26_method_security-6DB33F?style=flat-square&logo=springsecurity&logoColor=white)](https://docs.spring.io/spring-security/reference/6.5/servlet/authorization/method-security.html)
+[![Method security](https://img.shields.io/badge/Spring_Security-PreAuthorize_%26_method_security-6DB33F?style=flat-square&logo=springsecurity&logoColor=white&color=161b22&labelColor=303b49&logoColor=d4a478)](https://docs.spring.io/spring-security/reference/6.5/servlet/authorization/method-security.html)
 
-[![CSRF](https://img.shields.io/badge/Spring_Security-CSRF_%26_registration-6DB33F?style=flat-square&logo=springsecurity&logoColor=white)](https://docs.spring.io/spring-security/reference/6.5/servlet/exploits/csrf.html)
+[![CSRF](https://img.shields.io/badge/Spring_Security-CSRF_%26_registration-6DB33F?style=flat-square&logo=springsecurity&logoColor=white&color=161b22&labelColor=303b49&logoColor=d4a478)](https://docs.spring.io/spring-security/reference/6.5/servlet/exploits/csrf.html)
 
-[![Database authentication](https://img.shields.io/badge/Spring_Security-UserDetailsService_%26_Principal-6DB33F?style=flat-square&logo=springsecurity&logoColor=white)](https://docs.spring.io/spring-security/reference/6.5/servlet/authentication/passwords/user-details-service.html)
+[![Database authentication](https://img.shields.io/badge/Spring_Security-UserDetailsService_%26_Principal-6DB33F?style=flat-square&logo=springsecurity&logoColor=white&color=161b22&labelColor=303b49&logoColor=d4a478)](https://docs.spring.io/spring-security/reference/6.5/servlet/authentication/passwords/user-details-service.html)
 
-[![Spring Security](https://img.shields.io/badge/Spring_Security-HTTP_Basic_%26_roles-6DB33F?style=flat-square&logo=springsecurity&logoColor=white)](https://docs.spring.io/spring-security/reference/6.5/servlet/index.html)
-[![BCrypt](https://img.shields.io/badge/Passwords-BCrypt-6DB33F?style=flat-square)](https://docs.spring.io/spring-security/reference/6.5/features/authentication/password-storage.html)
+[![Spring Security](https://img.shields.io/badge/Spring_Security-HTTP_Basic_%26_roles-6DB33F?style=flat-square&logo=springsecurity&logoColor=white&color=161b22&labelColor=303b49&logoColor=d4a478)](https://docs.spring.io/spring-security/reference/6.5/servlet/index.html)
+[![BCrypt](https://img.shields.io/badge/Passwords-BCrypt-6DB33F?style=flat-square&color=161b22&labelColor=303b49&logoColor=d4a478)](https://docs.spring.io/spring-security/reference/6.5/features/authentication/password-storage.html)
 
-[![Flyway](https://img.shields.io/badge/Flyway-SQL_migrations-CC0200?style=flat-square&logo=flyway&logoColor=white)](https://documentation.red-gate.com/flyway/)
-[![PostgreSQL JDBC](https://img.shields.io/badge/PostgreSQL-JDBC_driver-4169E1?style=flat-square&logo=postgresql&logoColor=white)](https://jdbc.postgresql.org/)
-[![Java 21](https://img.shields.io/badge/Java-21-ED8B00?style=flat-square&logo=openjdk&logoColor=white)](https://openjdk.org/projects/jdk/21/)
-[![BigDecimal](https://img.shields.io/badge/BigDecimal-Java-ED8B00?style=flat-square&logo=openjdk&logoColor=white)](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/math/BigDecimal.html)
-[![Optional](https://img.shields.io/badge/Optional-Java-ED8B00?style=flat-square&logo=openjdk&logoColor=white)](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Optional.html)
-[![Stream API](https://img.shields.io/badge/Stream_API-Java-ED8B00?style=flat-square&logo=openjdk&logoColor=white)](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/stream/package-summary.html)
-[![java.time](https://img.shields.io/badge/java.time-Java-ED8B00?style=flat-square&logo=openjdk&logoColor=white)](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/time/package-summary.html)
-[![JUnit 5](https://img.shields.io/badge/JUnit-5-25A162?style=flat-square&logo=junit5&logoColor=white)](https://junit.org/junit5/)
-[![Maven](https://img.shields.io/badge/Maven-3.9-C71A36?style=flat-square&logo=apachemaven&logoColor=white)](https://maven.apache.org/)
-[![Git](https://img.shields.io/badge/Git-2-F05032?style=flat-square&logo=git&logoColor=white)](https://git-scm.com/)
-[![GitHub](https://img.shields.io/badge/GitHub-Actions-181717?style=flat-square&logo=github&logoColor=white)](https://github.com/Kriksson/javaLearnAI/actions)
-[![PostgreSQL](https://img.shields.io/badge/PostgreSQL-SQL-4169E1?style=flat-square&logo=postgresql&logoColor=white)](https://www.postgresql.org/)
-[![JDBC](https://img.shields.io/badge/JDBC-Java-ED8B00?style=flat-square&logo=openjdk&logoColor=white)](https://docs.oracle.com/en/java/javase/21/docs/api/java.sql/java/sql/package-summary.html)
-[![HTTP Client](https://img.shields.io/badge/HTTP-Client-005571?style=flat-square&logo=openjdk&logoColor=white)](https://docs.oracle.com/en/java/javase/21/docs/api/java.net.http/java/net/http/HttpClient.html)
-[![HTTP Server](https://img.shields.io/badge/HTTP-Server-005571?style=flat-square&logo=openjdk&logoColor=white)](https://docs.oracle.com/en/java/javase/21/docs/api/jdk.httpserver/com/sun/net/httpserver/HttpHandler.html)
-[![Jackson](https://img.shields.io/badge/Jackson-JSON-2E8B57?style=flat-square)](https://github.com/FasterXML/jackson)
-[![Spring Boot](https://img.shields.io/badge/Spring_Boot-3.5-6DB33F?style=flat-square&logo=springboot&logoColor=white)](https://spring.io/projects/spring-boot)
-[![Bean Validation](https://img.shields.io/badge/Bean_Validation-Jakarta-6DB33F?style=flat-square)](https://beanvalidation.org/)
-[![Spring JDBC](https://img.shields.io/badge/Spring_JDBC-JdbcTemplate-6DB33F?style=flat-square&logo=spring&logoColor=white)](https://docs.spring.io/spring-framework/reference/6.2/data-access/jdbc/core.html)
-[![H2](https://img.shields.io/badge/H2-2.3.232-09476B?style=flat-square)](https://h2database.com/)
-[![Generated IDs](https://img.shields.io/badge/Spring_JDBC-GeneratedKeyHolder-6DB33F?style=flat-square&logo=spring&logoColor=white)](https://docs.spring.io/spring-framework/reference/data-access/jdbc/core.html#jdbc-auto-generated-keys)
-[![Spring Transactions](https://img.shields.io/badge/Spring-Transactional-6DB33F?style=flat-square&logo=spring&logoColor=white)](https://docs.spring.io/spring-framework/reference/data-access/transaction/declarative.html)
-[![Spring Data JPA](https://img.shields.io/badge/Spring_Data-JPA-6DB33F?style=flat-square&logo=spring&logoColor=white)](https://docs.spring.io/spring-data/jpa/reference/)
-[![Derived queries](https://img.shields.io/badge/Spring_Data-Derived_queries-6DB33F?style=flat-square&logo=spring&logoColor=white)](https://docs.spring.io/spring-data/jpa/reference/3.5/repositories/query-methods-details.html)
-[![Combined filters](https://img.shields.io/badge/Spring_Data-And_filters-6DB33F?style=flat-square&logo=spring&logoColor=white)](https://docs.spring.io/spring-data/jpa/reference/3.5/repositories/query-methods-details.html)
-[![Range queries](https://img.shields.io/badge/Spring_Data-GreaterThanEqual-6DB33F?style=flat-square&logo=spring&logoColor=white)](https://docs.spring.io/spring-data/jpa/reference/3.5/repositories/query-keywords-reference.html)
-[![Dirty checking](https://img.shields.io/badge/JPA-Dirty_checking-59666C?style=flat-square)](https://docs.spring.io/spring-data/jpa/reference/3.5/jpa/transactions.html)
-[![JPA Pagination](https://img.shields.io/badge/Spring_Data-Pageable_%26_Page-6DB33F?style=flat-square)](https://docs.spring.io/spring-data/commons/reference/3.5/repositories/query-methods-details.html)
-[![EntityGraph](https://img.shields.io/badge/JPA-EntityGraph_%26_N%2B1-59666C?style=flat-square)](https://docs.spring.io/spring-data/jpa/reference/3.5/jpa/query-methods.html#jpa.entity-graph)
-[![JPA relations](https://img.shields.io/badge/JPA-ManyToOne-59666C?style=flat-square)](https://jakarta.ee/specifications/persistence/)
-[![Hibernate](https://img.shields.io/badge/Hibernate-ORM-59666C?style=flat-square&logo=hibernate&logoColor=white)](https://hibernate.org/orm/documentation/)
-[![Conditional update](https://img.shields.io/badge/Spring_JDBC-UPDATE_row_count-6DB33F?style=flat-square&logo=spring&logoColor=white)](https://docs.spring.io/spring-framework/reference/data-access/jdbc/core.html)
+[![Flyway](https://img.shields.io/badge/Flyway-SQL_migrations-CC0200?style=flat-square&logo=flyway&logoColor=white&color=161b22&labelColor=303b49&logoColor=d4a478)](https://documentation.red-gate.com/flyway/)
+[![PostgreSQL JDBC](https://img.shields.io/badge/PostgreSQL-JDBC_driver-4169E1?style=flat-square&logo=postgresql&logoColor=white&color=161b22&labelColor=303b49&logoColor=d4a478)](https://jdbc.postgresql.org/)
+[![Java 21](https://img.shields.io/badge/Java-21-ED8B00?style=flat-square&logo=openjdk&logoColor=white&color=161b22&labelColor=303b49&logoColor=d4a478)](https://openjdk.org/projects/jdk/21/)
+[![BigDecimal](https://img.shields.io/badge/BigDecimal-Java-ED8B00?style=flat-square&logo=openjdk&logoColor=white&color=161b22&labelColor=303b49&logoColor=d4a478)](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/math/BigDecimal.html)
+[![Optional](https://img.shields.io/badge/Optional-Java-ED8B00?style=flat-square&logo=openjdk&logoColor=white&color=161b22&labelColor=303b49&logoColor=d4a478)](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/Optional.html)
+[![Stream API](https://img.shields.io/badge/Stream_API-Java-ED8B00?style=flat-square&logo=openjdk&logoColor=white&color=161b22&labelColor=303b49&logoColor=d4a478)](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/util/stream/package-summary.html)
+[![java.time](https://img.shields.io/badge/java.time-Java-ED8B00?style=flat-square&logo=openjdk&logoColor=white&color=161b22&labelColor=303b49&logoColor=d4a478)](https://docs.oracle.com/en/java/javase/21/docs/api/java.base/java/time/package-summary.html)
+[![JUnit 5](https://img.shields.io/badge/JUnit-5-25A162?style=flat-square&logo=junit5&logoColor=white&color=161b22&labelColor=303b49&logoColor=d4a478)](https://junit.org/junit5/)
+[![Maven](https://img.shields.io/badge/Maven-3.9-C71A36?style=flat-square&logo=apachemaven&logoColor=white&color=161b22&labelColor=303b49&logoColor=d4a478)](https://maven.apache.org/)
+[![Git](https://img.shields.io/badge/Git-2-F05032?style=flat-square&logo=git&logoColor=white&color=161b22&labelColor=303b49&logoColor=d4a478)](https://git-scm.com/)
+[![GitHub](https://img.shields.io/badge/GitHub-Actions-181717?style=flat-square&logo=github&logoColor=white&color=161b22&labelColor=303b49&logoColor=d4a478)](https://github.com/Kriksson/javaLearnAI/actions)
+[![PostgreSQL](https://img.shields.io/badge/PostgreSQL-SQL-4169E1?style=flat-square&logo=postgresql&logoColor=white&color=161b22&labelColor=303b49&logoColor=d4a478)](https://www.postgresql.org/)
+[![JDBC](https://img.shields.io/badge/JDBC-Java-ED8B00?style=flat-square&logo=openjdk&logoColor=white&color=161b22&labelColor=303b49&logoColor=d4a478)](https://docs.oracle.com/en/java/javase/21/docs/api/java.sql/java/sql/package-summary.html)
+[![HTTP Client](https://img.shields.io/badge/HTTP-Client-005571?style=flat-square&logo=openjdk&logoColor=white&color=161b22&labelColor=303b49&logoColor=d4a478)](https://docs.oracle.com/en/java/javase/21/docs/api/java.net.http/java/net/http/HttpClient.html)
+[![HTTP Server](https://img.shields.io/badge/HTTP-Server-005571?style=flat-square&logo=openjdk&logoColor=white&color=161b22&labelColor=303b49&logoColor=d4a478)](https://docs.oracle.com/en/java/javase/21/docs/api/jdk.httpserver/com/sun/net/httpserver/HttpHandler.html)
+[![Jackson](https://img.shields.io/badge/Jackson-JSON-2E8B57?style=flat-square&color=161b22&labelColor=303b49&logoColor=d4a478)](https://github.com/FasterXML/jackson)
+[![Spring Boot](https://img.shields.io/badge/Spring_Boot-3.5-6DB33F?style=flat-square&logo=springboot&logoColor=white&color=161b22&labelColor=303b49&logoColor=d4a478)](https://spring.io/projects/spring-boot)
+[![Bean Validation](https://img.shields.io/badge/Bean_Validation-Jakarta-6DB33F?style=flat-square&color=161b22&labelColor=303b49&logoColor=d4a478)](https://beanvalidation.org/)
+[![Spring JDBC](https://img.shields.io/badge/Spring_JDBC-JdbcTemplate-6DB33F?style=flat-square&logo=spring&logoColor=white&color=161b22&labelColor=303b49&logoColor=d4a478)](https://docs.spring.io/spring-framework/reference/6.2/data-access/jdbc/core.html)
+[![H2](https://img.shields.io/badge/H2-2.3.232-09476B?style=flat-square&color=161b22&labelColor=303b49&logoColor=d4a478)](https://h2database.com/)
+[![Generated IDs](https://img.shields.io/badge/Spring_JDBC-GeneratedKeyHolder-6DB33F?style=flat-square&logo=spring&logoColor=white&color=161b22&labelColor=303b49&logoColor=d4a478)](https://docs.spring.io/spring-framework/reference/data-access/jdbc/core.html#jdbc-auto-generated-keys)
+[![Spring Transactions](https://img.shields.io/badge/Spring-Transactional-6DB33F?style=flat-square&logo=spring&logoColor=white&color=161b22&labelColor=303b49&logoColor=d4a478)](https://docs.spring.io/spring-framework/reference/data-access/transaction/declarative.html)
+[![Spring Data JPA](https://img.shields.io/badge/Spring_Data-JPA-6DB33F?style=flat-square&logo=spring&logoColor=white&color=161b22&labelColor=303b49&logoColor=d4a478)](https://docs.spring.io/spring-data/jpa/reference/)
+[![Derived queries](https://img.shields.io/badge/Spring_Data-Derived_queries-6DB33F?style=flat-square&logo=spring&logoColor=white&color=161b22&labelColor=303b49&logoColor=d4a478)](https://docs.spring.io/spring-data/jpa/reference/3.5/repositories/query-methods-details.html)
+[![Combined filters](https://img.shields.io/badge/Spring_Data-And_filters-6DB33F?style=flat-square&logo=spring&logoColor=white&color=161b22&labelColor=303b49&logoColor=d4a478)](https://docs.spring.io/spring-data/jpa/reference/3.5/repositories/query-methods-details.html)
+[![Range queries](https://img.shields.io/badge/Spring_Data-GreaterThanEqual-6DB33F?style=flat-square&logo=spring&logoColor=white&color=161b22&labelColor=303b49&logoColor=d4a478)](https://docs.spring.io/spring-data/jpa/reference/3.5/repositories/query-keywords-reference.html)
+[![Dirty checking](https://img.shields.io/badge/JPA-Dirty_checking-59666C?style=flat-square&color=161b22&labelColor=303b49&logoColor=d4a478)](https://docs.spring.io/spring-data/jpa/reference/3.5/jpa/transactions.html)
+[![JPA Pagination](https://img.shields.io/badge/Spring_Data-Pageable_%26_Page-6DB33F?style=flat-square&color=161b22&labelColor=303b49&logoColor=d4a478)](https://docs.spring.io/spring-data/commons/reference/3.5/repositories/query-methods-details.html)
+[![EntityGraph](https://img.shields.io/badge/JPA-EntityGraph_%26_N%2B1-59666C?style=flat-square&color=161b22&labelColor=303b49&logoColor=d4a478)](https://docs.spring.io/spring-data/jpa/reference/3.5/jpa/query-methods.html#jpa.entity-graph)
+[![JPA relations](https://img.shields.io/badge/JPA-ManyToOne-59666C?style=flat-square&color=161b22&labelColor=303b49&logoColor=d4a478)](https://jakarta.ee/specifications/persistence/)
+[![Hibernate](https://img.shields.io/badge/Hibernate-ORM-59666C?style=flat-square&logo=hibernate&logoColor=white&color=161b22&labelColor=303b49&logoColor=d4a478)](https://hibernate.org/orm/documentation/)
+[![Conditional update](https://img.shields.io/badge/Spring_JDBC-UPDATE_row_count-6DB33F?style=flat-square&logo=spring&logoColor=white&color=161b22&labelColor=303b49&logoColor=d4a478)](https://docs.spring.io/spring-framework/reference/data-access/jdbc/core.html)
 
 Java 21 · BigDecimal · Optional · Stream API · java.time · JUnit 5 · Maven · Git · GitHub Actions · SQL · PostgreSQL · JDBC · HTTP Client · HTTP Server · Jackson · Spring Boot · Bean Validation · Spring JDBC · H2 · GeneratedKeyHolder · SQL IDENTITY · JdbcTemplate UPDATE row count · Spring Data JPA · Hibernate · ManyToOne · Spring Data derived queries · Flyway · Hibernate schema validation · Spring Security · HTTP Basic · BCrypt · UserDetailsService · Principal · CSRF · Client registration · Method security · Ownership checks
 
@@ -367,10 +433,17 @@ Java 21 · BigDecimal · Optional · Stream API · java.time · JUnit 5 · Maven
 
   - Kafka: topic с тремя partitions, две независимые consumer group, ConsumerRecord с реальными partition и offset, сохранение порядка по ключу и отдельные потокобезопасные представления доставки/аудита; подтверждены 39 интеграционных тестов, включая остановку и возобновление каждой группы.
 
-## Прогресс
+<h2 id="прогресс">
+<picture>
+  <source media="(prefers-reduced-motion: reduce) and (max-width: 600px)" srcset="docs/readme/headings/section-8-mobile.svg">
+  <source media="(prefers-reduced-motion: reduce)" srcset="docs/readme/headings/section-8.svg">
+  <source media="(max-width: 600px)" srcset="docs/readme/motion/headings/section-8-mobile.svg">
+  <img src="docs/readme/motion/headings/section-8.svg" alt="Прогресс" width="100%">
+</picture>
+</h2>
 
 - Решено задач: **102**
-- Последняя решённая задача: [№100 — Банк: partitions и независимые consumer group](tasks/completed/task_100_bank_kafka_groups/README.md).
+- Последняя решённая задача: [№102 — Банк: повторная отправка SMS и DLT](tasks/completed/task_102_bank_sms_retry_dlt/README.md).
 
 | № | Задача | Подтверждённые навыки | Статус |
 |---:|---|---|---|
@@ -482,17 +555,38 @@ Java 21 · BigDecimal · Optional · Stream API · java.time · JUnit 5 · Maven
 | 101 | Банк: три consumer отправляют SMS параллельно | concurrency=3, синхронный HttpClient, независимый прогресс partitions, порядок обработки, таймауты и сохранение после ответа шлюза; 33 теста | решена |
 | 102 | Банк: повторная отправка SMS и DLT | DefaultErrorHandler, FixedBackOff, первая попытка и два повтора, DeadLetterPublishingRecoverer, исходные key/value и headers, продолжение partition после recovery; 43 теста | решена |
 
-## Последняя решённая задача
+<h2 id="последняя-решённая-задача">
+<picture>
+  <source media="(prefers-reduced-motion: reduce) and (max-width: 600px)" srcset="docs/readme/headings/section-9-mobile.svg">
+  <source media="(prefers-reduced-motion: reduce)" srcset="docs/readme/headings/section-9.svg">
+  <source media="(max-width: 600px)" srcset="docs/readme/motion/headings/section-9-mobile.svg">
+  <img src="docs/readme/motion/headings/section-9.svg" alt="Последняя решённая задача" width="100%">
+</picture>
+</h2>
 
 [Открыть архив задачи №102](tasks/completed/task_102_bank_sms_retry_dlt/README.md).
 
-## Текущий этап
+<h2 id="текущий-этап">
+<picture>
+  <source media="(prefers-reduced-motion: reduce) and (max-width: 600px)" srcset="docs/readme/headings/section-10-mobile.svg">
+  <source media="(prefers-reduced-motion: reduce)" srcset="docs/readme/headings/section-10.svg">
+  <source media="(max-width: 600px)" srcset="docs/readme/motion/headings/section-10-mobile.svg">
+  <img src="docs/readme/motion/headings/section-10.svg" alt="Текущий этап" width="100%">
+</picture>
+</h2>
 
 **№102 решена и архивирована 24.10.2026.** [Решение, условие и 43 теста](tasks/completed/task_102_bank_sms_retry_dlt/README.md), [отдельный работающий пример](tasks/completed/task_102_bank_sms_retry_dlt/EXAMPLE.md). Подтверждены ограниченные повторы обработки, успех после временных отказов, публикация исходной записи в DLT после трёх неудач, стандартные headers и продолжение обработки partition после recovery. Все 43 теста прошли с настоящим Kafka и локальным HTTP-шлюзом, без ошибок и пропусков.
 
 Решено **102** задачи. Активной задачи сейчас нет; следующая ещё не выдана. Все автоматические тесты и вспомогательную тестовую инфраструктуру пишет тренер. [План пет-проекта](docs/PET_PROJECT_PLAN.md) сохранён как отдельный контекст.
 
-## Структура
+<h2 id="структура">
+<picture>
+  <source media="(prefers-reduced-motion: reduce) and (max-width: 600px)" srcset="docs/readme/headings/section-11-mobile.svg">
+  <source media="(prefers-reduced-motion: reduce)" srcset="docs/readme/headings/section-11.svg">
+  <source media="(max-width: 600px)" srcset="docs/readme/motion/headings/section-11-mobile.svg">
+  <img src="docs/readme/motion/headings/section-11.svg" alt="Структура" width="100%">
+</picture>
+</h2>
 
 ```text
 tasks/
